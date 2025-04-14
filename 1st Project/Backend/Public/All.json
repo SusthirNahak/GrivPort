@@ -1,0 +1,3461 @@
+{
+	"state": {
+		"state_name": "Odisha",
+		"total_districts": 30,
+		"total_blocks": 314,
+		"total_gram_panchayats": 6794,
+		"total_villages": 50000,
+		"districts": [
+			{
+				"district_name": "Angul",
+				"blocks": [
+					{
+						"block_name": "Angul",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Angul",
+								"villages": [
+									"Angul Town",
+									"Turanga",
+									"Khalari",
+									"Nuagaon",
+									"Sanakerjang"
+								]
+							},
+							{
+								"gram_panchayat_name": "Balasingha",
+								"villages": [
+									"Balasingha",
+									"Sanatulisahi",
+									"Kumurisingha",
+									"Badasingha",
+									"Rajkishorenagar"
+								]
+							},
+							{
+								"gram_panchayat_name": "Bantala",
+								"villages": [
+									"Bantala",
+									"Matiasahi",
+									"Badakera",
+									"Barasingha",
+									"Talagarh"
+								]
+							},
+							{
+								"gram_panchayat_name": "Badakera",
+								"villages": [
+									"Badakera",
+									"Sankrida",
+									"Khamar",
+									"Podapada",
+									"Gadatarasa"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jagannathpur",
+								"villages": [
+									"Jagannathpur",
+									"Rantalei",
+									"Balipata",
+									"Nuapada",
+									"Kukudanga"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Athamallik",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Athmallik",
+								"villages": [
+									"Athmallik Town",
+									"Nuagan",
+									"Kandhapada",
+									"Taparapada",
+									"Pitabahal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kiakata",
+								"villages": [
+									"Kiakata",
+									"Bandhagaon",
+									"Jamudoli",
+									"Kandhapada",
+									"Odapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Madanpur",
+								"villages": [
+									"Madanpur",
+									"Kusumunda",
+									"Dholapur",
+									"Purunapani",
+									"Sankhamala"
+								]
+							},
+							{
+								"gram_panchayat_name": "Lunahandi",
+								"villages": [
+									"Lunahandi",
+									"Tentulikhunti",
+									"Kutarthpur",
+									"Ambaguda",
+									"Barabandha"
+								]
+							},
+							{
+								"gram_panchayat_name": "Paikasahi",
+								"villages": [
+									"Paikasahi",
+									"Dangapal",
+									"Nuapada",
+									"Kusumunda",
+									"Bhalupali"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Balangir",
+				"blocks": [
+					{
+						"block_name": "Balangir",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Barpali",
+								"villages": [
+									"Barpali",
+									"Chhelia",
+									"Dangarapada",
+									"Kanakpur",
+									"Nuapali"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chandgaon",
+								"villages": [
+									"Chandgaon",
+									"Bahalpali",
+									"Kuturapali",
+									"Sindurpali",
+									"Jamgaon"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jhankarpali",
+								"villages": [
+									"Jhankarpali",
+									"Kusumpali",
+									"Dumerpali",
+									"Tentulipali",
+									"Sargiguda"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kutasingha",
+								"villages": [
+									"Kutasingha",
+									"Rengali",
+									"Madhiapali",
+									"Baghapali",
+									"Kandhpali"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sakma",
+								"villages": [
+									"Sakma",
+									"Budhapali",
+									"Jharmunda",
+									"Patharpali",
+									"Kusanga"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Titilagarh",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Titilagarh",
+								"villages": [
+									"Titilagarh Town",
+									"Kumuda",
+									"Siluan",
+									"Bandupala",
+									"Ghantabahali"
+								]
+							},
+							{
+								"gram_panchayat_name": "Binekela",
+								"villages": [
+									"Binekela",
+									"Chitarol",
+									"Kandajuri",
+									"Kuanrgaon",
+									"Sargiguda"
+								]
+							},
+							{
+								"gram_panchayat_name": "Ghantabahali",
+								"villages": [
+									"Ghantabahali",
+									"Kutapada",
+									"Dangarpara",
+									"Podapada",
+									"Mahulpada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kursud",
+								"villages": [
+									"Kursud",
+									"Dumerpada",
+									"Rengali",
+									"Suklibhata",
+									"Sindurpali"
+								]
+							},
+							{
+								"gram_panchayat_name": "Manigaon",
+								"villages": [
+									"Manigaon",
+									"Kuturabeda",
+									"Tikrapada",
+									"Bagdor",
+									"Jharpada"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Balasore",
+				"blocks": [
+					{
+						"block_name": "Balasore",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Baliapal",
+								"villages": [
+									"Baliapal",
+									"Badhapal",
+									"Chaumukh",
+									"Jagatipur",
+									"Pratappur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chandipur",
+								"villages": [
+									"Chandipur",
+									"Ranasahi",
+									"Badamahulia",
+									"Gudupahi",
+									"Hidigan"
+								]
+							},
+							{
+								"gram_panchayat_name": "Genguti",
+								"villages": [
+									"Genguti",
+									"Sasanpada",
+									"Rasulpur",
+									"Nuapur",
+									"Patrapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Hidigaon",
+								"villages": [
+									"Hidigaon",
+									"Sankarpur",
+									"Gobindapur",
+									"Bahabalpur",
+									"Nuagan"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jayarampur",
+								"villages": [
+									"Jayarampur",
+									"Chakrajpur",
+									"Barahapur",
+									"Sundarpur",
+									"Mahammadpur"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Basta",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Basta",
+								"villages": [
+									"Basta",
+									"Basuchakurai",
+									"Darada",
+									"Sadhubrahmapur",
+									"Mathani"
+								]
+							},
+							{
+								"gram_panchayat_name": "Darada",
+								"villages": [
+									"Darada",
+									"Paunsakuli",
+									"Raghunathpur",
+									"Chakradharpur",
+									"Nuagan"
+								]
+							},
+							{
+								"gram_panchayat_name": "Mathani",
+								"villages": [
+									"Mathani",
+									"Sankhudi",
+									"Barada",
+									"Purusottampur",
+									"Gopinathpur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Mukulisi",
+								"villages": [
+									"Mukulisi",
+									"Sasanpada",
+									"Khandapada",
+									"Balisahi",
+									"Rasulpur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Nabara",
+								"villages": [
+									"Nabara",
+									"Sankhapada",
+									"Chakrajpur",
+									"Mahulpada",
+									"Sundarpur"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Bargarh",
+				"blocks": [
+					{
+						"block_name": "Bargarh",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Bargarh",
+								"villages": [
+									"Bargarh Town",
+									"Jamurda",
+									"Gudesira",
+									"Dang",
+									"Katapali"
+								]
+							},
+							{
+								"gram_panchayat_name": "Bardol",
+								"villages": [
+									"Bardol",
+									"Talsirgida",
+									"Khaliapali",
+									"Bhatli",
+									"Sukuda"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gaisima",
+								"villages": [
+									"Gaisima",
+									"Kurla",
+									"Jhankarpali",
+									"Baulasingha",
+									"Tentulitikra"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jamurda",
+								"villages": [
+									"Jamurda",
+									"Bhatli",
+									"Khaliapali",
+									"Sukuda",
+									"Talsirgida"
+								]
+							},
+							{
+								"gram_panchayat_name": "Khaliapali",
+								"villages": [
+									"Khaliapali",
+									"Bardol",
+									"Gudesira",
+									"Katapali",
+									"Dang"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Attabira",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Attabira",
+								"villages": [
+									"Attabira Town",
+									"Ladarpali",
+									"Rengalipali",
+									"Kandapali",
+									"Larambha"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chakuli",
+								"villages": [
+									"Chakuli",
+									"Kulunda",
+									"Janged",
+									"Paharsrigida",
+									"Sindurpali"
+								]
+							},
+							{
+								"gram_panchayat_name": "Janged",
+								"villages": [
+									"Janged",
+									"Chakuli",
+									"Kulunda",
+									"Larambha",
+									"Rengalipali"
+								]
+							},
+							{
+								"gram_panchayat_name": "Larambha",
+								"villages": [
+									"Larambha",
+									"Attabira",
+									"Kandapali",
+									"Paharsrigida",
+									"Sindurpali"
+								]
+							},
+							{
+								"gram_panchayat_name": "Paharsrigida",
+								"villages": [
+									"Paharsrigida",
+									"Janged",
+									"Chakuli",
+									"Kulunda",
+									"Larambha"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Bhadrak",
+				"blocks": [
+					{
+						"block_name": "Bhadrak",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Arnapal",
+								"villages": [
+									"Arnapal",
+									"Sabarang",
+									"Gelpur",
+									"Kedarpur",
+									"Bandhagaon"
+								]
+							},
+							{
+								"gram_panchayat_name": "Bandhagaon",
+								"villages": [
+									"Bandhagaon",
+									"Arnapal",
+									"Sabarang",
+									"Gelpur",
+									"Kedarpur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gelpur",
+								"villages": [
+									"Gelpur",
+									"Kedarpur",
+									"Arnapal",
+									"Sabarang",
+									"Bandhagaon"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kedarpur",
+								"villages": [
+									"Kedarpur",
+									"Gelpur",
+									"Arnapal",
+									"Sabarang",
+									"Bandhagaon"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sabarang",
+								"villages": [
+									"Sabarang",
+									"Arnapal",
+									"Bandhagaon",
+									"Gelpur",
+									"Kedarpur"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Basudevpur",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Basudevpur",
+								"villages": [
+									"Basudevpur Town",
+									"Andola",
+									"Barandua",
+									"Guamal",
+									"Naikanago"
+								]
+							},
+							{
+								"gram_panchayat_name": "Andola",
+								"villages": [
+									"Andola",
+									"Basudevpur",
+									"Barandua",
+									"Guamal",
+									"Naikanago"
+								]
+							},
+							{
+								"gram_panchayat_name": "Barandua",
+								"villages": [
+									"Barandua",
+									"Andola",
+									"Basudevpur",
+									"Guamal",
+									"Naikanago"
+								]
+							},
+							{
+								"gram_panchayat_name": "Guamal",
+								"villages": [
+									"Guamal",
+									"Barandua",
+									"Andola",
+									"Basudevpur",
+									"Naikanago"
+								]
+							},
+							{
+								"gram_panchayat_name": "Naikanago",
+								"villages": [
+									"Naikanago",
+									"Guamal",
+									"Barandua",
+									"Andola",
+									"Basudevpur"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Boudh",
+				"blocks": [
+					{
+						"block_name": "Boudh",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Adenigarh",
+								"villages": [
+									"Adenigarh",
+									"Baghiapada",
+									"Boudhnagar",
+									"Manamunda",
+									"Palaspat"
+								]
+							},
+							{
+								"gram_panchayat_name": "Baghiapada",
+								"villages": [
+									"Baghiapada",
+									"Adenigarh",
+									"Boudhnagar",
+									"Manamunda",
+									"Palaspat"
+								]
+							},
+							{
+								"gram_panchayat_name": "Boudhnagar",
+								"villages": [
+									"Boudhnagar",
+									"Baghiapada",
+									"Adenigarh",
+									"Manamunda",
+									"Palaspat"
+								]
+							},
+							{
+								"gram_panchayat_name": "Manamunda",
+								"villages": [
+									"Manamunda",
+									"Boudhnagar",
+									"Baghiapada",
+									"Adenigarh",
+									"Palaspat"
+								]
+							},
+							{
+								"gram_panchayat_name": "Palaspat",
+								"villages": [
+									"Palaspat",
+									"Manamunda",
+									"Boudhnagar",
+									"Baghiapada",
+									"Adenigarh"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Kantamal",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Kantamal",
+								"villages": [
+									"Kantamal Town",
+									"Ambagaon",
+									"Ghantapada",
+									"Khatakhatia",
+									"Uma"
+								]
+							},
+							{
+								"gram_panchayat_name": "Ambagaon",
+								"villages": [
+									"Ambagaon",
+									"Kantamal",
+									"Ghantapada",
+									"Khatakhatia",
+									"Uma"
+								]
+							},
+							{
+								"gram_panchayat_name": "Ghantapada",
+								"villages": [
+									"Ghantapada",
+									"Ambagaon",
+									"Kantamal",
+									"Khatakhatia",
+									"Uma"
+								]
+							},
+							{
+								"gram_panchayat_name": "Khatakhatia",
+								"villages": [
+									"Khatakhatia",
+									"Ghantapada",
+									"Ambagaon",
+									"Kantamal",
+									"Uma"
+								]
+							},
+							{
+								"gram_panchayat_name": "Uma",
+								"villages": [
+									"Uma",
+									"Khatakhatia",
+									"Ghantapada",
+									"Ambagaon",
+									"Kantamal"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Cuttack",
+				"blocks": [
+					{
+						"block_name": "Athagarh",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Anantapur",
+								"villages": [
+									"Anantapur",
+									"Badabhuin",
+									"Bentapada",
+									"Bhogara",
+									"Chhagaon"
+								]
+							},
+							{
+								"gram_panchayat_name": "Badabhuin",
+								"villages": [
+									"Badabhuin",
+									"Anantapur",
+									"Bentapada",
+									"Bhogara",
+									"Chhagaon"
+								]
+							},
+							{
+								"gram_panchayat_name": "Bentapada",
+								"villages": [
+									"Bentapada",
+									"Badabhuin",
+									"Anantapur",
+									"Bhogara",
+									"Chhagaon"
+								]
+							},
+							{
+								"gram_panchayat_name": "Bhogara",
+								"villages": [
+									"Bhogara",
+									"Bentapada",
+									"Badabhuin",
+									"Anantapur",
+									"Chhagaon"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chhagaon",
+								"villages": [
+									"Chhagaon",
+									"Bhogara",
+									"Bentapada",
+									"Badabhuin",
+									"Anantapur"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Badamba",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Abhimanpur",
+								"villages": [
+									"Abhimanpur",
+									"Badabarsingh",
+									"Badakambilo",
+									"Banamalipur",
+									"Bhattarika"
+								]
+							},
+							{
+								"gram_panchayat_name": "Badabarsingh",
+								"villages": [
+									"Badabarsingh",
+									"Abhimanpur",
+									"Badakambilo",
+									"Banamalipur",
+									"Bhattarika"
+								]
+							},
+							{
+								"gram_panchayat_name": "Badakambilo",
+								"villages": [
+									"Badakambilo",
+									"Badabarsingh",
+									"Abhimanpur",
+									"Banamalipur",
+									"Bhattarika"
+								]
+							},
+							{
+								"gram_panchayat_name": "Banamalipur",
+								"villages": [
+									"Banamalipur",
+									"Badakambilo",
+									"Badabarsingh",
+									"Abhimanpur",
+									"Bhattarika"
+								]
+							},
+							{
+								"gram_panchayat_name": "Bhattarika",
+								"villages": [
+									"Bhattarika",
+									"Banamalipur",
+									"Badakambilo",
+									"Badabarsingh",
+									"Abhimanpur"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Deogarh",
+				"blocks": [
+					{
+						"block_name": "Barkote",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Balanda",
+								"villages": [
+									"Balanda",
+									"Dandasingha",
+									"Kalla",
+									"Kansar",
+									"Saida"
+								]
+							},
+							{
+								"gram_panchayat_name": "Dandasingha",
+								"villages": [
+									"Dandasingha",
+									"Balanda",
+									"Kalla",
+									"Kansar",
+									"Saida"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kalla",
+								"villages": [
+									"Kalla",
+									"Dandasingha",
+									"Balanda",
+									"Kansar",
+									"Saida"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kansar",
+								"villages": [
+									"Kansar",
+									"Kalla",
+									"Dandasingha",
+									"Balanda",
+									"Saida"
+								]
+							},
+							{
+								"gram_panchayat_name": "Saida",
+								"villages": [
+									"Saida",
+									"Kansar",
+									"Kalla",
+									"Dandasingha",
+									"Balanda"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Reamal",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Adas",
+								"villages": [
+									"Adas",
+									"Budido",
+									"Kundheigola",
+									"Lulang",
+									"Reamal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Budido",
+								"villages": [
+									"Budido",
+									"Adas",
+									"Kundheigola",
+									"Lulang",
+									"Reamal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kundheigola",
+								"villages": [
+									"Kundheigola",
+									"Budido",
+									"Adas",
+									"Lulang",
+									"Reamal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Lulang",
+								"villages": [
+									"Lulang",
+									"Kundheigola",
+									"Budido",
+									"Adas",
+									"Reamal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Reamal",
+								"villages": [
+									"Reamal",
+									"Lulang",
+									"Kundheigola",
+									"Budido",
+									"Adas"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Dhenkanal",
+				"blocks": [
+					{
+						"block_name": "Dhenkanal Sadar",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Balarampur",
+								"villages": [
+									"Balarampur",
+									"Beltikiri",
+									"Gengutia",
+									"Kaimati",
+									"Saptasajya"
+								]
+							},
+							{
+								"gram_panchayat_name": "Beltikiri",
+								"villages": [
+									"Beltikiri",
+									"Balarampur",
+									"Gengutia",
+									"Kaimati",
+									"Saptasajya"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gengutia",
+								"villages": [
+									"Gengutia",
+									"Beltikiri",
+									"Balarampur",
+									"Kaimati",
+									"Saptasajya"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kaimati",
+								"villages": [
+									"Kaimati",
+									"Gengutia",
+									"Beltikiri",
+									"Balarampur",
+									"Saptasajya"
+								]
+							},
+							{
+								"gram_panchayat_name": "Saptasajya",
+								"villages": [
+									"Saptasajya",
+									"Kaimati",
+									"Gengutia",
+									"Beltikiri",
+									"Balarampur"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Kamakhyanagar",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Anlabereni",
+								"villages": [
+									"Anlabereni",
+									"Baisinga",
+									"Bhagirathpur",
+									"Kamakhyanagar",
+									"Kantapal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Baisinga",
+								"villages": [
+									"Baisinga",
+									"Anlabereni",
+									"Bhagirathpur",
+									"Kamakhyanagar",
+									"Kantapal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Bhagirathpur",
+								"villages": [
+									"Bhagirathpur",
+									"Baisinga",
+									"Anlabereni",
+									"Kamakhyanagar",
+									"Kantapal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kamakhyanagar",
+								"villages": [
+									"Kamakhyanagar Town",
+									"Bhagirathpur",
+									"Baisinga",
+									"Anlabereni",
+									"Kantapal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kantapal",
+								"villages": [
+									"Kantapal",
+									"Kamakhyanagar",
+									"Bhagirathpur",
+									"Baisinga",
+									"Anlabereni"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Gajapati",
+				"blocks": [
+					{
+						"block_name": "Gosani",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Garabandha",
+								"villages": [
+									"Garabandha",
+									"Gosani",
+									"Kerandi",
+									"Machamara",
+									"Uppalada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gosani",
+								"villages": [
+									"Gosani",
+									"Garabandha",
+									"Kerandi",
+									"Machamara",
+									"Uppalada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kerandi",
+								"villages": [
+									"Kerandi",
+									"Gosani",
+									"Garabandha",
+									"Machamara",
+									"Uppalada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Machamara",
+								"villages": [
+									"Machamara",
+									"Kerandi",
+									"Gosani",
+									"Garabandha",
+									"Uppalada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Uppalada",
+								"villages": [
+									"Uppalada",
+									"Machamara",
+									"Kerandi",
+									"Gosani",
+									"Garabandha"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Mohana",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Adava",
+								"villages": [
+									"Adava",
+									"Chandragiri",
+									"Dengaskhal",
+									"Mohana",
+									"Pindiki"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chandragiri",
+								"villages": [
+									"Chandragiri",
+									"Adava",
+									"Dengaskhal",
+									"Mohana",
+									"Pindiki"
+								]
+							},
+							{
+								"gram_panchayat_name": "Dengaskhal",
+								"villages": [
+									"Dengaskhal",
+									"Chandragiri",
+									"Adava",
+									"Mohana",
+									"Pindiki"
+								]
+							},
+							{
+								"gram_panchayat_name": "Mohana",
+								"villages": [
+									"Mohana",
+									"Dengaskhal",
+									"Chandragiri",
+									"Adava",
+									"Pindiki"
+								]
+							},
+							{
+								"gram_panchayat_name": "Pindiki",
+								"villages": [
+									"Pindiki",
+									"Mohana",
+									"Dengaskhal",
+									"Chandragiri",
+									"Adava"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Ganjam",
+				"blocks": [
+					{
+						"block_name": "Aska",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Aska",
+								"villages": [
+									"Aska Town",
+									"Badakholi",
+									"Babanapur",
+									"Balichai",
+									"Gangapur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Badakholi",
+								"villages": [
+									"Badakholi",
+									"Aska",
+									"Babanapur",
+									"Balichai",
+									"Gangapur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Babanapur",
+								"villages": [
+									"Babanapur",
+									"Badakholi",
+									"Aska",
+									"Balichai",
+									"Gangapur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Balichai",
+								"villages": [
+									"Balichai",
+									"Babanapur",
+									"Badakholi",
+									"Aska",
+									"Gangapur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gangapur",
+								"villages": [
+									"Gangapur",
+									"Balichai",
+									"Babanapur",
+									"Badakholi",
+									"Aska"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Bhanjanagar",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Bhanjanagar",
+								"villages": [
+									"Bhanjanagar Town",
+									"Baunsalundi",
+									"Dihapadhal",
+									"Galleri",
+									"Jilluba"
+								]
+							},
+							{
+								"gram_panchayat_name": "Baunsalundi",
+								"villages": [
+									"Baunsalundi",
+									"Bhanjanagar",
+									"Dihapadhal",
+									"Galleri",
+									"Jilluba"
+								]
+							},
+							{
+								"gram_panchayat_name": "Dihapadhal",
+								"villages": [
+									"Dihapadhal",
+									"Baunsalundi",
+									"Bhanjanagar",
+									"Galleri",
+									"Jilluba"
+								]
+							},
+							{
+								"gram_panchayat_name": "Galleri",
+								"villages": [
+									"Galleri",
+									"Dihapadhal",
+									"Baunsalundi",
+									"Bhanjanagar",
+									"Jilluba"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jilluba",
+								"villages": [
+									"Jilluba",
+									"Galleri",
+									"Dihapadhal",
+									"Baunsalundi",
+									"Bhanjanagar"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Jagatsinghpur",
+				"blocks": [
+					{
+						"block_name": "Jagatsinghpur",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Alipingal",
+								"villages": [
+									"Alipingal",
+									"Jankoti",
+									"Kandarpur",
+									"Mudupur",
+									"Patasara"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jankoti",
+								"villages": [
+									"Jankoti",
+									"Alipingal",
+									"Kandarpur",
+									"Mudupur",
+									"Patasara"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kandarpur",
+								"villages": [
+									"Kandarpur",
+									"Jankoti",
+									"Alipingal",
+									"Mudupur",
+									"Patasara"
+								]
+							},
+							{
+								"gram_panchayat_name": "Mudupur",
+								"villages": [
+									"Mudupur",
+									"Kandarpur",
+									"Jankoti",
+									"Alipingal",
+									"Patasara"
+								]
+							},
+							{
+								"gram_panchayat_name": "Patasara",
+								"villages": [
+									"Patasara",
+									"Mudupur",
+									"Kandarpur",
+									"Jankoti",
+									"Alipingal"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Balikuda",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Ambiki",
+								"villages": [
+									"Ambiki",
+									"Balikuda",
+									"Borikina",
+									"Nagapur",
+									"Osakana"
+								]
+							},
+							{
+								"gram_panchayat_name": "Balikuda",
+								"villages": [
+									"Balikuda",
+									"Ambiki",
+									"Borikina",
+									"Nagapur",
+									"Osakana"
+								]
+							},
+							{
+								"gram_panchayat_name": "Borikina",
+								"villages": [
+									"Borikina",
+									"Balikuda",
+									"Ambiki",
+									"Nagapur",
+									"Osakana"
+								]
+							},
+							{
+								"gram_panchayat_name": "Nagapur",
+								"villages": [
+									"Nagapur",
+									"Borikina",
+									"Balikuda",
+									"Ambiki",
+									"Osakana"
+								]
+							},
+							{
+								"gram_panchayat_name": "Osakana",
+								"villages": [
+									"Osakana",
+									"Nagapur",
+									"Borikina",
+									"Balikuda",
+									"Ambiki"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Jajpur",
+				"blocks": [
+					{
+						"block_name": "Jajpur",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Bichitrapur",
+								"villages": [
+									"Bichitrapur",
+									"Chainipur",
+									"Jajpur",
+									"Markandapur",
+									"Rahasoi"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chainipur",
+								"villages": [
+									"Chainipur",
+									"Bichitrapur",
+									"Jajpur",
+									"Markandapur",
+									"Rahasoi"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jajpur",
+								"villages": [
+									"Jajpur Town",
+									"Chainipur",
+									"Bichitrapur",
+									"Markandapur",
+									"Rahasoi"
+								]
+							},
+							{
+								"gram_panchayat_name": "Markandapur",
+								"villages": [
+									"Markandapur",
+									"Jajpur",
+									"Chainipur",
+									"Bichitrapur",
+									"Rahasoi"
+								]
+							},
+							{
+								"gram_panchayat_name": "Rahasoi",
+								"villages": [
+									"Rahasoi",
+									"Markandapur",
+									"Jajpur",
+									"Chainipur",
+									"Bichitrapur"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Barchana",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Arilo",
+								"villages": [
+									"Arilo",
+									"Barchana",
+									"Kolar",
+									"Nalipur",
+									"Salapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Barchana",
+								"villages": [
+									"Barchana",
+									"Arilo",
+									"Kolar",
+									"Nalipur",
+									"Salapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kolar",
+								"villages": [
+									"Kolar",
+									"Barchana",
+									"Arilo",
+									"Nalipur",
+									"Salapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Nalipur",
+								"villages": [
+									"Nalipur",
+									"Kolar",
+									"Barchana",
+									"Arilo",
+									"Salapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Salapada",
+								"villages": [
+									"Salapada",
+									"Nalipur",
+									"Kolar",
+									"Barchana",
+									"Arilo"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Jharsuguda",
+				"blocks": [
+					{
+						"block_name": "Jharsuguda",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Badmal",
+								"villages": [
+									"Badmal",
+									"Durlaga",
+									"Hirma",
+									"Jharsuguda",
+									"Talpatia"
+								]
+							},
+							{
+								"gram_panchayat_name": "Durlaga",
+								"villages": [
+									"Durlaga",
+									"Badmal",
+									"Hirma",
+									"Jharsuguda",
+									"Talpatia"
+								]
+							},
+							{
+								"gram_panchayat_name": "Hirma",
+								"villages": [
+									"Hirma",
+									"Durlaga",
+									"Badmal",
+									"Jharsuguda",
+									"Talpatia"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jharsuguda",
+								"villages": [
+									"Jharsuguda Town",
+									"Hirma",
+									"Durlaga",
+									"Badmal",
+									"Talpatia"
+								]
+							},
+							{
+								"gram_panchayat_name": "Talpatia",
+								"villages": [
+									"Talpatia",
+									"Jharsuguda",
+									"Hirma",
+									"Durlaga",
+									"Badmal"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Lakhanpur",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Bandhapali",
+								"villages": [
+									"Bandhapali",
+									"Kudaloi",
+									"Lakhanpur",
+									"Panchgaon",
+									"Samasingha"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kudaloi",
+								"villages": [
+									"Kudaloi",
+									"Bandhapali",
+									"Lakhanpur",
+									"Panchgaon",
+									"Samasingha"
+								]
+							},
+							{
+								"gram_panchayat_name": "Lakhanpur",
+								"villages": [
+									"Lakhanpur",
+									"Kudaloi",
+									"Bandhapali",
+									"Panchgaon",
+									"Samasingha"
+								]
+							},
+							{
+								"gram_panchayat_name": "Panchgaon",
+								"villages": [
+									"Panchgaon",
+									"Lakhanpur",
+									"Kudaloi",
+									"Bandhapali",
+									"Samasingha"
+								]
+							},
+							{
+								"gram_panchayat_name": "Samasingha",
+								"villages": [
+									"Samasingha",
+									"Panchgaon",
+									"Lakhanpur",
+									"Kudaloi",
+									"Bandhapali"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Kalahandi",
+				"blocks": [
+					{
+						"block_name": "Bhawanipatna",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Bhawanipatna",
+								"villages": [
+									"Bhawanipatna Town",
+									"Chhatrapur",
+									"Deypur",
+									"Kalampur",
+									"Medinipur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chhatrapur",
+								"villages": [
+									"Chhatrapur",
+									"Bhawanipatna",
+									"Deypur",
+									"Kalampur",
+									"Medinipur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Deypur",
+								"villages": [
+									"Deypur",
+									"Chhatrapur",
+									"Bhawanipatna",
+									"Kalampur",
+									"Medinipur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kalampur",
+								"villages": [
+									"Kalampur",
+									"Deypur",
+									"Chhatrapur",
+									"Bhawanipatna",
+									"Medinipur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Medinipur",
+								"villages": [
+									"Medinipur",
+									"Kalampur",
+									"Deypur",
+									"Chhatrapur",
+									"Bhawanipatna"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Kesinga",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Bhatangpadar",
+								"villages": [
+									"Bhatangpadar",
+									"Kesinga",
+									"Kikia",
+									"Laitara",
+									"Utkela"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kesinga",
+								"villages": [
+									"Kesinga Town",
+									"Bhatangpadar",
+									"Kikia",
+									"Laitara",
+									"Utkela"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kikia",
+								"villages": [
+									"Kikia",
+									"Kesinga",
+									"Bhatangpadar",
+									"Laitara",
+									"Utkela"
+								]
+							},
+							{
+								"gram_panchayat_name": "Laitara",
+								"villages": [
+									"Laitara",
+									"Kikia",
+									"Kesinga",
+									"Bhatangpadar",
+									"Utkela"
+								]
+							},
+							{
+								"gram_panchayat_name": "Utkela",
+								"villages": [
+									"Utkela",
+									"Laitara",
+									"Kikia",
+									"Kesinga",
+									"Bhatangpadar"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Kandhamal",
+				"blocks": [
+					{
+						"block_name": "Phulbani",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Alami",
+								"villages": [
+									"Alami",
+									"Duduki",
+									"Gumagarh",
+									"Phulbani",
+									"Tudipaju"
+								]
+							},
+							{
+								"gram_panchayat_name": "Duduki",
+								"villages": [
+									"Duduki",
+									"Alami",
+									"Gumagarh",
+									"Phulbani",
+									"Tudipaju"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gumagarh",
+								"villages": [
+									"Gumagarh",
+									"Duduki",
+									"Alami",
+									"Phulbani",
+									"Tudipaju"
+								]
+							},
+							{
+								"gram_panchayat_name": "Phulbani",
+								"villages": [
+									"Phulbani Town",
+									"Gumagarh",
+									"Duduki",
+									"Alami",
+									"Tudipaju"
+								]
+							},
+							{
+								"gram_panchayat_name": "Tudipaju",
+								"villages": [
+									"Tudipaju",
+									"Phulbani",
+									"Gumagarh",
+									"Duduki",
+									"Alami"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Baliguda",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Baliguda",
+								"villages": [
+									"Baliguda Town",
+									"Bataguda",
+									"Khamankhol",
+									"Rebingia",
+									"Sindirigaon"
+								]
+							},
+							{
+								"gram_panchayat_name": "Bataguda",
+								"villages": [
+									"Bataguda",
+									"Baliguda",
+									"Khamankhol",
+									"Rebingia",
+									"Sindirigaon"
+								]
+							},
+							{
+								"gram_panchayat_name": "Khamankhol",
+								"villages": [
+									"Khamankhol",
+									"Bataguda",
+									"Baliguda",
+									"Rebingia",
+									"Sindirigaon"
+								]
+							},
+							{
+								"gram_panchayat_name": "Rebingia",
+								"villages": [
+									"Rebingia",
+									"Khamankhol",
+									"Bataguda",
+									"Baliguda",
+									"Sindirigaon"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sindirigaon",
+								"villages": [
+									"Sindirigaon",
+									"Rebingia",
+									"Khamankhol",
+									"Bataguda",
+									"Baliguda"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Kendrapara",
+				"blocks": [
+					{
+						"block_name": "Kendrapara",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Alapua",
+								"villages": [
+									"Alapua",
+									"Baro",
+									"Chakroda",
+									"Ghagara",
+									"Kalapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Baro",
+								"villages": [
+									"Baro",
+									"Alapua",
+									"Chakroda",
+									"Ghagara",
+									"Kalapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chakroda",
+								"villages": [
+									"Chakroda",
+									"Baro",
+									"Alapua",
+									"Ghagara",
+									"Kalapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Ghagara",
+								"villages": [
+									"Ghagara",
+									"Chakroda",
+									"Baro",
+									"Alapua",
+									"Kalapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kalapada",
+								"villages": [
+									"Kalapada",
+									"Ghagara",
+									"Chakroda",
+									"Baro",
+									"Alapua"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Pattamundai",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Andhara",
+								"villages": [
+									"Andhara",
+									"Balipatna",
+									"Dampada",
+									"Kasananta",
+									"Pattamundai"
+								]
+							},
+							{
+								"gram_panchayat_name": "Balipatna",
+								"villages": [
+									"Balipatna",
+									"Andhara",
+									"Dampada",
+									"Kasananta",
+									"Pattamundai"
+								]
+							},
+							{
+								"gram_panchayat_name": "Dampada",
+								"villages": [
+									"Dampada",
+									"Balipatna",
+									"Andhara",
+									"Kasananta",
+									"Pattamundai"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kasananta",
+								"villages": [
+									"Kasananta",
+									"Dampada",
+									"Balipatna",
+									"Andhara",
+									"Pattamundai"
+								]
+							},
+							{
+								"gram_panchayat_name": "Pattamundai",
+								"villages": [
+									"Pattamundai Town",
+									"Kasananta",
+									"Dampada",
+									"Balipatna",
+									"Andhara"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Keonjhar",
+				"blocks": [
+					{
+						"block_name": "Keonjhar",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Bauripada",
+								"villages": [
+									"Bauripada",
+									"Keonjhar",
+									"Naranapur",
+									"Padmapur",
+									"Raisuan"
+								]
+							},
+							{
+								"gram_panchayat_name": "Keonjhar",
+								"villages": [
+									"Keonjhar Town",
+									"Bauripada",
+									"Naranapur",
+									"Padmapur",
+									"Raisuan"
+								]
+							},
+							{
+								"gram_panchayat_name": "Naranapur",
+								"villages": [
+									"Naranapur",
+									"Keonjhar",
+									"Bauripada",
+									"Padmapur",
+									"Raisuan"
+								]
+							},
+							{
+								"gram_panchayat_name": "Padmapur",
+								"villages": [
+									"Padmapur",
+									"Naranapur",
+									"Keonjhar",
+									"Bauripada",
+									"Raisuan"
+								]
+							},
+							{
+								"gram_panchayat_name": "Raisuan",
+								"villages": [
+									"Raisuan",
+									"Padmapur",
+									"Naranapur",
+									"Keonjhar",
+									"Bauripada"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Anandapur",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Anandapur",
+								"villages": [
+									"Anandapur Town",
+									"Baunsagarh",
+									"Gayalamunda",
+									"Kodapada",
+									"Panchupalli"
+								]
+							},
+							{
+								"gram_panchayat_name": "Baunsagarh",
+								"villages": [
+									"Baunsagarh",
+									"Anandapur",
+									"Gayalamunda",
+									"Kodapada",
+									"Panchupalli"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gayalamunda",
+								"villages": [
+									"Gayalamunda",
+									"Baunsagarh",
+									"Anandapur",
+									"Kodapada",
+									"Panchupalli"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kodapada",
+								"villages": [
+									"Kodapada",
+									"Gayalamunda",
+									"Baunsagarh",
+									"Anandapur",
+									"Panchupalli"
+								]
+							},
+							{
+								"gram_panchayat_name": "Panchupalli",
+								"villages": [
+									"Panchupalli",
+									"Kodapada",
+									"Gayalamunda",
+									"Baunsagarh",
+									"Anandapur"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Khordha",
+				"blocks": [
+					{
+						"block_name": "Bhubaneswar",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Andharua",
+								"villages": [
+									"Andharua",
+									"Barimunda",
+									"Chandaka",
+									"Daruthenga",
+									"Mendhasal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Barimunda",
+								"villages": [
+									"Barimunda",
+									"Andharua",
+									"Chandaka",
+									"Daruthenga",
+									"Mendhasal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chandaka",
+								"villages": [
+									"Chandaka",
+									"Barimunda",
+									"Andharua",
+									"Daruthenga",
+									"Mendhasal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Daruthenga",
+								"villages": [
+									"Daruthenga",
+									"Chandaka",
+									"Barimunda",
+									"Andharua",
+									"Mendhasal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Mendhasal",
+								"villages": [
+									"Mendhasal",
+									"Daruthenga",
+									"Chandaka",
+									"Barimunda",
+									"Andharua"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Khordha",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Bajpur",
+								"villages": [
+									"Bajpur",
+									"Gurujanga",
+									"Keranga",
+									"Khordha",
+									"Pubusahi"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gurujanga",
+								"villages": [
+									"Gurujanga",
+									"Bajpur",
+									"Keranga",
+									"Khordha",
+									"Pubusahi"
+								]
+							},
+							{
+								"gram_panchayat_name": "Keranga",
+								"villages": [
+									"Keranga",
+									"Gurujanga",
+									"Bajpur",
+									"Khordha",
+									"Pubusahi"
+								]
+							},
+							{
+								"gram_panchayat_name": "Khordha",
+								"villages": [
+									"Khordha Town",
+									"Keranga",
+									"Gurujanga",
+									"Bajpur",
+									"Pubusahi"
+								]
+							},
+							{
+								"gram_panchayat_name": "Pubusahi",
+								"villages": [
+									"Pubusahi",
+									"Khordha",
+									"Keranga",
+									"Gurujanga",
+									"Bajpur"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Koraput",
+				"blocks": [
+					{
+						"block_name": "Koraput",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Deoghati",
+								"villages": [
+									"Deoghati",
+									"Koraput",
+									"Laurapada",
+									"Mastiput",
+									"Umuri"
+								]
+							},
+							{
+								"gram_panchayat_name": "Koraput",
+								"villages": [
+									"Koraput Town",
+									"Deoghati",
+									"Laurapada",
+									"Mastiput",
+									"Umuri"
+								]
+							},
+							{
+								"gram_panchayat_name": "Laurapada",
+								"villages": [
+									"Laurapada",
+									"Koraput",
+									"Deoghati",
+									"Mastiput",
+									"Umuri"
+								]
+							},
+							{
+								"gram_panchayat_name": "Mastiput",
+								"villages": [
+									"Mastiput",
+									"Laurapada",
+									"Koraput",
+									"Deoghati",
+									"Umuri"
+								]
+							},
+							{
+								"gram_panchayat_name": "Umuri",
+								"villages": [
+									"Umuri",
+									"Mastiput",
+									"Laurapada",
+									"Koraput",
+									"Deoghati"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Jeypore",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Balipada",
+								"villages": [
+									"Balipada",
+									"Jeypore",
+									"Kundura",
+									"Phampuni",
+									"Tankua"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jeypore",
+								"villages": [
+									"Jeypore Town",
+									"Balipada",
+									"Kundura",
+									"Phampuni",
+									"Tankua"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kundura",
+								"villages": [
+									"Kundura",
+									"Jeypore",
+									"Balipada",
+									"Phampuni",
+									"Tankua"
+								]
+							},
+							{
+								"gram_panchayat_name": "Phampuni",
+								"villages": [
+									"Phampuni",
+									"Kundura",
+									"Jeypore",
+									"Balipada",
+									"Tankua"
+								]
+							},
+							{
+								"gram_panchayat_name": "Tankua",
+								"villages": [
+									"Tankua",
+									"Phampuni",
+									"Kundura",
+									"Jeypore",
+									"Balipada"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Malkangiri",
+				"blocks": [
+					{
+						"block_name": "Malkangiri",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Gompa",
+								"villages": [
+									"Gompa",
+									"Malkangiri",
+									"Markel",
+									"Pedawada",
+									"Sindhrimal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Malkangiri",
+								"villages": [
+									"Malkangiri Town",
+									"Gompa",
+									"Markel",
+									"Pedawada",
+									"Sindhrimal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Markel",
+								"villages": [
+									"Markel",
+									"Malkangiri",
+									"Gompa",
+									"Pedawada",
+									"Sindhrimal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Pedawada",
+								"villages": [
+									"Pedawada",
+									"Markel",
+									"Malkangiri",
+									"Gompa",
+									"Sindhrimal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sindhrimal",
+								"villages": [
+									"Sindhrimal",
+									"Pedawada",
+									"Markel",
+									"Malkangiri",
+									"Gompa"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Kalimela",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Chintalwada",
+								"villages": [
+									"Chintalwada",
+									"Girikanpalli",
+									"Kalimela",
+									"Manyamkonda",
+									"Telerai"
+								]
+							},
+							{
+								"gram_panchayat_name": "Girikanpalli",
+								"villages": [
+									"Girikanpalli",
+									"Chintalwada",
+									"Kalimela",
+									"Manyamkonda",
+									"Telerai"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kalimela",
+								"villages": [
+									"Kalimela",
+									"Girikanpalli",
+									"Chintalwada",
+									"Manyamkonda",
+									"Telerai"
+								]
+							},
+							{
+								"gram_panchayat_name": "Manyamkonda",
+								"villages": [
+									"Manyamkonda",
+									"Kalimela",
+									"Girikanpalli",
+									"Chintalwada",
+									"Telerai"
+								]
+							},
+							{
+								"gram_panchayat_name": "Telerai",
+								"villages": [
+									"Telerai",
+									"Manyamkonda",
+									"Kalimela",
+									"Girikanpalli",
+									"Chintalwada"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Mayurbhanj",
+				"blocks": [
+					{
+						"block_name": "Baripada",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Baripada",
+								"villages": [
+									"Baripada Town",
+									"Betnoti",
+									"Chandua",
+									"Purna",
+									"Sankhabhanga"
+								]
+							},
+							{
+								"gram_panchayat_name": "Betnoti",
+								"villages": [
+									"Betnoti",
+									"Baripada",
+									"Chandua",
+									"Purna",
+									"Sankhabhanga"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chandua",
+								"villages": [
+									"Chandua",
+									"Betnoti",
+									"Baripada",
+									"Purna",
+									"Sankhabhanga"
+								]
+							},
+							{
+								"gram_panchayat_name": "Purna",
+								"villages": [
+									"Purna",
+									"Chandua",
+									"Betnoti",
+									"Baripada",
+									"Sankhabhanga"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sankhabhanga",
+								"villages": [
+									"Sankhabhanga",
+									"Purna",
+									"Chandua",
+									"Betnoti",
+									"Baripada"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Karanjia",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Karanjia",
+								"villages": [
+									"Karanjia Town",
+									"Badagaon",
+									"Dudhiani",
+									"Kerkera",
+									"Patbil"
+								]
+							},
+							{
+								"gram_panchayat_name": "Badagaon",
+								"villages": [
+									"Badagaon",
+									"Karanjia",
+									"Dudhiani",
+									"Kerkera",
+									"Patbil"
+								]
+							},
+							{
+								"gram_panchayat_name": "Dudhiani",
+								"villages": [
+									"Dudhiani",
+									"Badagaon",
+									"Karanjia",
+									"Kerkera",
+									"Patbil"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kerkera",
+								"villages": [
+									"Kerkera",
+									"Dudhiani",
+									"Badagaon",
+									"Karanjia",
+									"Patbil"
+								]
+							},
+							{
+								"gram_panchayat_name": "Patbil",
+								"villages": [
+									"Patbil",
+									"Kerkera",
+									"Dudhiani",
+									"Badagaon",
+									"Karanjia"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Nabarangpur",
+				"blocks": [
+					{
+						"block_name": "Nabarangpur",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Agnipur",
+								"villages": [
+									"Agnipur",
+									"Bhatrasiuni",
+									"Mantriguda",
+									"Nabarangpur",
+									"Taragam"
+								]
+							},
+							{
+								"gram_panchayat_name": "Bhatrasiuni",
+								"villages": [
+									"Bhatrasiuni",
+									"Agnipur",
+									"Mantriguda",
+									"Nabarangpur",
+									"Taragam"
+								]
+							},
+							{
+								"gram_panchayat_name": "Mantriguda",
+								"villages": [
+									"Mantriguda",
+									"Bhatrasiuni",
+									"Agnipur",
+									"Nabarangpur",
+									"Taragam"
+								]
+							},
+							{
+								"gram_panchayat_name": "Nabarangpur",
+								"villages": [
+									"Nabarangpur Town",
+									"Mantriguda",
+									"Bhatrasiuni",
+									"Agnipur",
+									"Taragam"
+								]
+							},
+							{
+								"gram_panchayat_name": "Taragam",
+								"villages": [
+									"Taragam",
+									"Nabarangpur",
+									"Mantriguda",
+									"Bhatrasiuni",
+									"Agnipur"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Umerkote",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Beheda",
+								"villages": [
+									"Beheda",
+									"Bokoda",
+									"Jharigaon",
+									"Semla",
+									"Umerkote"
+								]
+							},
+							{
+								"gram_panchayat_name": "Bokoda",
+								"villages": [
+									"Bokoda",
+									"Beheda",
+									"Jharigaon",
+									"Semla",
+									"Umerkote"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jharigaon",
+								"villages": [
+									"Jharigaon",
+									"Bokoda",
+									"Beheda",
+									"Semla",
+									"Umerkote"
+								]
+							},
+							{
+								"gram_panchayat_name": "Semla",
+								"villages": [
+									"Semla",
+									"Jharigaon",
+									"Bokoda",
+									"Beheda",
+									"Umerkote"
+								]
+							},
+							{
+								"gram_panchayat_name": "Umerkote",
+								"villages": [
+									"Umerkote Town",
+									"Semla",
+									"Jharigaon",
+									"Bokoda",
+									"Beheda"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Nayagarh",
+				"blocks": [
+					{
+						"block_name": "Nayagarh",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Balugaon",
+								"villages": [
+									"Balugaon",
+									"Bhatasahi",
+									"Gambharidihi",
+									"Nayagarh",
+									"Sinduria"
+								]
+							},
+							{
+								"gram_panchayat_name": "Bhatasahi",
+								"villages": [
+									"Bhatasahi",
+									"Balugaon",
+									"Gambharidihi",
+									"Nayagarh",
+									"Sinduria"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gambharidihi",
+								"villages": [
+									"Gambharidihi",
+									"Bhatasahi",
+									"Balugaon",
+									"Nayagarh",
+									"Sinduria"
+								]
+							},
+							{
+								"gram_panchayat_name": "Nayagarh",
+								"villages": [
+									"Nayagarh Town",
+									"Gambharidihi",
+									"Bhatasahi",
+									"Balugaon",
+									"Sinduria"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sinduria",
+								"villages": [
+									"Sinduria",
+									"Nayagarh",
+									"Gambharidihi",
+									"Bhatasahi",
+									"Balugaon"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Daspalla",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Banigochha",
+								"villages": [
+									"Banigochha",
+									"Chadeyapalli",
+									"Daspalla",
+									"Gholahandi",
+									"Tumandi"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chadeyapalli",
+								"villages": [
+									"Chadeyapalli",
+									"Banigochha",
+									"Daspalla",
+									"Gholahandi",
+									"Tumandi"
+								]
+							},
+							{
+								"gram_panchayat_name": "Daspalla",
+								"villages": [
+									"Daspalla Town",
+									"Chadeyapalli",
+									"Banigochha",
+									"Gholahandi",
+									"Tumandi"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gholahandi",
+								"villages": [
+									"Gholahandi",
+									"Daspalla",
+									"Chadeyapalli",
+									"Banigochha",
+									"Tumandi"
+								]
+							},
+							{
+								"gram_panchayat_name": "Tumandi",
+								"villages": [
+									"Tumandi",
+									"Gholahandi",
+									"Daspalla",
+									"Chadeyapalli",
+									"Banigochha"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Nuapada",
+				"blocks": [
+					{
+						"block_name": "Nuapada",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Amanara",
+								"villages": [
+									"Amanara",
+									"Bhaleswar",
+									"Kuliabandha",
+									"Nuapada",
+									"Saipala"
+								]
+							},
+							{
+								"gram_panchayat_name": "Bhaleswar",
+								"villages": [
+									"Bhaleswar",
+									"Amanara",
+									"Kuliabandha",
+									"Nuapada",
+									"Saipala"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kuliabandha",
+								"villages": [
+									"Kuliabandha",
+									"Bhaleswar",
+									"Amanara",
+									"Nuapada",
+									"Saipala"
+								]
+							},
+							{
+								"gram_panchayat_name": "Nuapada",
+								"villages": [
+									"Nuapada Town",
+									"Kuliabandha",
+									"Bhaleswar",
+									"Amanara",
+									"Saipala"
+								]
+							},
+							{
+								"gram_panchayat_name": "Saipala",
+								"villages": [
+									"Saipala",
+									"Nuapada",
+									"Kuliabandha",
+									"Bhaleswar",
+									"Amanara"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Komna",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Bhela",
+								"villages": [
+									"Bhela",
+									"Jadamunda",
+									"Komna",
+									"Sunabeda",
+									"Tikrapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jadamunda",
+								"villages": [
+									"Jadamunda",
+									"Bhela",
+									"Komna",
+									"Sunabeda",
+									"Tikrapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Komna",
+								"villages": [
+									"Komna",
+									"Jadamunda",
+									"Bhela",
+									"Sunabeda",
+									"Tikrapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sunabeda",
+								"villages": [
+									"Sunabeda",
+									"Komna",
+									"Jadamunda",
+									"Bhela",
+									"Tikrapada"
+								]
+							},
+							{
+								"gram_panchayat_name": "Tikrapada",
+								"villages": [
+									"Tikrapada",
+									"Sunabeda",
+									"Komna",
+									"Jadamunda",
+									"Bhela"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Puri",
+				"blocks": [
+					{
+						"block_name": "Puri Sadar",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Baliguali",
+								"villages": [
+									"Baliguali",
+									"Chandanpur",
+									"Gadadharpur",
+									"Gopinathpur",
+									"Sasan Damodarpur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chandanpur",
+								"villages": [
+									"Chandanpur",
+									"Baliguali",
+									"Gadadharpur",
+									"Gopinathpur",
+									"Sasan Damodarpur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gadadharpur",
+								"villages": [
+									"Gadadharpur",
+									"Chandanpur",
+									"Baliguali",
+									"Gopinathpur",
+									"Sasan Damodarpur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gopinathpur",
+								"villages": [
+									"Gopinathpur",
+									"Gadadharpur",
+									"Chandanpur",
+									"Baliguali",
+									"Sasan Damodarpur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sasan Damodarpur",
+								"villages": [
+									"Sasan Damodarpur",
+									"Gopinathpur",
+									"Gadadharpur",
+									"Chandanpur",
+									"Baliguali"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Gop",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Achutapur",
+								"villages": [
+									"Achutapur",
+									"Badagaon",
+									"Erabanga",
+									"Gop",
+									"Nimapara"
+								]
+							},
+							{
+								"gram_panchayat_name": "Badagaon",
+								"villages": [
+									"Badagaon",
+									"Achutapur",
+									"Erabanga",
+									"Gop",
+									"Nimapara"
+								]
+							},
+							{
+								"gram_panchayat_name": "Erabanga",
+								"villages": [
+									"Erabanga",
+									"Badagaon",
+									"Achutapur",
+									"Gop",
+									"Nimapara"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gop",
+								"villages": [
+									"Gop",
+									"Erabanga",
+									"Badagaon",
+									"Achutapur",
+									"Nimapara"
+								]
+							},
+							{
+								"gram_panchayat_name": "Nimapara",
+								"villages": [
+									"Nimapara",
+									"Gop",
+									"Erabanga",
+									"Badagaon",
+									"Achutapur"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Rayagada",
+				"blocks": [
+					{
+						"block_name": "Rayagada",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Bishamakatak",
+								"villages": [
+									"Bishamakatak",
+									"Dangasil",
+									"Kumbhikota",
+									"Piskapanga",
+									"Hajaridang"
+								]
+							},
+							{
+								"gram_panchayat_name": "Dangasil",
+								"villages": [
+									"Dangasil",
+									"Bishamakatak",
+									"Kumbhikota",
+									"Piskapanga",
+									"Sikarpai"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kumbhikota",
+								"villages": [
+									"Kumbhikota",
+									"Dangasil",
+									"Bishamakatak",
+									"Piskapanga",
+									"Kutraguda"
+								]
+							},
+							{
+								"gram_panchayat_name": "Piskapanga",
+								"villages": [
+									"Piskapanga",
+									"Kumbhikota",
+									"Dangasil",
+									"Bishamakatak",
+									"Gunduriguda"
+								]
+							},
+							{
+								"gram_panchayat_name": "Rayagada",
+								"villages": [
+									"Rayagada Town",
+									"Piskapanga",
+									"Kumbhikota",
+									"Dangasil",
+									"Bishamakatak"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Gunupur",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Chandrapur",
+								"villages": [
+									"Chandrapur",
+									"Ghanantri",
+									"Gunupur",
+									"Jagannathpur",
+									"Sundhidhamuni"
+								]
+							},
+							{
+								"gram_panchayat_name": "Ghanantri",
+								"villages": [
+									"Ghanantri",
+									"Chandrapur",
+									"Gunupur",
+									"Jagannathpur",
+									"Sundhidhamuni"
+								]
+							},
+							{
+								"gram_panchayat_name": "Gunupur",
+								"villages": [
+									"Gunupur Town",
+									"Ghanantri",
+									"Chandrapur",
+									"Jagannathpur",
+									"Sundhidhamuni"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jagannathpur",
+								"villages": [
+									"Jagannathpur",
+									"Gunupur",
+									"Ghanantri",
+									"Chandrapur",
+									"Sundhidhamuni"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sundhidhamuni",
+								"villages": [
+									"Sundhidhamuni",
+									"Jagannathpur",
+									"Gunupur",
+									"Ghanantri",
+									"Chandrapur"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Sambalpur",
+				"blocks": [
+					{
+						"block_name": "Sambalpur",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Basiapada",
+								"villages": [
+									"Basiapada",
+									"Fashimal",
+									"Kardola",
+									"Naktideul",
+									"Sambalpur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Fashimal",
+								"villages": [
+									"Fashimal",
+									"Basiapada",
+									"Kardola",
+									"Naktideul",
+									"Sambalpur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kardola",
+								"villages": [
+									"Kardola",
+									"Fashimal",
+									"Basiapada",
+									"Naktideul",
+									"Sambalpur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Naktideul",
+								"villages": [
+									"Naktideul",
+									"Kardola",
+									"Fashimal",
+									"Basiapada",
+									"Sambalpur"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sambalpur",
+								"villages": [
+									"Sambalpur Town",
+									"Naktideul",
+									"Kardola",
+									"Fashimal",
+									"Basiapada"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Kuchinda",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Bauriguda",
+								"villages": [
+									"Bauriguda",
+									"Hadipali",
+									"Kuchinda",
+									"Paruabhadi",
+									"Telitileimal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Hadipali",
+								"villages": [
+									"Hadipali",
+									"Bauriguda",
+									"Kuchinda",
+									"Paruabhadi",
+									"Telitileimal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kuchinda",
+								"villages": [
+									"Kuchinda Town",
+									"Hadipali",
+									"Bauriguda",
+									"Paruabhadi",
+									"Telitileimal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Paruabhadi",
+								"villages": [
+									"Paruabhadi",
+									"Kuchinda",
+									"Hadipali",
+									"Bauriguda",
+									"Telitileimal"
+								]
+							},
+							{
+								"gram_panchayat_name": "Telitileimal",
+								"villages": [
+									"Telitileimal",
+									"Paruabhadi",
+									"Kuchinda",
+									"Hadipali",
+									"Bauriguda"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Subarnapur",
+				"blocks": [
+					{
+						"block_name": "Sonepur",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Bisimunda",
+								"villages": [
+									"Bisimunda",
+									"Chhakormal",
+									"Kharjura",
+									"Sonepur",
+									"Subalaya"
+								]
+							},
+							{
+								"gram_panchayat_name": "Chhakormal",
+								"villages": [
+									"Chhakormal",
+									"Bisimunda",
+									"Kharjura",
+									"Sonepur",
+									"Subalaya"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kharjura",
+								"villages": [
+									"Kharjura",
+									"Chhakormal",
+									"Bisimunda",
+									"Sonepur",
+									"Subalaya"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sonepur",
+								"villages": [
+									"Sonepur Town",
+									"Kharjura",
+									"Chhakormal",
+									"Bisimunda",
+									"Subalaya"
+								]
+							},
+							{
+								"gram_panchayat_name": "Subalaya",
+								"villages": [
+									"Subalaya",
+									"Sonepur",
+									"Kharjura",
+									"Chhakormal",
+									"Bisimunda"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Binika",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Baunsuni",
+								"villages": [
+									"Baunsuni",
+									"Binika",
+									"Jharial",
+									"Mahada",
+									"Sindhol"
+								]
+							},
+							{
+								"gram_panchayat_name": "Binika",
+								"villages": [
+									"Binika Town",
+									"Baunsuni",
+									"Jharial",
+									"Mahada",
+									"Sindhol"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jharial",
+								"villages": [
+									"Jharial",
+									"Binika",
+									"Baunsuni",
+									"Mahada",
+									"Sindhol"
+								]
+							},
+							{
+								"gram_panchayat_name": "Mahada",
+								"villages": [
+									"Mahada",
+									"Jharial",
+									"Binika",
+									"Baunsuni",
+									"Sindhol"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sindhol",
+								"villages": [
+									"Sindhol",
+									"Mahada",
+									"Jharial",
+									"Binika",
+									"Baunsuni"
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"district_name": "Sundargarh",
+				"blocks": [
+					{
+						"block_name": "Sundargarh",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Hamirpur",
+								"villages": [
+									"Hamirpur",
+									"Karmabahal",
+									"Kutra",
+									"Sundargarh",
+									"Tangarpali"
+								]
+							},
+							{
+								"gram_panchayat_name": "Karmabahal",
+								"villages": [
+									"Karmabahal",
+									"Hamirpur",
+									"Kutra",
+									"Sundargarh",
+									"Tangarpali"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kutra",
+								"villages": [
+									"Kutra",
+									"Karmabahal",
+									"Hamirpur",
+									"Sundargarh",
+									"Tangarpali"
+								]
+							},
+							{
+								"gram_panchayat_name": "Sundargarh",
+								"villages": [
+									"Sundargarh Town",
+									"Kutra",
+									"Karmabahal",
+									"Hamirpur",
+									"Tangarpali"
+								]
+							},
+							{
+								"gram_panchayat_name": "Tangarpali",
+								"villages": [
+									"Tangarpali",
+									"Sundargarh",
+									"Kutra",
+									"Karmabahal",
+									"Hamirpur"
+								]
+							}
+						]
+					},
+					{
+						"block_name": "Rajgangpur",
+						"gram_panchayats": [
+							{
+								"gram_panchayat_name": "Budham",
+								"villages": [
+									"Budham",
+									"Jharbeda",
+									"Kukuda",
+									"Rajgangpur",
+									"Ranibandh"
+								]
+							},
+							{
+								"gram_panchayat_name": "Jharbeda",
+								"villages": [
+									"Jharbeda",
+									"Budham",
+									"Kukuda",
+									"Rajgangpur",
+									"Ranibandh"
+								]
+							},
+							{
+								"gram_panchayat_name": "Kukuda",
+								"villages": [
+									"Kukuda",
+									"Jharbeda",
+									"Budham",
+									"Rajgangpur",
+									"Ranibandh"
+								]
+							},
+							{
+								"gram_panchayat_name": "Rajgangpur",
+								"villages": [
+									"Rajgangpur Town",
+									"Kukuda",
+									"Jharbeda",
+									"Budham",
+									"Ranibandh"
+								]
+							},
+							{
+								"gram_panchayat_name": "Ranibandh",
+								"villages": [
+									"Ranibandh",
+									"Rajgangpur",
+									"Kukuda",
+									"Jharbeda",
+									"Budham"
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,472 @@
+{
+	"Odisha": {
+	  "total_districts": 30,
+	  "total_blocks": 314,
+	  "district_select": [
+		{
+		  "name": "Angul",
+		  "blocks": [
+			"Angul",
+			"Athamallik",
+			"Banarpal",
+			"Chhendipada",
+			"Kaniha",
+			"Kishorenagar",
+			"Pallahara",
+			"Talcher"
+		  ]
+		},
+		{
+		  "name": "Balangir",
+		  "blocks": [
+			"Agalpur",
+			"Balangir",
+			"Bangomunda",
+			"Belpada",
+			"Deogaon",
+			"Gudvella",
+			"Khaprakhol",
+			"Loisingha",
+			"Muribahal",
+			"Patnagarh",
+			"Puintala",
+			"Saintala",
+			"Titilagarh",
+			"Turekela"
+		  ]
+		},
+		{
+		  "name": "Balasore",
+		  "blocks": [
+			"Baliapal",
+			"Basta",
+			"Bhogarai",
+			"Balasore",
+			"Jaleswar",
+			"Khaira",
+			"Nilgiri",
+			"Oupada",
+			"Remuna",
+			"Simulia",
+			"Soro",
+			"Bahanaga"
+		  ]
+		},
+		{
+		  "name": "Bargarh",
+		  "blocks": [
+			"Ambabhona",
+			"Attabira",
+			"Bargarh",
+			"Barpali",
+			"Bhatli",
+			"Bheden",
+			"Bijepur",
+			"Gaisilet",
+			"Jharbandh",
+			"Padampur",
+			"Paikmal",
+			"Sohela"
+		  ]
+		},
+		{
+		  "name": "Bhadrak",
+		  "blocks": [
+			"Basudevpur",
+			"Bhadrak",
+			"Bhandaripokhari",
+			"Bonth",
+			"Chandabali",
+			"Dhamnagar",
+			"Tihidi"
+		  ]
+		},
+		{
+		  "name": "Boudh",
+		  "blocks": [
+			"Boudh",
+			"Harbhanga",
+			"Kantamal"
+		  ]
+		},
+		{
+		  "name": "Cuttack",
+		  "blocks": [
+			"Athagarh",
+			"Badamba",
+			"Banki",
+			"Baranga",
+			"Cuttack Sadar",
+			"Kantapada",
+			"Mahanga",
+			"Niali",
+			"Nischintakoili",
+			"Salepur",
+			"Tangi-Choudwar",
+			"Tigiria",
+			"Narasinghpur",
+			"Damapada"
+		  ]
+		},
+		{
+		  "name": "Deogarh",
+		  "blocks": [
+			"Barkote",
+			"Reamal",
+			"Tileibani"
+		  ]
+		},
+		{
+		  "name": "Dhenkanal",
+		  "blocks": [
+			"Bhuban",
+			"Dhenkanal Sadar",
+			"Gondia",
+			"Hindol",
+			"Kamakhyanagar",
+			"Kankadahad",
+			"Odapada",
+			"Parjang"
+		  ]
+		},
+		{
+		  "name": "Gajapati",
+		  "blocks": [
+			"Gosani",
+			"Gumma",
+			"Kashinagar",
+			"Mohana",
+			"Nuagada",
+			"R.Udayagiri",
+			"Rayagada"
+		  ]
+		},
+		{
+		  "name": "Ganjam",
+		  "blocks": [
+			"Aska",
+			"Beguniapada",
+			"Bellaguntha",
+			"Bhanjanagar",
+			"Buguda",
+			"Chatrapur",
+			"Chikiti",
+			"Dharakote",
+			"Digapahandi",
+			"Ganjam",
+			"Hinjilicut",
+			"Jaganathprasad",
+			"Kabisuryanagar",
+			"Khalikote",
+			"Kodala",
+			"Kukudakhandi",
+			"Patrapur",
+			"Polasara",
+			"Purusottampur",
+			"Rangeilunda",
+			"Sanakhemundi",
+			"Sheragada"
+		  ]
+		},
+		{
+		  "name": "Jagatsinghpur",
+		  "blocks": [
+			"Balikuda",
+			"Biridi",
+			"Erasama",
+			"Jagatsinghpur",
+			"Kujang",
+			"Naugaon",
+			"Raghunathpur",
+			"Tirtol"
+		  ]
+		},
+		{
+		  "name": "Jajpur",
+		  "blocks": [
+			"Barchana",
+			"Bari",
+			"Binjharpur",
+			"Danagadi",
+			"Dasarathpur",
+			"Dharmasala",
+			"Jajpur",
+			"Korei",
+			"Rasulpur",
+			"Sukinda"
+		  ]
+		},
+		{
+		  "name": "Jharsuguda",
+		  "blocks": [
+			"Jharsuguda",
+			"Kirmira",
+			"Kolabira",
+			"Laikera",
+			"Lakhanpur"
+		  ]
+		},
+		{
+		  "name": "Kalahandi",
+		  "blocks": [
+			"Bhawanipatna",
+			"Dharamgarh",
+			"Golamunda",
+			"Jaipatna",
+			"Junagarh",
+			"Kalampur",
+			"Karlamunda",
+			"Kesinga",
+			"Koksara",
+			"Lanjigarh",
+			"Madanpur Rampur",
+			"Narala",
+			"Thuamul Rampur"
+		  ]
+		},
+		{
+		  "name": "Kandhamal",
+		  "blocks": [
+			"Baliguda",
+			"Chakapada",
+			"Daringbadi",
+			"G.Udayagiri",
+			"K.Nuagaon",
+			"Khajuripada",
+			"Kotagarh",
+			"Phiringia",
+			"Phulbani",
+			"Raikia",
+			"Tikabali",
+			"Tumudibandha"
+		  ]
+		},
+		{
+		  "name": "Kendrapara",
+		  "blocks": [
+			"Aul",
+			"Derabis",
+			"Garadpur",
+			"Kendrapara",
+			"Mahakalapada",
+			"Marshaghai",
+			"Pattamundai",
+			"Rajnagar",
+			"Rajkanika"
+		  ]
+		},
+		{
+		  "name": "Keonjhar",
+		  "blocks": [
+			"Anandapur",
+			"Banspal",
+			"Champua",
+			"Ghasipura",
+			"Ghatgaon",
+			"Harichandanpur",
+			"Hatadihi",
+			"Jhumpura",
+			"Joda",
+			"Keonjhar",
+			"Patna",
+			"Saharpada",
+			"Telkoi"
+		  ]
+		},
+		{
+		  "name": "Khordha",
+		  "blocks": [
+			"Balianta",
+			"Balipatna",
+			"Banapur",
+			"Begunia",
+			"Bhapur",
+			"Bhubaneswar",
+			"Bolagarh",
+			"Chilika",
+			"Jatni",
+			"Khordha"
+		  ]
+		},
+		{
+		  "name": "Koraput",
+		  "blocks": [
+			"Bandhugaon",
+			"Boipariguda",
+			"Borigumma",
+			"Dasmantapur",
+			"Jeypore",
+			"Koraput",
+			"Kotpad",
+			"Kundra",
+			"Lamtaput",
+			"Laxmipur",
+			"Narayanpatna",
+			"Nandapur",
+			"Pottangi",
+			"Semiliguda"
+		  ]
+		},
+		{
+		  "name": "Malkangiri",
+		  "blocks": [
+			"Chitrakonda",
+			"Kalimela",
+			"Khairaput",
+			"Korukonda",
+			"Malkangiri",
+			"Mathili",
+			"Podia"
+		  ]
+		},
+		{
+		  "name": "Mayurbhanj",
+		  "blocks": [
+			"Badasahi",
+			"Bahalda",
+			"Bangiriposi",
+			"Baripada",
+			"Barsahi",
+			"Betnoti",
+			"Bijatala",
+			"Bisoi",
+			"Gopabandhunagar",
+			"Jamda",
+			"Jashipur",
+			"Kaptipada",
+			"Karanjia",
+			"Khunta",
+			"Kuliana",
+			"Kusumi",
+			"Morada",
+			"Rairangpur",
+			"Raruan",
+			"Rasgovindpur",
+			"Samakhunta",
+			"Saraskana",
+			"Sukruli",
+			"Suliapada",
+			"Thakurmunda",
+			"Tiring"
+		  ]
+		},
+		{
+		  "name": "Nabarangpur",
+		  "blocks": [
+			"Chandahandi",
+			"Dabugaon",
+			"Jharigaon",
+			"Kosagumuda",
+			"Nabarangpur",
+			"Papadahandi",
+			"Raighar",
+			"Tentulikhunti",
+			"Umerkote",
+			"Nandahandi"
+		  ]
+		},
+		{
+		  "name": "Nayagarh",
+		  "blocks": [
+			"Bhapur",
+			"Daspalla",
+			"Gania",
+			"Khandapada",
+			"Nayagarh",
+			"Nuagaon",
+			"Odagaon",
+			"Ranapur"
+		  ]
+		},
+		{
+		  "name": "Nuapada",
+		  "blocks": [
+			"Boden",
+			"Khariar",
+			"Komna",
+			"Nuapada",
+			"Sinapali"
+		  ]
+		},
+		{
+		  "name": "Puri",
+		  "blocks": [
+			"Astaranga",
+			"Brahmagiri",
+			"Delanga",
+			"Gop",
+			"Kakatpur",
+			"Kanas",
+			"Konark",
+			"Krushnaprasad",
+			"Nimapada",
+			"Pipili",
+			"Satyabadi"
+		  ]
+		},
+		{
+		  "name": "Rayagada",
+		  "blocks": [
+			"Bissamcuttack",
+			"Chandrapur",
+			"Gudari",
+			"Gunupur",
+			"Kashipur",
+			"Kolnara",
+			"Muniguda",
+			"Padmapur",
+			"Ramanaguda",
+			"Rayagada",
+			"K.Singpur"
+		  ]
+		},
+		{
+		  "name": "Sambalpur",
+		  "blocks": [
+			"Bamra",
+			"Dhankauda",
+			"Jamanakira",
+			"Jujumura",
+			"Kuchinda",
+			"Maneswar",
+			"Naktideul",
+			"Rairakhol",
+			"Rengali"
+		  ]
+		},
+		{
+		  "name": "Subarnapur",
+		  "blocks": [
+			"Binika",
+			"Biramaharajpur",
+			"Dunguripali",
+			"Sonepur",
+			"Tarbha",
+			"Ullunda"
+		  ]
+		},
+		{
+		  "name": "Sundargarh",
+		  "blocks": [
+			"Balisankara",
+			"Bargaon",
+			"Bonaigarh",
+			"Gurundia",
+			"Hemgiri",
+			"Kuanrmunda",
+			"Kutra",
+			"Lahunipada",
+			"Lathikata",
+			"Lefripada",
+			"Nuagaon",
+			"Rajgangpur",
+			"Subdega",
+			"Sundargarh",
+			"Tangarpali",
+			"Talsara",
+			"Bisra"
+		  ]
+		}
+	  ]
+	}
+  }
