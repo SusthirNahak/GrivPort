@@ -17,20 +17,20 @@ export default function LandingPage() {
 
   return (
     <>
-      <div className="md:flex h-[100vh] w-full bg-amber-100">
+      <div className="md:flex h-[100vh] w-full bg-amber-100 overflow-hidden">
         {/* Upper Half */}
-        <div className="w-full h-[60%] flex flex-col justify-center items-center md:w-[65%] md:h-full">
+        <div className=" w-full h-[60%] flex flex-col md:justify-center items-center md:w-[65%] md:h-full">
           <div className="mx-auto mb-0 flex justify-center items-center">
             <img
               src="https://static.vecteezy.com/system/resources/previews/036/139/726/non_2x/hand-drawn-namaste-gesture-vector.jpg"
               alt="Namaste gesture"
-              className="h-56 w-56 mix-blend-color-burn hue-rotate-0 saturate-[50] brightness-100"
+              className="h-40 w-40 md:h-56 md:w-56 mix-blend-color-burn hue-rotate-0 saturate-[50] brightness-100"
             />
           </div>
-          <h2 className="text-5xl text-orange-700 font-semibold py-5 md:text-6xl">
+          <h2 className="text-5xl text-orange-700 font-semibold py-3 md:py-5 md:text-6xl">
             Welcome to
           </h2>
-          <h1 className="text-xl font-bold text-gray-800 pb-4 capitalize md:text-3xl">
+          <h1 className="text-xl font-bold text-gray-800 pb-2 md:b-4 capitalize md:text-3xl">
             Grievance Management Portal
           </h1>
           <p className="text-md text-gray-600 font-normal md:text-xl">
@@ -40,7 +40,7 @@ export default function LandingPage() {
 
         {/* Lower Half */}
         <div
-          className="w-full h-[40%] flex flex-col justify-center px-10 md:w-[35%] md:h-full md:bg-[#f8f8f8]"
+          className=" border-red-900  w-full h-[40%] flex flex-col justify-center px-10 md:w-[35%] md:h-full md:bg-[#f8f8f8]"
           
         >
           {/* <div> */}

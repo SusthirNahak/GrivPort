@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Sidebar = ({ hidden }) => {
-  const [activeItem, setActiveItem] = useState('Dashboard');
   const navigate = useNavigate();
+  const location = useLocation();
+
 
   const menuItems = [
     { name: 'Dashboard', icon: 'bxs-dashboard', link: "/admin/home" },
@@ -17,8 +18,6 @@ const Sidebar = ({ hidden }) => {
     { name: 'Settings', icon: 'bxs-cog' },
     { name: 'Logout', icon: 'bx-power-off', className: 'logout', link: "/" },
   ];
-
-  const handleItemClick = (name) => setActiveItem(name)
 
   const handleLogout = () => {
     sessionStorage.removeItem('name');
@@ -33,8 +32,8 @@ const Sidebar = ({ hidden }) => {
       </Link>
       <ul className="side-menu top">
         {menuItems.map((item) => (
-          <li key={item.name} className={activeItem === item.name ? 'active' : ''}>
-            <Link to={item.link} onClick={() => handleItemClick(item.name)}>
+          <li key={item.name}  className={location.pathname === item.link ? 'active' : ''}>
+            <Link to={item.link}>
               <i className={`bx ${item.icon} bx-sm`}></i>
               <span className="text">{item.name}</span>
             </Link>

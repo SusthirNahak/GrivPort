@@ -265,9 +265,9 @@ const Home = () => {
         <div className="left">
           <h1>Dashboard</h1>
           <ul className="breadcrumb">
-            <li><Link to="/">Dashboard</Link></li>
+            <li><Link to="">Dashboard</Link></li>
             <li><i className="bx bx-chevron-right"></i></li>
-            <li><Link to="/" className="active">Home</Link></li>
+            <li><Link to="/admin/home" className="active">Home</Link></li>
           </ul>
         </div>
       </div>
