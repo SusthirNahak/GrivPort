@@ -167,11 +167,12 @@ const DashboardCharts = () => {
                 }
 
                 const counts = data.data[0];
-                const completed = counts.Completed || 0;
-                const rejected = counts.Rejected || 0;
-                const pending = counts.Pending || 0;
-                const process = counts.Process || 0;
-                const ticketRaised = counts["Ticket Raised"] || 0;
+                const completed = counts.completed || 0;
+                const rejected = counts.rejected || 0;
+                const pending = counts.pending || 0;
+                const process = counts.process || 0;
+                const ticketRaised = counts["ticket raised"] || 0;
+                const total = completed + rejected + pending + process + ticketRaised;
 
                 const chartData = [completed, rejected, pending, process, ticketRaised];
                 setSeries(chartData);
@@ -180,6 +181,10 @@ const DashboardCharts = () => {
                 console.error('Error fetching chart data:', error);
             });
     }, []);
+
+
+    console.log("SERIES: ", series);
+
 
     return (
         <main className="p-6 space-y-10">

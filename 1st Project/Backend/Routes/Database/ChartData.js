@@ -21,29 +21,36 @@ router.get("/ChartData", async (req, res) => {
         console.log("Connected to MySQL: " + connection.threadId);
 
         const query = `
-            SELECT Application_Status, COUNT(*) AS count 
-            FROM form 
-            WHERE Application_Status IN ('Completed', 'Pending', 'Process', 'Rejected', 'Ticket Raised') 
-            GROUP BY Application_Status;
+            SELECT Application_Status, COUNT(*) AS count FROM form WHERE Application_Status COLLATE utf8mb4_general_ci IN ('completed', 'pending', 'process', 'rejected', 'raised') GROUP BY Application_Status;
+
         `;
 
         const [results] = await connection.execute(query);
 
+        console.log("result: ", results);
         // Match the exact case from database
         const statusCounts = {
-            'Completed': 0,
-            'Pending': 0,
-            'Process': 0,
-            'Rejected': 0,
-            'Ticket Raised': 0
+            'completed': 0,
+            'pending': 0,
+            'process': 0,
+            'rejected': 0,
+            'ticket raised': 0
         };
-
+        
         // Map results directly without case conversion
         results.forEach(row => {
-            if (statusCounts.hasOwnProperty(row.Application_Status)) {
-                statusCounts[row.Application_Status] = row.count;
+            let status = row.Application_Status.toLowerCase();
+            
+            if (status === 'raised') {
+                status = 'ticket raised';
+            }
+            
+            if (statusCounts.hasOwnProperty(status)) {
+                statusCounts[status] = row.count;
             }
         });
+        
+        console.log("statusCounts: ", statusCounts);
 
         const total = Object.values(statusCounts).reduce((a, b) => a + b, 0);
 

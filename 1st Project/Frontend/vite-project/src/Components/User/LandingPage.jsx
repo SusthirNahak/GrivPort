@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SignIn from "./SignIn";
-import VerifyOTP from "./VerifyOtp";
+import VerifyOTP from "./VerifyOTP";
 
 export default function LandingPage() {
   const [showVerifyOTP, setShowVerifyOTP] = useState(false); // State to toggle between SignIn and VerifyOTP

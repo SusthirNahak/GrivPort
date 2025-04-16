@@ -143,7 +143,7 @@ const Modal = ({ isOpen, onClose, data }) => {
               </div>
             )}
           </div>
-          {data.Application_Status.toLowerCase() !== 'rejected' && <div className="flex justify-end !p-4 border-t">
+          {data.Application_Status.toLowerCase() === 'process' ? <div className="flex justify-end !p-4 border-t">
             <button
               onClick={onClose}
               className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 !mr-3 hover:underline"
@@ -155,6 +155,15 @@ const Modal = ({ isOpen, onClose, data }) => {
               className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 hover:underline"
             >
               Share
+            </button>
+          </div>
+          :
+          <div className="flex justify-end !p-4 border-t">
+            <button
+              onClick={onClose}
+              className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 !mr-3 hover:underline"
+            >
+              Close
             </button>
           </div>
           }

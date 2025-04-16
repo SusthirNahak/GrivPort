@@ -26,7 +26,7 @@ function AdminApp() {
   return (
     <div className={darkMode ? 'dark' : ''}>
       {!isLandingPage && <Sidebar hidden={sidebarHidden} />}
-      <div id="content" className={sidebarHidden ? 'sidebar-hidden' : ''}>
+      <div id={!isLandingPage ? "content" : ''} className={sidebarHidden ? 'sidebar-hidden' : ''}>
         {!isLandingPage && (
           <Navbar
             toggleSidebar={toggleSidebar}

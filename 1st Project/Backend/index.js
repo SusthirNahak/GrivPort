@@ -24,6 +24,8 @@ const UserData = require('./Routes/Database/UserSpecificAllData')
 const TicketRaiseReason = require('./Routes/Database/TicketRaiseReason')
 const ChartData = require('./Routes/Database/ChartData')
 
+ShareDepartmentData = require('./Routes/ShareDepartmentData')
+
 
 app.use(grievanceFormRoutes); 
 
@@ -40,6 +42,8 @@ app.use('/Admin', ChartData);
 
 app.use('/user', UserData);
 app.use('/user', TicketRaiseReason);
+
+app.use('/ShareDepartmentData', ShareDepartmentData);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

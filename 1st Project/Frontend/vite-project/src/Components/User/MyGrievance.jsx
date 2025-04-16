@@ -155,7 +155,7 @@ export default function MyGrievance() {
                                                         ) : (
                                                             <button className="mx-2">--</button>
                                                         )}
-                                                        {(singleData.User_Ticket_Raise_Message === null || singleData.User_Ticket_Raise_Message.toLowerCase() === 'NULL' )
+                                                        {(singleData.User_Ticket_Raise_Message === null || singleData.User_Ticket_Raise_Message.toLowerCase() === 'null' )
                                                         ? (<button
                                                             onClick={() => {
                                                                 setIsRaiseTicketModalOpen([true, singleData.Application_Id]);

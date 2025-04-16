@@ -84,9 +84,9 @@
         }
 
         return (
-            <div className="md:flex h-[100vh] w-full bg-amber-100">
+            <div className="md:flex h-[100vh] w-full bg-amber-100 border" >
                 {/* Left Side - Welcome Section */}
-                <div className="w-full h-[60%] flex flex-col justify-center items-center md:w-[65%] md:h-full">
+                <div className="w-full h-[50%] flex flex-col md:justify-center items-center md:w-[65%] md:h-full">
                     <div className="mx-auto mb-0">
                         <img
                             src="https://static.vecteezy.com/system/resources/previews/036/139/726/non_2x/hand-drawn-namaste-gesture-vector.jpg"
@@ -106,10 +106,10 @@
                 </div>
 
                 {/* Right Side - Auth Section */}
-                <div className="w-full h-[40%] flex flex-col justify-center px-10 md:w-[35%] md:h-full md:bg-[#f8f8f8]">
+                <div className="w-full h-[50%] px-10 md:w-[35%] md:h-full md:bg-[#f8f8f8] md:flex md:justify-center md:items-center">
                     {/* Sign In Form */}
                     <form onSubmit={handleSubmit}>
-                        <h1 className="font-bold text-5xl mb-10">Sign In</h1>
+                        <h1 className="font-bold hidden md:block text-5xl mb-10">Sign In</h1>
 
                         <div className="mb-4">
                             <label

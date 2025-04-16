@@ -12,21 +12,86 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState(null);
+  const [shareModalData, setShareModalData] = useState(false);
+  const [shareData, setShareData] = useState(null);
+  const [handleShare, setHandleShare] = useState(false);
   const [isRejectModalOpen, setIsRejectModalOpen] = useState(false);
   const [rejectReason, setRejectReason] = useState('');
   const [rejectId, setRejectId] = useState(null);
+  const [series, setSeries] = useState(null);
   const [actionStatus, setActionStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
-  const boxInfo = [
-    { icon: 'bxs-calendar-check', value: '1020', label: 'New Order', color: 'blue' },
-    { icon: 'bxs-group', value: '2834', label: 'Visitors', color: 'yellow' },
-    { icon: 'bxs-dollar-circle', value: 'N$2543.00', label: 'Total Sales', color: 'orange' },
-  ];
+  useEffect(() => {
+    fetch('http://localhost:5000/Admin/ChartData')
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data.data || !Array.isArray(data.data) || data.data.length === 0) {
+          console.error("Invalid data structure:", data);
+          return;
+        }
+
+        const counts = data.data[0];
+        const completed = counts.completed || 0;
+        const rejected = counts.rejected || 0;
+        const pending = counts.pending || 0;
+        const process = counts.process || 0;
+        const ticketRaised = counts["ticket raised"] || 0;
+        const total = completed + rejected + pending + process + ticketRaised;
+
+        const chartData = [total, completed, rejected, pending, process, ticketRaised];
+        setSeries(chartData);
+      })
+      .catch((error) => {
+        console.error('Error fetching chart data:', error);
+      });
+  }, []);
+
+  console.log("SERIES: ", series);
+
+  const boxInfo = series ? [
+    {
+      icon: 'bx bx-list-plus',
+      value: series[0],
+      label: 'Total Applications',
+      color: 'blue',
+    },
+    {
+      icon: 'bx bx-check-square',
+      value: series[1],
+      label: 'Completed',
+      color: 'green',
+    },
+    {
+      icon: 'bx bx-x-circle',
+      value: series[2],
+      label: 'Rejected',
+      color: 'red',
+    },
+    {
+      icon: 'bx bx-time-five',
+      value: series[3],
+      label: 'Pending',
+      color: 'yellow',
+    },
+    {
+      icon: 'bx bx-cog',
+      value: series[4],
+      label: 'In Process',
+      color: 'purple',
+    },
+    {
+      icon: 'bx bx-error-circle',
+      value: series[5],
+      label: 'Ticket Raised',
+      color: 'orange',
+    },
+  ] : [];
 
   useEffect(() => {
-    const userCookie = Cookies.get('Name'); 
+    const userCookie = Cookies.get('Name');
     if (!userCookie) {
       navigate('/admin');
     }
@@ -78,9 +143,8 @@ const Home = () => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      if (response.ok) {
+      if (response.ok && handleShare) {
         window.location.reload();
-
       }
     } catch (error) {
       setError("An error occurred: " + error.message);
@@ -128,6 +192,51 @@ const Home = () => {
     } catch (error) {
       setError("An error occurred: " + error.message);
     }
+  };
+
+  console.log("SHARE DATA: ", shareData);
+
+
+  const [email, setEmail] = useState("");
+  const [department, setDepartment] = useState("");
+
+  const handleShareSubmit = async (e) => {
+    e.preventDefault();
+    alert(`Your Data shared to ${department || 'Not selected'} Department with Email ${email}\n`);
+    // You can add logic here to reset form or close modal if needed
+    setLoading(true);
+    try {
+      const response = await fetch("http://localhost:5000/ShareDepartmentData", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, department, shareData }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Network response was not ok");
+      }
+
+      console.log("response: ", data);
+
+
+      if (data.success) {
+        
+        alert(`Send to data ${department} department sucessfully!!!`);
+        setEmail("");
+        setDepartment('');
+        setShareModalData(false);
+      }
+    } catch (error) {
+      setError("An error occurred: " + error.message);
+    }finally{
+      setLoading(false);
+    }
+
   };
 
   function toCapitalize(str) {
@@ -232,7 +341,15 @@ const Home = () => {
                           onClick={() => handleActionAccept(singleData.Application_Id)}
                           className={`${reviewMessageNull ? "text-green-600 hover:underline sm:px-2 cursor-pointer " : ''}`}
                         >
-                          {reviewMessageNull ? <i className='bx bx-share bx-flip-horizontal bx-xs bx-fade-right-'></i> : " --"}
+                          {reviewMessageNull ? <button
+                            onClick={() => {
+                              setShareData(singleData);
+                              setShareModalData(true);
+                            }}
+                            className="cursor-pointer"
+                          >
+                            <i className="bx bx-share bx-flip-horizontal bx-xs"></i>
+                          </button> : " --"}
 
                         </button>
                       </td>
@@ -316,6 +433,94 @@ const Home = () => {
           </form>
         </div>
       )}
+
+      {shareModalData && (
+        <div
+          className="fixed flex items-center justify-center inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300"
+          onClick={() => { setShareModalData(false), setEmail(''), setDepartment('') }}
+        >
+          <form
+            className="bg-white p-6 rounded shadow-lg w-full max-w-md space-y-4 relative dark-mode"
+            onClick={(e) => e.stopPropagation()}
+            onSubmit={handleShareSubmit}
+          >
+            <button
+              onClick={() => { setShareModalData(false), setEmail(''), setDepartment('') }}
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-300 text-2xl"
+              type="button"
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <h2 className="text-xl font-semibold">Select The Department Where You Share</h2>
+            <hr className="bg-gray-200" />
+
+            <label htmlFor="department">Department <sup className="text-red-500">*</sup></label>
+            <select
+              id="department"
+              value={department}
+              onChange={(e) => setDepartment(e.target.value)}
+              className="w-full p-2 border border-gray-200 rounded resize-none focus:outline-1 mt-2"
+            >
+              <option value="" disabled>-- Select --</option>
+              <option value="health">Health</option>
+              <option value="road">Road</option>
+            </select>
+
+            <label htmlFor="email">Email <sup className="text-red-500">*</sup></label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-2 border border-gray-200 rounded resize-none focus:outline-1 mt-2"
+              placeholder='John@example.com'
+            />
+
+            <hr className="bg-gray-200" />
+            <div className="flex justify-between space-x-4">
+              <button
+                type="submit"
+                className="mx-auto bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition w-[40%]"
+              >
+                {loading ? (
+                  <>
+                  <div className='flex'>
+                    <svg
+                      className="animate-spin h-5 w-5 mr-2 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v8h8a8 8 0 01-16 0z"
+                      ></path>
+                    </svg>
+                    Processing...
+                    </div>
+                  </>
+                ) : (
+                  "Submit"
+                )}
+              </button>
+            </div>
+          </form>
+        </div>
+      )
+      }
+
       <style jsx>{`
         body.dark .dark-mode {
           background-color: var(--light);
