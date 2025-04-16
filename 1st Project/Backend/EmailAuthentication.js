@@ -67,7 +67,8 @@ async function verifySmtp(email, mxHost) {
 
     socket.on('connect', () => {
       socket.write(`HELO localhost\r\n`);
-      socket.write(`MAIL FROM:<test@example.com>\r\n`);
+      socket.write(`MAIL FROM:rakeshkumarsahoo398@gmail.com
+        \r\n`);
       socket.write(`RCPT TO:<${email}>\r\n`);
     });
 
@@ -99,7 +100,7 @@ async function verifySmtp(email, mxHost) {
 
 // Example usage
 async function main() {
-  const email = 'hrakeshkumarsahoo398@gmail.com';
+  const email = 'rakeshkumarsahoo398@gmail.com';
   const result = await checkEmailExists(email);
   console.log(result);
 }

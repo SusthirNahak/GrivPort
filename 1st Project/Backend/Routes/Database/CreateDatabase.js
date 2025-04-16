@@ -1,10 +1,11 @@
 const express = require("express");
-const mysql = require("mysql2/promise");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 
 const router = express.Router();
+
+const { getConnection } = require('./DBConnect');
 
 // Ensure the uploads folder exists
 const uploadDir = path.join(__dirname, "../../uploads/");
@@ -47,16 +48,6 @@ function applicationId() {
   }).join("");
 
   return part1 + part2 + part3;
-}
-
-// Function to create and return a connection
-async function getConnection() {
-  return await mysql.createConnection({
-    host: "localhost",
-    user: "WilyFox",
-    password: "WilyFox@12345",
-    multipleStatements: true,
-  });
 }
 
 // Endpoint to handle form data and file uploads

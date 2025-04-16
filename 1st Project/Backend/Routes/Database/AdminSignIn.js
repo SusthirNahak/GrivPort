@@ -1,17 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const mysql = require("mysql2/promise");
-
-// Function to create and return a connection
-async function getConnection() {
-  return await mysql.createConnection({
-    host: "localhost",
-    user: "WilyFox",
-    password: "WilyFox@12345",
-    database: "WilyFox",
-    multipleStatements: true,
-  });
-}
+const { getConnection } = require('./DBConnect');
 
 // Endpoint to check and create database, table, and insert data
 router.post("/SignIn", async (req, res) => {

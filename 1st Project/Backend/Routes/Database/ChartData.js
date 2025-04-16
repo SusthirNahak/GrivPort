@@ -1,17 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const mysql = require("mysql2/promise");
 const { Application } = require("twilio/lib/twiml/VoiceResponse");
-
-async function getConnection() {
-    return await mysql.createConnection({
-        host: "localhost",
-        user: "WilyFox",
-        password: "WilyFox@12345",
-        database: "WilyFox",
-        multipleStatements: true,
-    });
-}
+const { getConnection } = require('./DBConnect');
 
 router.get("/ChartData", async (req, res) => {
     let connection;
