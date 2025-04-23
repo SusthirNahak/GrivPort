@@ -8,7 +8,7 @@ async function getConnection() {
     // Step 1: Create a connection without specifying a database
     connection = await mysql.createConnection({
       host: process.env.hostname,
-      user: "WilyFox",
+      user: process.env.username,
       password: process.env.password,
       multipleStatements: true,
     });
