@@ -93,7 +93,7 @@ export default function MyGrievance() {
 
     return (
         <>
-            <div className="table-data p-4">
+            <div className="pt-28 pb-16 table-data px-4 md:px-10">
                 <div className="order rounded-lg shadow-md bg-white">
                     <div className="flex items-center justify-between p-4 mb-3">
                         <h3 className="text-lg font-semibold text-gray-800">All Data</h3>

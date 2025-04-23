@@ -81,10 +81,10 @@ export default function SignIn({ onSignInSuccess }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="mb-4 w-full" >
+      {/* <div className="mb-4 w-full" >
         <label
           htmlFor="phoneNumber"
-          className="block text-lg font-medium text-black pb-3"
+          className="block text-lg font-medium text-black pb-3 md:"
         >
           Phone Number<sup className="text-red-500 text-lg">*</sup>
         </label>
@@ -107,15 +107,36 @@ export default function SignIn({ onSignInSuccess }) {
             disabled={isSubmitted}
           />
         </div>
+      </div> */}
+      <div className="relative mb-6">
+        <input
+          type="text"
+          id="phoneNumber"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          placeholder=" "
+          maxLength="10"
+          pattern="[6-9]{1}[0-9]{9}"
+          required
+          className="peer w-full border border-gray-400 rounded-md px-6 py-3 text-sm placeholder-transparent focus:outline-2 focus:outline-black focus:outline-offset-4 focus:border-black"
+        />
+
+        <label
+          htmlFor="phoneNumber"
+          className="absolute left-[20%] -top-3.5 transform -translate-x-1/2 px-2 text-sm transition-all duration-300 ease-in-out bg-[#f5e790] peer-placeholder-shown:top-2 peer-placeholder-shown:left-20 peer-placeholder-shown:transform-none peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-4 peer-focus:left-[20%] peer-focus:-translate-x-1/2 peer-focus:text-sm peer-focus:text-black text-black rounded-lg leading-1.5"
+        >
+          Phone Number <sup className="text-red-500 text-lg">*</sup>
+        </label>
+
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting || isSubmitted}
-        className={`w-full py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition duration-200 cursor-pointer ${
-          isSubmitting || isSubmitted ? "opacity-50 cursor-not-allowed" : ""
-        }`}
+        className={`w-full py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition duration-200 cursor-pointer ${isSubmitting || isSubmitted ? "opacity-50 cursor-not-allowed" : ""
+          }`}
       >
+
         {isSubmitting ? "..." : "Get OTP"}
       </button>
 
@@ -127,3 +148,5 @@ export default function SignIn({ onSignInSuccess }) {
     </form>
   );
 }
+
+

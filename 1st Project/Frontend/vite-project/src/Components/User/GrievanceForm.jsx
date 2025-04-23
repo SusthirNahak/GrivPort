@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useDropzone } from "react-dropzone";
 import Cookies from 'js-cookie';
 
+import { useTranslation } from 'react-i18next';
+
 // import { useLocation } from "react-router-dom";
 import ThankYou from "./ThankYou";
 
@@ -47,7 +49,10 @@ export default function GrievanceForm() {
 
   const [data, setData] = useState(false);
 
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
+    
 
   // const location = useLocation();
   // const { grievanceSelectedValue } = location.state || {};
@@ -369,8 +374,8 @@ export default function GrievanceForm() {
 
   return (
     // <div className="bg-amber-50">
-    <div className="mx-auto sm:w-3/4 mt-2 px-6">
-      <h1 className="font-bold text-4xl my-5">Enter Location Details</h1>
+    <div className="pt-24 pb-16 mx-auto sm:w-3/4 mt-2 px-6 md:px-0">
+      <h1 className="font-bold text-4xl my-5">{t('Enter_Location_Details')}</h1>
       <hr className="w-full" />
       {loading && <p className="text-blue-500">Loading...</p>}
       {error && <p className="text-red-500">Error: {error}</p>}

@@ -20,7 +20,7 @@ const { upload, fileData } = require("./FileDatas"); // Import upload and fileDa
 //       console.error("Error connecting to MySQL:", err.stack);
 //       return;
 //     }
-//     console.log("Connected to MySQL as id " + connection.threadId);
+//     // console.log("Connected to MySQL as id " + connection.threadId);
 //   });
 
 //   // Endpoint to check and create database, table, and insert data
@@ -35,7 +35,7 @@ const { upload, fileData } = require("./FileDatas"); // Import upload and fileDa
 //       if (err) {
 //         return res.status(500).send("Error creating database: " + err.message);
 //       }
-//       console.log("Database checked/created successfully.");
+//       // console.log("Database checked/created successfully.");
 
 //       // Step 2: Select the database
 //       const useDbQuery = `USE ${dbName};`;
@@ -69,10 +69,10 @@ const { upload, fileData } = require("./FileDatas"); // Import upload and fileDa
 //           if (err) {
 //             return res.status(500).send("Error creating table: " + err.message);
 //           }
-//           console.log("Table checked/created successfully.");
+//           // console.log("Table checked/created successfully.");
 
 //           let formData = req.body;
-//           console.log("formData: ", formData);
+//           // console.log("formData: ", formData);
 
 //           // Step 4: Insert data into the table if it exists
 //           const insertDataQuery = `
@@ -80,7 +80,7 @@ const { upload, fileData } = require("./FileDatas"); // Import upload and fileDa
 //             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 //           `;
 
-//           console.log("inside insert query");
+//           // console.log("inside insert query");
 
 //           const values = [
 //             formData.Grievance,
@@ -95,7 +95,7 @@ const { upload, fileData } = require("./FileDatas"); // Import upload and fileDa
 //             formData.Disability,
 //             formData.Email,
 //           ];
-//           console.log("inside insert query2");
+//           // console.log("inside insert query2");
 //           connection.query(insertDataQuery, values, (err, result) => {
 //             if (err) {
 //               return res.status(500).send({
@@ -103,7 +103,7 @@ const { upload, fileData } = require("./FileDatas"); // Import upload and fileDa
 //                 error: "Error inserting data: " + err.message,
 //               });
 //             }
-//             console.log("inside insert query3");
+//             // console.log("inside insert query3");
 //             res.status(200).send({
 //               success: true,
 //               message: "Data are successfully set up!",
@@ -152,9 +152,9 @@ async function getConnection() {
 
 // Endpoint to check and create database, table, and insert data
 router.post("/userFormData", upload.array("Files"), async (req, res) => {
-  // console.log("Content-Type:", req.headers["content-type"]);
+  // // console.log("Content-Type:", req.headers["content-type"]);
   const files = req.files;
-  // console.log("files: ", files);
+  // // console.log("files: ", files);
 
   if (!files) {
     return res.status(400).json({ error: "No files uploaded" });
@@ -168,15 +168,15 @@ router.post("/userFormData", upload.array("Files"), async (req, res) => {
   try {
     // Step 1: Create connection
     connection = await getConnection();
-    console.log("Connected to MySQL: " + connection.threadId);
+    // console.log("Connected to MySQL: " + connection.threadId);
 
     // Step 2: Check if the database exists, and create it if it doesn't
     await connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName}`);
-    console.log("Database checked/created successfully.");
+    // console.log("Database checked/created successfully.");
 
     // Step 3: Select the database
     await connection.query(`USE ${dbName}`);
-    console.log("Database selected successfully.");
+    // console.log("Database selected successfully.");
 
     // Step 4: Check if the table exists, and create it if it doesn't
     const createTableQuery = `
@@ -201,13 +201,13 @@ router.post("/userFormData", upload.array("Files"), async (req, res) => {
       );
     `;
     await connection.query(createTableQuery);
-    console.log("Table checked/created successfully.");
+    // console.log("Table checked/created successfully.");
 
     // Step 5: Insert data into the table
     const formData = req.body;
     // const files = req.files;
-    console.log("formData: ", formData);
-    console.log("files: ", files);
+    // console.log("formData: ", formData);
+    // console.log("files: ", files);
 
     const id = applicationId();
 
@@ -260,7 +260,7 @@ router.post("/userFormData", upload.array("Files"), async (req, res) => {
     // Close the connection
     if (connection) {
       await connection.end();
-      console.log("MySQL connection closed.");
+      // console.log("MySQL connection closed.");
     }
   }
 });

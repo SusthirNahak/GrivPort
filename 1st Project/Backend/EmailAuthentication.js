@@ -19,7 +19,7 @@
 //         const response = await fetch(`https://api.neverbounce.com/v4/single/check?${params}`);
 //         const result = await response.json();
 
-//         console.log('Verification Result:', {
+//         // console.log('Verification Result:', {
 //             verdict: result.result,
 //             details: result,
 //         });
@@ -102,7 +102,7 @@ async function verifySmtp(email, mxHost) {
 async function main() {
   const email = 'rakeshkumarsahoo398@gmail.com';
   const result = await checkEmailExists(email);
-  console.log(result);
+console.log(result);
 }
 
 main();

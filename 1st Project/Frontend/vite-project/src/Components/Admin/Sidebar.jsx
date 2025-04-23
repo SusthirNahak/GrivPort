@@ -10,7 +10,7 @@ const Sidebar = ({ hidden }) => {
   const menuItems = [
     { name: 'Dashboard', icon: 'bxs-dashboard', link: "/admin/home" },
     { name: 'Analytics', icon: 'bxs-pie-chart-alt-2', link: "/admin/chart" },
-    { name: 'Message', icon: 'bxs-message-dots' },
+    { name: 'Update', icon: 'bxs-message-dots', link: "/admin/update-location" },
     { name: 'Team', icon: 'bxs-group' },
   ];
 

@@ -103,7 +103,7 @@ const VerifyOTP = () => {
       if (data.success) {
         setTimeout(() => {
           // setIsVerified(true);
-          navigate("/grievanceform");
+          navigate("/home");
           // alert("sucessful navigation");
           setOtp(["", "", "", ""]);
           inputRefs.current[0]?.focus();
@@ -160,7 +160,7 @@ const VerifyOTP = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <form onSubmit={handleSubmit} className="w-full max-w-sm">
-        <div className="mb-7 space-x-2 flex justify-center">
+        <div className="my-7 space-x-2 flex justify-center">
           {otp.map((digit, index) => (
             <input
               key={index}

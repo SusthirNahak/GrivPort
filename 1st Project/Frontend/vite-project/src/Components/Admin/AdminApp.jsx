@@ -7,6 +7,7 @@ import AdminLandingPage from "./AdminLandingPage.jsx";
 import Home from "./Home.jsx";
 import FileViewer from './FileViewer.jsx';
 import DashboardCharts from './Chart.jsx';
+import UpdateLocation from './UpdateLocation.jsx';
 
 function AdminApp() {
   const [sidebarHidden, setSidebarHidden] = useState(false);
@@ -40,6 +41,7 @@ function AdminApp() {
           <Route path="home" element={<Home />} />
           <Route path="fileviewer" element={<FileViewer />} />
           <Route path="chart" element={<DashboardCharts />} />
+          <Route path="update-location" element={<UpdateLocation />} />
           {/* Catch-all fallback (optional) */}
           <Route path="*" element={<Navigate to="/admin" />} />
         </Routes>

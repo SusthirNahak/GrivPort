@@ -1,27 +1,39 @@
-
 const mysql = require("mysql2/promise");
-require('dotenv').config();
+require("dotenv").config();
 
-console.log({
-    host: process.env.hostname,
-    user: process.env.USERNAME,
-    password: process.env.password,
-    database: process.env.pathname
-});
-
-
-// Function to create and return a connection
 async function getConnection() {
+  let connection;
 
-    return await mysql.createConnection({
-        host: process.env.hostname,
-        user: 'WilyFox',
-        password: process.env.password,
-        database: process.env.pathname,
-        multipleStatements: true,
+  try {
+    // Step 1: Create a connection without specifying a database
+    connection = await mysql.createConnection({
+      host: process.env.hostname,
+      user: "WilyFox",
+      password: process.env.password,
+      multipleStatements: true,
     });
+
+    // Step 2: Create the database if it doesn't exist
+    const dbName = process.env.pathname || "wilyFox"; // Fallback to 'wilyFox' if pathname is undefined
+    await connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName}`);
+
+    // Step 3: Close the initial connection
+    await connection.end();
+
+    // Step 4: Reconnect to the newly created/existing database
+    connection = await mysql.createConnection({
+      host: process.env.hostname,
+      user: "WilyFox",
+      password: process.env.password,
+      database: dbName,
+      multipleStatements: true,
+    });
+
+    return connection;
+  } catch (err) {
+    console.error("Error in getConnection:", err.message);
+    throw err; // Let the caller handle the error
+  }
 }
-
-
 
 module.exports = { getConnection };

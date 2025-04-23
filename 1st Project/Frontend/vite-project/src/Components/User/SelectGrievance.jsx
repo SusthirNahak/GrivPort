@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+import Cookies from 'js-cookie';
+
 export default function SelectGreivance() {
   const options = [
     { value: "pothole_main", text: "Pothole on Main Street" },
@@ -50,7 +52,7 @@ export default function SelectGreivance() {
         typeof isLoggedIn === "undefined"
       ) {
         // console.log("Redirecting to /landingpage");
-        navigate("/landingpage", { replace: true });
+        navigate(Cookies.get("currentLocation"), { replace: true });
         return;
       }
     } catch (error) {

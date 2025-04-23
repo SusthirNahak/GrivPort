@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
   const { email, department, shareData } = req.body;
-  console.log("BODY: ", email, department, shareData);
+  // console.log("BODY: ", email, department, shareData);
 
   // Validate input
   if (!email || !department || !shareData) {
@@ -163,7 +163,7 @@ router.post('/', async (req, res) => {
 
     try {
       await transporter.sendMail(mailOptions);
-      console.log("Email sent successfully");
+      // console.log("Email sent successfully");
       res.json({ success: true, message: 'Email sent successfully!' });
     } catch (error) {
       console.error('Email error:', error);

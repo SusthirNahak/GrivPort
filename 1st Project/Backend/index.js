@@ -25,6 +25,7 @@ const RejectReason = require('./Routes/Database/Reject')
 const UserData = require('./Routes/Database/UserSpecificAllData')
 const TicketRaiseReason = require('./Routes/Database/TicketRaiseReason')
 const ChartData = require('./Routes/Database/ChartData')
+const UpdateLocation = require('./Routes/Database/UpdateLocation')
 
 ShareDepartmentData = require('./Routes/ShareDepartmentData')
 
@@ -41,6 +42,7 @@ app.use('/Admin', AdminFetchData);
 app.use('/Admin', AcceptChange);
 app.use('/Admin', RejectReason);
 app.use('/Admin', ChartData);
+app.use('/Admin', UpdateLocation);
 
 app.use('/user', UserData);
 app.use('/user', TicketRaiseReason);

@@ -6,8 +6,14 @@ import '../../App.css';
 import GrievanceForm from "./GrievanceForm.jsx";
 import LandingPage from "./LandingPage.jsx";
 // import VerifyOTP from "./VerifyOTP.jsx";
+
 import Navbar from "./Navbar.jsx";
+import Footer from "./Footer.jsx";
 import MyGrievance from "./MyGrievance.jsx";
+import AboutUs from "./AboutUs.jsx";
+import Home from "./Home.jsx";
+
+
 
 export default function UserApp() {
 	const location = useLocation();
@@ -16,15 +22,18 @@ export default function UserApp() {
 	return (
 		<>
 			{/* Show Navbar on all pages except landing */}
-			{!hideNavbar && <Navbar />}
+			<Navbar />
 
 			<Routes>
-				<Route path="/" element={<LandingPage />} />
+				<Route path="/" element={<Home />} />
+				<Route path="/home" element={<Home />} />
 				<Route path="/landingpage" element={<LandingPage />} />
 				{/* <Route path="/verifyotp" element={<VerifyOTP />} /> */}
 				<Route path="/mygrievance" element={<MyGrievance />} />
+				<Route path="/about-us" element={<AboutUs />} />
 				<Route path="/grievanceform" element={<GrievanceForm />} />
 			</Routes>
+			<Footer />
 		</>
 	);
 }

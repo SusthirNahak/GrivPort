@@ -58,7 +58,7 @@ router.post("/userFormData", upload.array("Files"), async (req, res) => {
     return res.status(400).json({ error: "No files uploaded" });
   }
 
-  const dbName = "wilyFox";
+  const dbName = "WilyFox";
   const tableName = "Form";
   let connection;
 
@@ -68,7 +68,7 @@ router.post("/userFormData", upload.array("Files"), async (req, res) => {
     console.log("Connected to MySQL: " + connection.threadId);
 
     // Step 2: Check if the database exists, and create it if it doesn't
-    await connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName}`);
+    // await connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName}`);
     console.log("Database checked/created successfully.");
 
     // Step 3: Select the database
@@ -111,6 +111,19 @@ router.post("/userFormData", upload.array("Files"), async (req, res) => {
     await connection.query(adminTableCreateQuery);
     console.log("Admin Table checked/created successfully.");
 
+    const adminLocationCreateQuery = `CREATE TABLE IF NOT EXISTS locationset (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      state VARCHAR(100) NOT NULL,
+      district VARCHAR(100) NOT NULL,
+      block VARCHAR(100) NOT NULL,
+      gp VARCHAR(100) NOT NULL,
+      village VARCHAR(100) NOT NULL,
+      UNIQUE (state, district, block, gp, village)
+    );`
+
+    await connection.query(adminLocationCreateQuery);
+    console.log("Admin Location Table checked/created successfully.");
+
     // Step 5: Prepare file data as JSON strings
     const formData = req.body;
     console.log("formData: ", formData);
@@ -133,8 +146,7 @@ router.post("/userFormData", upload.array("Files"), async (req, res) => {
     // Step 6: Insert data into the table
     const insertDataQuery = `
       INSERT INTO ${tableName} (
-        Application_Id, User_Id, Application_Status, Grievance, Name, State, District, Block, GP, Village, 
-        Address, Gender, Disability, Email, Message, User_Ticket_Raise_Message, File_Names, File_Paths, File_Types, File_Sizes, Review_Message
+        Application_Id, User_Id, Application_Status, Grievance, Name, State, District, Block, GP, Village, Address, Gender, Disability, Email, Message, User_Ticket_Raise_Message, File_Names, File_Paths, File_Types, File_Sizes, Review_Message
       )
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
     `;
