@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PopUp from "./popUp";
-// import GrievanceForm from "./GrievanceForm";
+import Cookies from 'js-cookie';
 
-const VerifyOTP = () => {
+const apiKey = import.meta.env.VITE_API_KEY;
+
+
+const VerifyOTP = ({ phoneNumber }) => {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [isValid, setIsValid] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -12,12 +15,10 @@ const VerifyOTP = () => {
   const [resendCooldown, setResendCooldown] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
   const [data, setData] = useState({});
-  // const [isVerified, setIsVerified] = useState(false);
   const inputRefs = useRef([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Set the document title
     document.title = "Landing Page/Verify OTP";
   }, []);
 
@@ -78,36 +79,25 @@ const VerifyOTP = () => {
     setTriggerAnimation(true);
     setError(null);
 
-    // console.log("OTP: ", otp.join(""));
-
     let otpString = otp.join("");
 
     try {
-      const response = await fetch("http://localhost:5000/verifyOTP", {
+        const response = await fetch(`${apiKey}/verifyOTP`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ otpString }),
       });
 
       const data = await response.json();
-
-      // console.log("DATA FROM BACKEND VERIFY OTP: ", data);
-
-      // const safeData = JSON.stringify(data, (key, value) =>
-      //   value === data ? undefined : value
-      // );
-      // console.log("DATA FROM BACKEND VERIFY OTP: ", safeData);
-
       setData(data);
 
       if (data.success) {
         setTimeout(() => {
-          // setIsVerified(true);
+          Cookies.set("setPhoneNumber", phoneNumber)
           navigate("/home");
-          // alert("sucessful navigation");
           setOtp(["", "", "", ""]);
           inputRefs.current[0]?.focus();
-        }, 1000); // Wait for green animation to complete
+        }, 1000);
       } else {
         setShowPopup(true);
         setIsValid(false);
@@ -120,10 +110,6 @@ const VerifyOTP = () => {
 
     setTimeout(() => {
       setTriggerAnimation(false);
-      // if (!isValid) {
-      //   setOtp(["", "", "", ""]); // Reset OTP on wrong entry
-      //   inputRefs.current[0]?.focus();
-      // }
     }, 1000);
   };
 
@@ -133,7 +119,7 @@ const VerifyOTP = () => {
     setError(null);
 
     try {
-      await fetch("http://localhost:5000/resendOTP", {
+        await fetch(`${apiKey}/resendOTP`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       });
@@ -151,11 +137,6 @@ const VerifyOTP = () => {
   };
 
   const isButtonEnabled = otp.every((digit) => digit !== "");
-
-  // If OTP is verified, render SelectGrievance instead of the OTP form
-  // if (isVerified) {
-  //   return <GrievanceForm />;
-  // }
 
   return (
     <div className="flex flex-col items-center justify-center">

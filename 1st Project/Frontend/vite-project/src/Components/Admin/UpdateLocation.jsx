@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+const apiKey = import.meta.env.VITE_API_KEY;
+
 
 export default function UpdateLocation() {
     const [fetchData, setFetchData] = useState([]);
@@ -19,7 +21,8 @@ export default function UpdateLocation() {
     // Fetch data from backend
     const fetchDataFromServer = async () => {
         try {
-            const response = await fetch("http://localhost:5000/Admin/UpdateLocation", {
+                const response = await fetch(`${apiKey}/Admin/UpdateLocation`, {
+
                 method: "GET",
             });
 
@@ -72,7 +75,8 @@ export default function UpdateLocation() {
         }
 
         try {
-            const response = await fetch("http://localhost:5000/Admin/UpdateLocation", {
+                const response = await fetch(`${apiKey}/Admin/UpdateLocation`, {
+
                 method: isDelete ? "DELETE" : isUpdate ? "PUT" : "POST",
                 headers: {
                     "Content-Type": "application/json",

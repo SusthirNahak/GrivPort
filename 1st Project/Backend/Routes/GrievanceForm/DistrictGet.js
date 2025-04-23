@@ -8,7 +8,6 @@ const fs = require("fs");
 let districtData = [];
 router.get("/", (req, res) => {
   const stateName = req.query.stateName;
-  // console.log("stateName: ", stateName);
   if (!stateName) {
 	return res.status(400).json({ message: "stateName is required" });
   }
@@ -24,8 +23,6 @@ router.get("/", (req, res) => {
 	  districtData = JSON.parse(data).filter(
 		(data) => data.state === stateName
 	  );
-	  // const districts = districtData.filter((data) => data.state === stateName);
-	  // console.log(districtData);
 
 	  if (!districtData) {
 		return res

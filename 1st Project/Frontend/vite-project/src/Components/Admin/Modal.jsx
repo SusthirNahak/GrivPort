@@ -37,11 +37,8 @@ const Modal = ({ isOpen, onClose, data }) => {
 
         const urlWithoutParams = file.split("?")[0];
         const fileExtension = urlWithoutParams.split(".").pop().toLowerCase();
-        const fileType = types[index];
 
         const handleOpenFile = () => {
-          // window.open(`/file-review?file=${file}`, "_blank");
-          // <FileViewer path={file} />
           setSelectedFile(file)
         };
 
@@ -72,9 +69,6 @@ const Modal = ({ isOpen, onClose, data }) => {
       render: (value) => renderAttachments(value, data.File_Paths)
     },
   ];
-
-  console.log("FROM MODAL: ", data);
-
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto mt-6">

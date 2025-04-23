@@ -8,7 +8,6 @@ const fs = require("fs");
 let villageData = [];
 router.get("/", (req, res) => {
   const { stateName, districtName, blockName, gpName } = req.query;
-  console.log("blockName: ", stateName, districtName, blockName, gpName);
   if (!stateName && !districtName && !blockName && !gpName) {
     return res
       .status(400)
@@ -63,8 +62,6 @@ router.get("/", (req, res) => {
         gram_panchayat: gp?.gram_panchayat_name,
         villages: gp?.villages || []
       };
-
-      // console.log(GPData);
 
       if (!villageData) {
         return res.status(404).json({

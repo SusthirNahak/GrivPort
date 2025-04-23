@@ -1,7 +1,6 @@
 import React from "react";
 
 const FileViewer = () => {
-  // Get the file URL from the query parameter and decode it
   const urlParams = new URLSearchParams(window.location.search);
   const encodedFileUrl = urlParams.get("file");
   const fileUrl = encodedFileUrl ? decodeURIComponent(encodedFileUrl) : null;

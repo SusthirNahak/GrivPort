@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import Chart from 'react-apexcharts';
 import Cookies from 'js-cookie';
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
 const DashboardCharts = () => {
     const navigate = useNavigate();
     const [series, setSeries] = useState([]);
@@ -12,7 +14,7 @@ const DashboardCharts = () => {
             toolbar: {
                 show: true,
                 tools: {
-                    download: true,  // Enable the download button for Pie chart
+                    download: true,
                 },
             },
         },
@@ -137,14 +139,14 @@ const DashboardCharts = () => {
         xaxis: {
             categories: ['2011 Q1', '2011 Q2', '2011 Q3', '2011 Q4', '2012 Q1', '2012 Q2', '2012 Q3', '2012 Q4'],
             labels: {
-                position: 'bottom', // Labels below the bars
+                position: 'bottom',
             },
         },
         fill: {
             opacity: 1,
         },
         legend: {
-            position: 'bottom', // Adjusted legend positioning
+            position: 'bottom',
             offsetX: 0,
             offsetY: 0,
         },
@@ -158,7 +160,8 @@ const DashboardCharts = () => {
     }, [navigate]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/Admin/ChartData')
+        fetch(`${apiKey}/Admin/ChartData`)
+
             .then((response) => response.json())
             .then((data) => {
                 if (!data.data || !Array.isArray(data.data) || data.data.length === 0) {

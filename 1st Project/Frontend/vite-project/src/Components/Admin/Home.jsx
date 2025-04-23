@@ -7,6 +7,8 @@ import 'boxicons/css/boxicons.min.css';
 import Modal from './Modal';
 import FileViewer from './FileViewer';
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
 const Home = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -25,7 +27,8 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:5000/Admin/ChartData')
+    fetch(`${apiKey}/Admin/ChartData`)
+    
       .then((response) => response.json())
       .then((data) => {
         if (!data.data || !Array.isArray(data.data) || data.data.length === 0) {
@@ -100,7 +103,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/Admin/Data");
+        const response = await fetch(`${apiKey}/Admin/Data`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -133,7 +136,8 @@ const Home = () => {
     setActionStatus(id);
     console.log(`Action taken Accepted: ${id}`);
     try {
-      const response = await fetch("http://localhost:5000/Admin/AcceptData", {
+        const response = await fetch(`${apiKey}/Admin/AcceptData`, {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -171,7 +175,8 @@ const Home = () => {
     console.log("Reject submitted:", { id: rejectId, reason: rejectReason });
 
     try {
-      const response = await fetch("http://localhost:5000/Admin/RejectData", {
+        const response = await fetch(`${apiKey}/Admin/RejectData`, {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -206,7 +211,8 @@ const Home = () => {
     // You can add logic here to reset form or close modal if needed
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/ShareDepartmentData", {
+        const response = await fetch(`${apiKey}/ShareDepartmentData`, {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json",

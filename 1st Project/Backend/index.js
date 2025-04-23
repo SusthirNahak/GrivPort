@@ -6,7 +6,10 @@ const cors = require("cors");
 const port = 5000;
 const path = require('path');
 
+const CreateDatabase = require('./Routes/Database/AllDatabase');
+
 // require('events').EventEmitter.defaultMaxListeners = 20;
+CreateDatabase();
 
 app.use(express.json());
 app.use(cors());

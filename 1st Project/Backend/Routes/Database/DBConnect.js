@@ -14,7 +14,7 @@ async function getConnection() {
     });
 
     // Step 2: Create the database if it doesn't exist
-    const dbName = process.env.pathname || "wilyFox"; // Fallback to 'wilyFox' if pathname is undefined
+    const dbName = process.env.pathname || "WilyFox";
     await connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName}`);
 
     // Step 3: Close the initial connection
@@ -32,7 +32,7 @@ async function getConnection() {
     return connection;
   } catch (err) {
     console.error("Error in getConnection:", err.message);
-    throw err; // Let the caller handle the error
+    throw err;
   }
 }
 

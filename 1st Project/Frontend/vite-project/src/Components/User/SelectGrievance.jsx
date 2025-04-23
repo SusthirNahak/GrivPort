@@ -35,15 +35,11 @@ export default function SelectGreivance() {
   const [selectGreivance, setSelectGreivance] = useState("");
   const navigate = useNavigate();
 
-  // console.log("Component mounting");
-
   useEffect(() => {
     try {
-      // console.log("useEffect started");
       document.title = "Select Grievance";
 
       const isLoggedIn = sessionStorage.getItem("setSessionPhoneNumber");
-      // console.log("isLoggedIn:", isLoggedIn);
 
       if (
         !isLoggedIn ||
@@ -51,7 +47,6 @@ export default function SelectGreivance() {
         isLoggedIn === "" ||
         typeof isLoggedIn === "undefined"
       ) {
-        // console.log("Redirecting to /landingpage");
         navigate(Cookies.get("currentLocation"), { replace: true });
         return;
       }
@@ -63,7 +58,6 @@ export default function SelectGreivance() {
   const handleSelectChange = (e) => {
     try {
       const selectedValue = e.target.value;
-      // const selectedOption = e.target.options[e.target.selectedIndex];
       const selectedOption = options.find((opt) => opt.value === selectedValue);;
       setSelectGreivance(selectedValue);
       console.log("Selected Text:", selectedOption.text);
@@ -77,7 +71,6 @@ export default function SelectGreivance() {
     try {
       e.preventDefault();
       if (selectGreivance) {
-        // console.log("Submitting, navigating to /grievanceform");
         navigate("/grievanceform", {
           state: { grievanceSelectedValue: selectGreivance },
         });
@@ -88,8 +81,6 @@ export default function SelectGreivance() {
       console.error("Error in handleSubmit:", error);
     }
   };
-
-  // console.log("Component rendering");
 
   return (
     <div className="flex flex-col h-[100vh] relative">

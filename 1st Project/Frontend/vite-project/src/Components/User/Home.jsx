@@ -46,7 +46,6 @@ const Home = () => {
             }
         });
 
-        // Immediately set hero to visible for better UX
         setIsVisible(prev => ({ ...prev, hero: true }));
 
         return () => {
@@ -353,7 +352,7 @@ const Home = () => {
                             Your voice matters to us. Submit your grievance today and experience transparent, efficient resolution.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="px-8 py-3 rounded-full border-2 border-white text-white font-medium hover:bg-white hover:text-blue-700 hover:bg-opacity-10  hover:bg-opacity-90 shadow-lg transition duration-300 transform hover:-translate-y-1" onClick={() => {
+                            <button className="px-8 py-3 rounded-full border-2 border-white text-white font-medium hover:bg-white hover:text-blue-700 hover:bg-opacity-90 shadow-lg transition duration-300 transform hover:-translate-y-1" onClick={() => {
                                     cookiesData ? navigate('/grievanceform') : navigate('/landingpage');
                                 }}>
                                 File a Grievance

@@ -7,7 +7,12 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
   const { email, department, shareData } = req.body;
-  // console.log("BODY: ", email, department, shareData);
+
+  
+  const sendUser = 'rakeshkumarsahoo398@gmail.com';
+  const sendUserCode = 'gdelfzgruozwrbcu';
+  const fromMail = 'rakeshkumarsahoo398@gmail.com';
+  const toMail = email;
 
   // Validate input
   if (!email || !department || !shareData) {
@@ -144,16 +149,16 @@ router.post('/', async (req, res) => {
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'rakeshkumarsahoo398@gmail.com',
-        pass: 'gdelfzgruozwrbcu',
+        user: sendUser,
+        pass: sendUserCode,
       },
       port: 465,
       secure: true,
     });
 
     let mailOptions = {
-      from: 'rakeshkumarsahoo398@gmail.com',
-      to: 'rakeshkumarsahoo398@gmail.com',
+      from: fromMail,
+      to: toMail,
       subject: `Grievance Form Submission - ${shareData.Application_Id}`,
       text:
         'Please find the attached PDF containing the grievance form data.' +
@@ -163,13 +168,11 @@ router.post('/', async (req, res) => {
 
     try {
       await transporter.sendMail(mailOptions);
-      // console.log("Email sent successfully");
       res.json({ success: true, message: 'Email sent successfully!' });
     } catch (error) {
       console.error('Email error:', error);
       res.status(500).json({success: false, message: 'Failed to send email.', error: error.message });
     } finally {
-      // Clean up the generated PDF
       fs.unlink(pdfPath, (err) => {
         if (err) console.error('Failed to delete PDF:', err);
       });

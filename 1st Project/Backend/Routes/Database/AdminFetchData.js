@@ -8,14 +8,10 @@ router.get("/Data", async (req, res) => {
   try {
     // Step 1: Create connection
     connection = await getConnection();
-    console.log("Connected to MySQL: " + connection.threadId);
-
-    // const insertDataQuery = `SELECT * FROM form WHERE Application_Status = 'Pending' OR Application_Status = 'Process';`;
+    
     const insertDataQuery = `SELECT * FROM form;`;
 
     const [rows] = await connection.query(insertDataQuery);
-
-    console.log("ROWS: ", rows);
 
     if(rows.length > 0){
       return res.status(200).send({
@@ -40,7 +36,6 @@ router.get("/Data", async (req, res) => {
     // Close the connection
     if (connection) {
       await connection.end();
-      console.log("MySQL connection closed.");
     }
   }
 });

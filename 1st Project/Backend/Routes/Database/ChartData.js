@@ -8,7 +8,6 @@ router.get("/ChartData", async (req, res) => {
 
     try {
         connection = await getConnection();
-        console.log("Connected to MySQL: " + connection.threadId);
 
         const query = `
             SELECT Application_Status, COUNT(*) AS count FROM form WHERE Application_Status COLLATE utf8mb4_general_ci IN ('completed', 'pending', 'process', 'rejected', 'raised') GROUP BY Application_Status;
@@ -17,8 +16,6 @@ router.get("/ChartData", async (req, res) => {
 
         const [results] = await connection.execute(query);
 
-        console.log("result: ", results);
-        // Match the exact case from database
         const statusCounts = {
             'completed': 0,
             'pending': 0,
@@ -27,7 +24,6 @@ router.get("/ChartData", async (req, res) => {
             'ticket raised': 0
         };
         
-        // Map results directly without case conversion
         results.forEach(row => {
             let status = row.Application_Status.toLowerCase();
             
@@ -40,8 +36,6 @@ router.get("/ChartData", async (req, res) => {
             }
         });
         
-        console.log("statusCounts: ", statusCounts);
-
         const total = Object.values(statusCounts).reduce((a, b) => a + b, 0);
 
         res.status(200).send({
@@ -60,7 +54,6 @@ router.get("/ChartData", async (req, res) => {
         if (connection) {
             try {
                 await connection.end();
-                console.log("MySQL connection closed.");
             } catch (endErr) {
                 console.error("Error closing connection:", endErr);
             }

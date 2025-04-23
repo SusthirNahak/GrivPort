@@ -14,3 +14,14 @@ export default defineConfig({
     },
   }
 })
+
+// export default {
+//   server: {
+//     proxy: {
+//       "/sendOTP": {
+//         target: "http://localhost:5000",
+//         changeOrigin: true,
+//       },
+//     },
+//   },
+// };

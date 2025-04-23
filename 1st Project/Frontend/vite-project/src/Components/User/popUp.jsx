@@ -11,7 +11,7 @@ const PopUp = ({ isOpen, setIsOpen, type }) => {
   }, [isOpen, setIsOpen]);
 
   if (!isOpen) return null;
-  // console.log("MESSAGE: ", message);
+
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4">

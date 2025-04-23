@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import Cookies from 'js-cookie';
-
 import PopUp from "./popUp";
+
+const apiKey = import.meta.env.VITE_API_KEY;
 
 export default function SignIn({ onSignInSuccess }) {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -11,15 +11,11 @@ export default function SignIn({ onSignInSuccess }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
 
-  // Log popupMessage updates for debugging
   useEffect(() => {
-    // console.log("Popup Message Updated: ", popupMessage);
   }, [popupMessage]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Validate phone number
     if (!phoneNumber.match(/^[6-9]{1}[0-9]{9}$/)) {
       alert("Please enter a valid 10-digit phone number.");
       return;
@@ -31,8 +27,8 @@ export default function SignIn({ onSignInSuccess }) {
       const fullPhoneNumber = countryCode + phoneNumber;
 
       try {
-        // API call with async/await
-        const response = await fetch("http://localhost:5000/sendOTP", {
+        const response = await fetch(`${apiKey}/sendOTP`, {
+
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ toPhoneNumber: fullPhoneNumber }),
@@ -40,23 +36,10 @@ export default function SignIn({ onSignInSuccess }) {
 
         const data = await response.json();
         setIsSubmitting(false);
-        // console.log("API Response:", data);
         setShowPopup(true);
-
-        // console.log("DATA FROM BACKEND: ", data);
-
-        // const safeData = JSON.stringify(data, (key, value) =>
-        //   value === data ? undefined : value
-        // );
-        // console.log("DATA FROM BACKEND: ", safeData);
-
         if (data.success) {
-          // console.log("DATA: ", data);
           setIsSubmitted(true);
-          // console.log("true");
           setPopupMessage(data);
-          // onSignInSuccess moved to handlePopupClose
-          Cookies.set("setPhoneNumber", phoneNumber)
         } else {
           setPopupMessage(data);
         }
@@ -71,43 +54,15 @@ export default function SignIn({ onSignInSuccess }) {
     }
   };
 
-  // Handle popup close and trigger navigation only if submission was successful
   const handlePopupClose = () => {
     setShowPopup(false);
     if (isSubmitted) {
-      onSignInSuccess(); // Navigate to VerifyOTP only after popup is closed
+      onSignInSuccess(phoneNumber);
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* <div className="mb-4 w-full" >
-        <label
-          htmlFor="phoneNumber"
-          className="block text-lg font-medium text-black pb-3 md:"
-        >
-          Phone Number<sup className="text-red-500 text-lg">*</sup>
-        </label>
-
-        <div className="relative">
-          <span className="absolute top-1/2 transform -translate-y-1/2 text-black text-lg border-r-1 px-2">
-            +91
-          </span>
-          <input
-            type="tel"
-            id="phoneNumber"
-            name="phoneNumber"
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            placeholder="81******78"
-            className={`w-full pl-15 py-2.5 border-1 border-black text-black rounded-lg text-lg bg-transparent
-              transition duration-150 focus:outline-2 focus:outline-black focus:outline-offset-4`}
-            maxLength="10"
-            pattern="[6-9]{1}[0-9]{9}"
-            required
-            disabled={isSubmitted}
-          />
-        </div>
-      </div> */}
       <div className="relative mb-6">
         <input
           type="text"

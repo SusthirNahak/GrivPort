@@ -44,11 +44,8 @@ const Navbar = () => {
 
     const phoneNumberFromCookie = Cookies.get('setPhoneNumber');
     const isAboutUs = location.pathname === '/about-us';
-
-    // Function to change the language
     const changeLanguage = (event) => {
         const language = event.target.value;
-        // console.log('Selected Language:', language);
         setCurrentLanguage(language);
         i18n.changeLanguage(language)
         

@@ -2,42 +2,27 @@ const express = require("express");
 const router = express.Router();
 const { getConnection } = require('./DBConnect');
 
-
-
-// Endpoint to check and create database, table, and insert data
 router.post("/AcceptData", async (req, res) => {
-
-    console.log("Body: ", req.body);
-
     const { id } = req.body;
-    console.log("Received ID: ", id);
-    console.log(typeof(id));
-
     let connection;
 
     try {
         // Step 1: Create connection
         connection = await getConnection();
-        console.log("Connected to MySQL: " + connection.threadId);
 
         // Step 2: Create UPDATE query
         const insertDataQuery = `UPDATE form SET  Application_Status = 'process' WHERE Application_Id = ?;`;
 
         // Step 3: Execute query
         const [results] = await connection.execute(insertDataQuery, [id]);
-        console.log("Query executed successfully:", results);
 
         // Step 4: Respond to client
-        if (results.affectedRows > 0) {
-            console.log("Data updated successfully");
-            
+        if (results.affectedRows > 0) {            
             res.status(200).send({
                 success: true,
                 message: "Data updated successfully",
             });
         } else {
-            console.log("Record not found or not updated");
-
             res.status(404).send({
                 success: false,
                 message: "Record not found or not updated",
@@ -54,7 +39,6 @@ router.post("/AcceptData", async (req, res) => {
         // Close the connection
         if (connection) {
             await connection.end();
-            console.log("MySQL connection closed.");
         }
     }
 });

@@ -4,16 +4,15 @@ import VerifyOTP from "./VerifyOTP";
 import image from '../../assets/mainbg.jpg'
 
 export default function LandingPage() {
-  const [showVerifyOTP, setShowVerifyOTP] = useState(false); // State to toggle between SignIn and VerifyOTP
-
-  // Callback to switch to VerifyOTP after successful SignIn\
+  const [showVerifyOTP, setShowVerifyOTP] = useState(false); 
+  const [phoneNumber, setPhoneNumber] = useState("");
   
-  const handleSignInSuccess = () => {
+  const handleSignInSuccess = (number) => {
+    setPhoneNumber(number);
     setShowVerifyOTP(true);
   };
 
   useEffect(() => {
-    // Set the document title
     document.title = "Landing Page/Sign IN";
   }, []);
 
@@ -56,7 +55,7 @@ export default function LandingPage() {
             {!showVerifyOTP ? (
               <SignIn onSignInSuccess={handleSignInSuccess} />
             ) : (
-              <VerifyOTP />
+              <VerifyOTP phoneNumber={phoneNumber} />
             )}
 
             <div className="mt-5 text-center">

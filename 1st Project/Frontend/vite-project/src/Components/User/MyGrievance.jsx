@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import 'boxicons/css/boxicons.min.css';
 import Cookies from 'js-cookie';
+const apiKey = import.meta.env.VITE_API_KEY;
 
 export default function MyGrievance() {
     const [data, setData] = useState('');
     const [error, setError] = useState('');
     const [rejectedReason, setRejectedReason] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isRaiseTicketModalOpen, setIsRaiseTicketModalOpen] = useState(false); // [isOpen, applicationId]
+    const [isRaiseTicketModalOpen, setIsRaiseTicketModalOpen] = useState(false);
     const [ticketRaiseReason, setTicketRaiseReason] = useState('');
 
     let cookiesData = Cookies.get("setPhoneNumber");
@@ -15,7 +16,8 @@ export default function MyGrievance() {
     useEffect(() => {
         const fetchSpecificUserAllData = async () => {
             try {
-                const response = await fetch("http://localhost:5000/user/SpecificUserAllData", {
+                    const response = await fetch(`${apiKey}/user/SpecificUserAllData`, {
+
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -57,19 +59,20 @@ export default function MyGrievance() {
 
     const handleRaiseSubmit = async (e) => {
         e.preventDefault();
-        const applicationId = isRaiseTicketModalOpen[1]; // Get Application_Id from the state
+        const applicationId = isRaiseTicketModalOpen[1];
         console.log("Ticket Raise Reason: ", ticketRaiseReason);
         console.log("Application Id: ", applicationId);
 
         try {
-            const response = await fetch("http://localhost:5000/user/TicketRaiseReason", {
+                const response = await fetch(`${apiKey}/user/TicketRaiseReason`, {
+
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                     ticketRaiseReason,
-                    Application_Id: applicationId // Include Application_Id in the request
+                    Application_Id: applicationId
                 }),
             });
             if (!response.ok) {

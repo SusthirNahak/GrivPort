@@ -3,9 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { useDropzone } from "react-dropzone";
 import Cookies from 'js-cookie';
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
 import { useTranslation } from 'react-i18next';
 
-// import { useLocation } from "react-router-dom";
 import ThankYou from "./ThankYou";
 
 export default function GrievanceForm() {
@@ -54,11 +55,6 @@ export default function GrievanceForm() {
   const navigate = useNavigate();
     
 
-  // const location = useLocation();
-  // const { grievanceSelectedValue } = location.state || {};
-
-  // console.log("grievanceSelectedValue: ", grievanceSelectedValue);
-
   useEffect(() => {
     !Cookies.get('setPhoneNumber') ? navigate('/landingpage') : navigate('/grievanceform');
   }, [navigate]);
@@ -68,11 +64,9 @@ export default function GrievanceForm() {
     const fetchGrievances = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:5000/grievances");
+        const response = await fetch(`${apiKey}/grievances`);
         if (!response.ok) throw new Error("Failed to fetch Grievances");
         const data = await response.json();
-        // console.log("GRIVEANCES: ", data.sort());
-
         setGrievances(data.sort());
       } catch (err) {
         setError(err.message);
@@ -88,7 +82,7 @@ export default function GrievanceForm() {
     const fetchStates = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:5000/states");
+        const response = await fetch(`${apiKey}/states`);
         if (!response.ok) throw new Error("Failed to fetch states");
         const data = await response.json();
         data.sort((a, b) => a.state_name.localeCompare(b.state_name));
@@ -108,9 +102,7 @@ export default function GrievanceForm() {
       const fetchDistricts = async () => {
         setLoading(true);
         try {
-          const response = await fetch(
-            `http://localhost:5000/districts?stateName=${stateSelect}`
-          );
+          const response = await fetch(`${apiKey}/districts?stateName=${stateSelect}`);
           if (!response.ok) throw new Error("Failed to fetch districts");
           const data = await response.json();
           const districtData = data[0]?.districts || [];
@@ -140,9 +132,9 @@ export default function GrievanceForm() {
       const fetchBlocks = async () => {
         setLoading(true);
         try {
-          const response = await fetch(
-            `http://localhost:5000/blocks?districtName=${districtSelect}`
-          );
+
+          const response = await fetch(`${apiKey}/blocks?districtName=${districtSelect}`);
+
           if (!response.ok) throw new Error("Failed to fetch blocks");
           const data = await response.json();
           const blockData = data[0]?.blocks || [];
@@ -170,9 +162,9 @@ export default function GrievanceForm() {
       const fetchGPs = async () => {
         setLoading(true);
         try {
-          const response = await fetch(
-            `http://localhost:5000/GPs?stateName=${stateSelect}&districtName=${districtSelect}&blockName=${blockSelect}`
-          );
+
+          const response = await fetch(`${apiKey}/GPs?stateName=${stateSelect}&districtName=${districtSelect}&blockName=${blockSelect}`);
+
           if (!response.ok) throw new Error("Failed to fetch GPs");
           const data = await response.json();
           const gpData = data?.gram_panchayats || [];
@@ -198,9 +190,9 @@ export default function GrievanceForm() {
       const fetchVillages = async () => {
         setLoading(true);
         try {
-          const response = await fetch(
-            `http://localhost:5000/villages?stateName=${stateSelect}&districtName=${districtSelect}&blockName=${blockSelect}&gpName=${gpSelect}`
-          );
+ 
+          const response = await fetch(`${apiKey}/villages?stateName=${stateSelect}&districtName=${districtSelect}&blockName=${blockSelect}&gpName=${gpSelect}`);
+
           if (!response.ok) throw new Error("Failed to fetch villages");
           const data = await response.json();
           const villageData = data?.villages || [];
@@ -219,7 +211,7 @@ export default function GrievanceForm() {
   }, [gpSelect]);
 
   // File
-  const maxSize = 1024 * 1024 * 1024; // 1GB in bytes
+  const maxSize = 1024 * 1024 * 1024;
 
   const onDrop = useCallback((acceptedFiles) => {
     const validFiles = acceptedFiles.filter((file) => file.size <= maxSize);
@@ -329,16 +321,14 @@ export default function GrievanceForm() {
 
     console.log("Submitting formData:");
     for (let [key, value] of formData.entries()) {
-      console.log(`${key}: ${value}`); // Log FormData contents
+      console.log(`${key}: ${value}`);
     }
 
     try {
-      const response = await fetch("http://localhost:5000/userFormData", {
+        const response = await fetch(`${apiKey}/userFormData`, {
         method: "POST",
         body: formData,
       });
-
-      // console.log("RESPONSE: ", response);
 
       if (!response.ok)
         throw new Error(
@@ -355,25 +345,12 @@ export default function GrievanceForm() {
       }
       setIsSubmitted(true);
       setData(data);
-
-      // setName("");
-      // setGrievanceSelect("");
-      // setStateSelect("");
-      // setDistrictSelect("");
-      // setBlockSelect("");
-      // setGPSelect("");
-      // setVillageSelect("");
-      // setAddress("");
-      // setGender("");
-      // setDisability("");
-      // setEmail("");
     } catch (err) {
       setError(err.message);
     }
   };
 
   return (
-    // <div className="bg-amber-50">
     <div className="pt-24 pb-16 mx-auto sm:w-3/4 mt-2 px-6 md:px-0">
       <h1 className="font-bold text-4xl my-5">{t('Enter_Location_Details')}</h1>
       <hr className="w-full" />
@@ -430,7 +407,6 @@ export default function GrievanceForm() {
                placeholder-gray-400"
             required
           />
-          {/* disabled={!grievanceSelect} */}
         </div>
         {/* State */}
         <div className="col-span-12 md:col-span-3 mt-5 sm:mt-0">
@@ -915,6 +891,5 @@ export default function GrievanceForm() {
         }
       `}</style>
     </div>
-    // </div>
   );
 }

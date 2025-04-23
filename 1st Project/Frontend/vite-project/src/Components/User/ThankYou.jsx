@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 const ThankYou = ({ onClose, message }) => {
-  // State to control animation
   const [isVisible, setIsVisible] = useState(false);
 
-  // Trigger animation on component mount
   useEffect(() => {
     setIsVisible(true);
-    // // Optional: Auto-close after some time
-    // const timer = setTimeout(() => {
-    //   setIsVisible(false);
-    //   setTimeout(() => onClose && onClose(), 300); // Wait for animation to complete
-    // }, 3000); // Shows for 3 seconds
-
-    // return () => clearTimeout(timer);
   }, [onClose]);
 
   return (
