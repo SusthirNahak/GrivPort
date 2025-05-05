@@ -60,8 +60,6 @@ export default function SelectGreivance() {
       const selectedValue = e.target.value;
       const selectedOption = options.find((opt) => opt.value === selectedValue);;
       setSelectGreivance(selectedValue);
-      console.log("Selected Text:", selectedOption.text);
-      console.log("Selected Value:", selectedValue);
     } catch (error) {
       console.error("Error in handleSelectChange:", error);
     }
@@ -74,8 +72,6 @@ export default function SelectGreivance() {
         navigate("/grievanceform", {
           state: { grievanceSelectedValue: selectGreivance },
         });
-      } else {
-        console.log("No grievance selected");
       }
     } catch (error) {
       console.error("Error in handleSubmit:", error);

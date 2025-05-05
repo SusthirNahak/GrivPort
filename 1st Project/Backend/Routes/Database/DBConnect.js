@@ -1,33 +1,42 @@
 const mysql = require("mysql2/promise");
 require("dotenv").config();
 
+let pool;
+
+async function initializePool() {
+  if (!pool) {
+    try {
+      pool = mysql.createPool({
+        host: process.env.DB_HOST || "localhost",
+        user: process.env.DB_USER || "WilyFox",
+        password: process.env.DB_PASSWORD || "WilyFox@12345",
+        multipleStatements: true,
+        waitForConnections: true,
+        connectionLimit: 10,
+        queueLimit: 0,
+      });
+
+      // Create the database if it doesn't exist
+      const dbName = process.env.DB_NAME || "WilyFox";
+      await pool.query(`CREATE DATABASE IF NOT EXISTS ${dbName}`);
+    } catch (err) {
+      console.error("Failed to initialize connection pool:", err.message);
+      throw err;
+    }
+  }
+}
+
 async function getConnection() {
-  let connection;
-
   try {
-    // Step 1: Create a connection without specifying a database
-    connection = await mysql.createConnection({
-      host: process.env.hostname,
-      user: process.env.username,
-      password: process.env.password,
-      multipleStatements: true,
-    });
+    // Ensure the pool is initialized
+    await initializePool();
 
-    // Step 2: Create the database if it doesn't exist
-    const dbName = process.env.pathname || "WilyFox";
-    await connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName}`);
+    // Get a connection from the pool
+    const connection = await pool.getConnection();
 
-    // Step 3: Close the initial connection
-    await connection.end();
-
-    // Step 4: Reconnect to the newly created/existing database
-    connection = await mysql.createConnection({
-      host: process.env.hostname,
-      user: "WilyFox",
-      password: process.env.password,
-      database: dbName,
-      multipleStatements: true,
-    });
+    // Switch to the specified database
+    const dbName = process.env.DB_NAME || "WilyFox";
+    await connection.changeUser({ database: dbName });
 
     return connection;
   } catch (err) {

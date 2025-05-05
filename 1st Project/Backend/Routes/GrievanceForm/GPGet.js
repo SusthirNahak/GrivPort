@@ -9,6 +9,7 @@ const fs = require("fs");
 let GPData = [];
 router.get("/", (req, res) => {
   const { stateName, districtName, blockName } = req.query;
+  
   if (!stateName && !districtName && !blockName) {
     return res
       .status(400)

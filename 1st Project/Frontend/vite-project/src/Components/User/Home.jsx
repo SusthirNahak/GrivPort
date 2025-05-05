@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import Cookies from 'js-cookie';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 import '../../UserIndex.css';
 
 
 const Home = () => {
+    const { t } = useTranslation();
+    
     const [isVisible, setIsVisible] = useState({
         hero: false,
         stats: false,
@@ -342,29 +345,29 @@ const Home = () => {
 
             {/* CTA Section */}
             <section
-                ref={sectionRefs.cta}
-                className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-indigo-700 text-white"
-            >
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible.cta ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Your Grievance Addressed?</h2>
-                        <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                            Your voice matters to us. Submit your grievance today and experience transparent, efficient resolution.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="px-8 py-3 rounded-full border-2 border-white text-white font-medium hover:bg-white hover:text-blue-700 hover:bg-opacity-90 shadow-lg transition duration-300 transform hover:-translate-y-1" onClick={() => {
-                                    cookiesData ? navigate('/grievanceform') : navigate('/landingpage');
-                                }}>
-                                File a Grievance
-                            </button>
-                            <Link to="/about-us" className="px-8 py-3 rounded-full border-2 border-white text-white font-medium hover:bg-white hover:text-blue-700 hover:bg-opacity-10 transition duration-300">
-                                Learn More
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        ref={sectionRefs.cta}
+        className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-indigo-700 text-white"
+      >
+        <div className="container mx-auto px-4 md:px-6">
+          <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible.cta ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('grievance_send_title')}</h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              {t('grievance_send_paragraph')}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-3 rounded-full border-2 border-white text-white font-medium hover:bg-white hover:text-blue-700 hover:bg-opacity-90 shadow-lg transition duration-300 transform hover:-translate-y-1" onClick={() => {
 
+                cookiesData ? navigate('/grievanceform') : navigate('/landingpage');
+              }}>
+                {t("file_a_grievance")}
+              </button>
+              <Link to="/about-us" className="px-8 py-3 rounded-full border-2 border-white text-white font-medium hover:bg-white hover:text-blue-700 hover:bg-opacity-10 transition duration-300">
+                {t('learn_more')}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
         </div>
     );

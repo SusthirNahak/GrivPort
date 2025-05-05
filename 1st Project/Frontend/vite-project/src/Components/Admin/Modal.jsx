@@ -32,9 +32,7 @@ const Modal = ({ isOpen, onClose, data }) => {
       const types = JSON.parse(fileTypes);
 
       return files.map((file, index) => {
-        console.log("FILE: ", file);
-        console.log("TYPES: ", types);
-
+;
         const urlWithoutParams = file.split("?")[0];
         const fileExtension = urlWithoutParams.split(".").pop().toLowerCase();
 

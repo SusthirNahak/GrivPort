@@ -1,8 +1,15 @@
 
 import { useState, useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
+import Cookies from "js-cookie";
+import { motion } from 'framer-motion';
 
 
 const AboutUs = () => {
+
+  const { t } = useTranslation();
+
   const [isVisible, setIsVisible] = useState({
     hero: false,
     mission: false,
@@ -18,8 +25,12 @@ const AboutUs = () => {
     team: useRef(null),
     history: useRef(null),
     achievements: useRef(null),
-    contact: useRef(null)
+    contact: useRef(null),
+    cta: useRef(null)
   };
+
+  const navigate = useNavigate();
+  let cookiesData = Cookies.get("setPhoneNumber");
 
   useEffect(() => {
     const observerOptions = {
@@ -27,7 +38,7 @@ const AboutUs = () => {
     };
 
     const observers = {};
-    
+
     Object.entries(sectionRefs).forEach(([key, ref]) => {
       const callback = (entries) => {
         entries.forEach(entry => {
@@ -36,15 +47,14 @@ const AboutUs = () => {
           }
         });
       };
-      
+
       observers[key] = new IntersectionObserver(callback, observerOptions);
       if (ref.current) {
         observers[key].observe(ref.current);
       }
     });
 
-    // Immediately set hero to visible for better UX
-    setIsVisible(prev => ({ ...prev, hero: true }));
+
 
     return () => {
       Object.entries(observers).forEach(([key, observer]) => {
@@ -55,94 +65,168 @@ const AboutUs = () => {
     };
   }, []);
 
-  const fadeInClass = (section) => 
+  const fadeInClass = (section) =>
     isVisible[section] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10';
 
+
+  useEffect(() => {
+    // Set hero section to visible on mount for immediate animation
+    setIsVisible(true);
+  }, []);
+
+  // Text animation variants
+  const textVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: 'easeOut',
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  // Child text animation variants
+  const childVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
+  };
+
+  // Image animation variants
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 1, ease: 'easeOut' },
+    },
+  };
   return (
-    <div className="min-h-screen bg-gray-50">
-    
-      
+    <div className="min-h-screen bg-gray-100">
+
+
       {/* Hero Section */}
-      <section 
-        ref={sectionRefs.hero}
-        className="pt-28 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-900 to-indigo-900 text-white"
-      >
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <div className={`max-w-3xl mx-auto transition-all duration-1000 ease-out ${fadeInClass('hero')}`}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              About GrievEase
-            </h1>
-            <p className="mt-6 text-xl text-blue-100 max-w-2xl mx-auto">
-              Empowering citizens through transparent and efficient grievance redressal. Learn about our mission, team, and the impact we're making.
-            </p>
-          </div>
-          <div className={`mt-12 max-w-4xl mx-auto transition-all duration-1000 delay-300 ease-out transform ${isVisible.hero ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-50 rounded-lg"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=1000&auto=format&fit=crop" 
-                alt="Government office building" 
-                className="w-full h-64 md:h-96 object-cover rounded-lg shadow-2xl"
+      <section className="relative w-full min-h-screen flex items-center justify-center pt-36 md:pt-24 px-4 bg-gradient-to-br from-indigo-50 via-white to-blue-50 overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-200 rounded-full filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
+        </div>
+
+        <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 z-10">
+        {/* Text Container */}
+          <motion.div
+            className="order-2 lg:order-1 w-full lg:w-1/2 flex flex-col justify-center px-6 md:px-12"
+            variants={textVariants}
+            initial="hidden"
+            animate={isVisible ? 'visible' : 'hidden'}
+          >
+            <motion.h1
+              className="text-4xl md:text-5xl lg:text-6xl font-bold flex justify-center items-center md:text-left bg-clip-text text-transparent bg-gradient-to-r from-indigo-900 via-blue-700 to-blue-500 mb-4 py-4 tracking-tight"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+              variants={childVariants}
+            >
+              {t('minister_name')}
+            </motion.h1>
+
+            <motion.p
+              className="text-2xl lg:text-3xl font-light flex justify-center items-center text-justify text-gray-700 mb-6 tracking-wide italic"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+              variants={childVariants}
+            >
+              {t('what_is_he')}
+            </motion.p>
+
+            <motion.p
+              className="text-lg md:text-xl flex justify-center items-center text-justify text-gray-600 mb-8 leading-relaxed"
+              style={{ fontFamily: "'EB Garamond', serif" }}
+              variants={childVariants}
+            >
+              {t('about_him_para_1')}
+            </motion.p>
+
+            <motion.p
+              className="text-lg md:text-xl flex justify-center items-center text-justify text-gray-600 mb-8 leading-relaxed"
+              style={{ fontFamily: "'EB Garamond', serif" }}
+              variants={childVariants}
+            >
+              {t('about_him_para_2')}
+            </motion.p>
+
+            <motion.div
+              className="flex justify-center md:justify-start"
+              variants={childVariants}
+            >
+              <button className="px-8 py-3 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-700 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                {t('learn_more')}
+              </button>
+            </motion.div>
+          </motion.div>
+
+          {/* Image Container */}
+          <motion.div
+            className="order-1 lg:order-2 w-full lg:w-1/2 flex justify-center"
+            variants={imageVariants}
+            initial="hidden"
+            animate={isVisible ? 'visible' : 'hidden'}
+            whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+          >
+            <div className="relative max-w-md md:max-w-lg">
+              <div className="absolute -inset-4 bg-gradient-to-r from-indigo-200 to-blue-200 rounded-3xl transform -rotate-3 z-0 opacity-50"></div>
+              <img
+                src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+                alt="Minister Image"
+                className="relative z-10 rounded-3xl shadow-2xl w-full h-auto object-cover"
               />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/40 to-transparent z-10"></div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Mission & Vision Section */}
-      <section 
+      <section
         ref={sectionRefs.mission}
         className="py-16 md:py-24 bg-white"
       >
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 ">
           <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className={`md:w-1/2 transition-all duration-700 ease-out ${fadeInClass('mission')}`}>
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Our Mission & Vision</h2>
+            <div className={`md:w-1/2 transition-all duration-700 ease-out  ${fadeInClass('mission')}`}>
+              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">{t('mission_visoin_title')}</h2>
               <div className="space-y-8">
                 <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
-                  <h3 className="text-xl font-semibold text-blue-800 mb-3">Our Mission</h3>
-                  <p className="text-gray-700">
-                    To provide a transparent, accessible, and efficient platform for citizens to voice their grievances and receive timely resolutions, fostering trust between the government and its people.
-                  </p>
+                  <h3 className="text-xl font-semibold text-blue-800 mb-3">{t('mission_visoin_subtitle_1')}</h3>
+                  <p className="text-gray-700">{t('mission_visoin_sparagraph_1')}</p>
                 </div>
-                
+
                 <div className="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-600">
-                  <h3 className="text-xl font-semibold text-indigo-800 mb-3">Our Vision</h3>
+                  <h3 className="text-xl font-semibold text-indigo-800 mb-3">{t('mission_visoin_subtitle_2')}</h3>
                   <p className="text-gray-700">
-                    A responsive governance system where every citizen's voice is heard, respected, and addressed, leading to improved public services and enhanced quality of life for all.
+                    {t('mission_visoin_sparagraph_2')}
                   </p>
                 </div>
-                
-                <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-600">
-                  <h3 className="text-xl font-semibold text-purple-800 mb-3">Our Values</h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="flex items-center">
-                      <div className="h-2 w-2 rounded-full bg-purple-600 mr-2"></div>
-                      <span className="text-gray-700">Transparency</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="h-2 w-2 rounded-full bg-purple-600 mr-2"></div>
-                      <span className="text-gray-700">Accountability</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="h-2 w-2 rounded-full bg-purple-600 mr-2"></div>
-                      <span className="text-gray-700">Efficiency</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="h-2 w-2 rounded-full bg-purple-600 mr-2"></div>
-                      <span className="text-gray-700">Citizen-Centric</span>
-                    </div>
-                  </div>
+
+                <div className="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-600">
+                  <h3 className="text-xl font-semibold text-indigo-800 mb-3">{t('mission_visoin_subtitle_3')}</h3>
+                  <p className="text-gray-700">
+                    {t('mission_visoin_sparagraph_3')}
+                  </p>
                 </div>
               </div>
             </div>
-            
+
             <div className={`md:w-1/2 transition-all duration-700 delay-200 ease-out ${fadeInClass('mission')}`}>
-              <div className="relative">
+              <div className="relative ">
                 <div className="absolute -top-6 -left-6 w-full h-full bg-gradient-to-br from-blue-200 to-indigo-200 rounded-xl transform -rotate-2"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Team meeting" 
+                <img
+                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop"
+                  alt="Team meeting"
                   className="relative z-10 rounded-xl shadow-lg w-full"
                 />
                 <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg z-20 max-w-xs">
@@ -155,164 +239,34 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Leadership Team Section */}
-      <section 
-        ref={sectionRefs.team}
-        className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50"
+      {/* CTA Section */}
+      <section
+        ref={sectionRefs.cta}
+        className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-indigo-700 text-white"
       >
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className={`text-3xl md:text-4xl font-bold text-blue-900 transition-all duration-700 ${isVisible.team ? 'opacity-100' : 'opacity-0'}`}>
-              Leadership Team
-            </h2>
-            <p className={`mt-4 text-lg text-gray-600 transition-all duration-700 delay-200 ${isVisible.team ? 'opacity-100' : 'opacity-0'}`}>
-              Meet the dedicated officials leading our mission to transform grievance redressal in India.
+          <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible.cta ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('grievance_send_title')}</h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              {t('grievance_send_paragraph')}
             </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Dr. Rajiv Sharma, IAS',
-                role: 'Secretary, Department of Administrative Reforms',
-                bio: 'With over 25 years of public service experience, Dr. Sharma leads GrievEase with a vision to transform citizen-government interaction.',
-                image: 'https://randomuser.me/api/portraits/men/32.jpg'
-              },
-              {
-                name: 'Ms. Sunita Patel, IAS',
-                role: 'Joint Secretary, Grievance Cell',
-                bio: 'A champion of digital governance, Ms. Patel has pioneered several e-governance initiatives that have improved government services.',
-                image: 'https://randomuser.me/api/portraits/women/44.jpg'
-              },
-              {
-                name: 'Mr. Anil Kumar, IPS',
-                role: 'Director of Operations',
-                bio: 'With expertise in process optimization, Mr. Kumar ensures that grievances are addressed efficiently and effectively.',
-                image: 'https://randomuser.me/api/portraits/men/67.jpg'
-              }
-            ].map((member, index) => (
-              <div 
-                key={index}
-                className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-700 ease-out ${isVisible.team ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${200 * index}ms` }}
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-50"></div>
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover object-center"
-                  />
-                  <div className="absolute bottom-0 left-0 p-6 text-white">
-                    <h3 className="font-bold text-xl">{member.name}</h3>
-                    <p className="text-blue-200">{member.role}</p>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-600">{member.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-3 rounded-full border-2 border-white text-white font-medium hover:bg-white hover:text-blue-700 hover:bg-opacity-90 shadow-lg transition duration-300 transform hover:-translate-y-1" onClick={() => {
 
-      {/* History & Evolution Section */}
-      <section 
-        ref={sectionRefs.history}
-        className="py-16 md:py-24 bg-white"
-      >
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 className={`text-3xl md:text-4xl font-bold text-blue-900 text-center mb-16 transition-all duration-700 ${isVisible.history ? 'opacity-100' : 'opacity-0'}`}>
-              Our Journey
-            </h2>
-            
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-blue-200 transform md:translate-x-[-50%]"></div>
-              
-              {/* Timeline items */}
-              {[
-                {
-                  year: '2018',
-                  title: 'Initiative Launch',
-                  description: 'The GrievEase initiative was launched as part of the Digital India program to modernize the grievance redressal system.',
-                  align: 'right'
-                },
-                {
-                  year: '2019',
-                  title: 'Pilot Program',
-                  description: 'Successfully implemented in 10 states, establishing the framework for a nationwide grievance handling system.',
-                  align: 'left'
-                },
-                {
-                  year: '2020',
-                  title: 'Digital Transformation',
-                  description: 'Complete digital overhaul with mobile app launch and integration with other government services.',
-                  align: 'right'
-                },
-                {
-                  year: '2021',
-                  title: 'Nationwide Expansion',
-                  description: 'Expanded to all states and union territories with localized language support for broader accessibility.',
-                  align: 'left'
-                },
-                {
-                  year: '2022',
-                  title: 'AI Integration',
-                  description: 'Introduced AI-powered categorization and routing to speed up grievance processing and resolution.',
-                  align: 'right'
-                },
-                {
-                  year: '2023',
-                  title: 'International Recognition',
-                  description: 'Received UN Public Service Award for innovative use of technology in public grievance management.',
-                  align: 'left'
-                }
-              ].map((item, index) => (
-                <div 
-                  key={index}
-                  className={`relative mb-12 md:mb-24 transition-all duration-700 ease-out ${isVisible.history ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                  style={{ transitionDelay: `${150 * index}ms` }}
-                >
-                  <div className={`flex flex-col md:flex-row items-center ${item.align === 'left' ? 'md:flex-row-reverse' : ''}`}>
-                    <div className="md:w-1/2 flex justify-center md:justify-end md:pr-12 md:pl-0 pl-12">
-                      {item.align === 'right' && (
-                        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 md:ml-auto">
-                          <h3 className="text-xl font-semibold text-blue-800 mb-2">{item.title}</h3>
-                          <p className="text-gray-600">{item.description}</p>
-                        </div>
-                      )}
-                    </div>
-                    
-                    <div className="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] flex flex-col items-center">
-                      <div className="w-8 h-8 rounded-full bg-blue-600 z-10 flex items-center justify-center text-white font-bold">
-                        {index + 1}
-                      </div>
-                      <div className="bg-blue-800 text-white font-bold px-3 py-1 rounded mt-2">
-                        {item.year}
-                      </div>
-                    </div>
-                    
-                    <div className="md:w-1/2 flex justify-center md:justify-start md:pl-12 md:pr-0 pl-12">
-                      {item.align === 'left' && (
-                        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 md:mr-auto">
-                          <h3 className="text-xl font-semibold text-blue-800 mb-2">{item.title}</h3>
-                          <p className="text-gray-600">{item.description}</p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
+                cookiesData ? navigate('/grievanceform') : navigate('/landingpage');
+              }}>
+                {t("file_a_grievance")}
+              </button>
+              <Link to="/about-us" className="px-8 py-3 rounded-full border-2 border-white text-white font-medium hover:bg-white hover:text-blue-700 hover:bg-opacity-10 transition duration-300">
+                {t('learn_more')}
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Achievements Section */}
-      <section 
+      <section
         ref={sectionRefs.achievements}
         className="py-16 md:py-24 bg-gradient-to-b from-blue-50 to-white"
       >
@@ -325,7 +279,7 @@ const AboutUs = () => {
               Milestones that mark our commitment to transforming citizen experience.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
@@ -389,7 +343,7 @@ const AboutUs = () => {
                 )
               }
             ].map((achievement, index) => (
-              <div 
+              <div
                 key={index}
                 className={`bg-white p-6 rounded-xl shadow-md border border-gray-100 transition-all duration-700 ease-out transform hover:-translate-y-2 hover:shadow-lg ${isVisible.achievements ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${100 * index}ms` }}
@@ -411,7 +365,7 @@ const AboutUs = () => {
       </section>
 
       {/* Contact Section */}
-      <section 
+      <section
         ref={sectionRefs.contact}
         className="py-16 md:py-24 bg-gradient-to-br from-blue-900 to-indigo-900 text-white"
       >
@@ -421,7 +375,7 @@ const AboutUs = () => {
             <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
               Have questions about GrievEase? Our team is here to help you navigate the grievance redressal process.
             </p>
-            
+
             <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl shadow-lg">
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
@@ -434,7 +388,7 @@ const AboutUs = () => {
                   <p className="text-blue-200">contact@grievease.gov.in</p>
                   <p className="text-blue-200">support@grievease.gov.in</p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-full bg-blue-500 mx-auto flex items-center justify-center mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -445,7 +399,7 @@ const AboutUs = () => {
                   <p className="text-blue-200">Toll Free: 1800-123-4567</p>
                   <p className="text-blue-200">Helpline: +91-11-23456789</p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-full bg-blue-500 mx-auto flex items-center justify-center mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -458,7 +412,7 @@ const AboutUs = () => {
                   <p className="text-blue-200">New Delhi, 110001</p>
                 </div>
               </div>
-              
+
               <div className="mt-12 text-center">
                 <button className="px-8 py-3 bg-white text-blue-900 font-medium rounded-full transition duration-300 hover:bg-blue-100 hover:shadow-lg">
                   Contact Support

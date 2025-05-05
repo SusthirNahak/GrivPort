@@ -1,37 +1,70 @@
-const express = require('express');
-const nodemailer = require('nodemailer');
-const PDFDocument = require('pdfkit-table');
-const fs = require('fs');
-const path = require('path');
+const express = require("express");
+const nodemailer = require("nodemailer");
+const PDFDocument = require("pdfkit-table");
+const fs = require("fs");
+const path = require("path");
 const router = express.Router();
+require("dotenv").config();
 
-router.post('/', async (req, res) => {
-  const { email, department, shareData } = req.body;
+const { getConnection } = require("./Database/DBConnect");
+let connection = getConnection();
 
-  
-  const sendUser = 'rakeshkumarsahoo398@gmail.com';
-  const sendUserCode = 'gdelfzgruozwrbcu';
-  const fromMail = 'rakeshkumarsahoo398@gmail.com';
+router.post("/", async (req, res) => {
+  const { email, department, priority, recipientName, shareData } = req.body;
+
+  const sendUser = "rakeshkumarsahoo398@gmail.com";
+  const sendUserCode = "gdelfzgruozwrbcu";
+  const fromMail = "rakeshkumarsahoo398@gmail.com";
   const toMail = email;
+  const time =
+    priority.toLowerCase() === "high"
+      ? "12 Hours"
+      : priority.toLowerCase() === "medium"
+      ? "1 Day"
+      : "2 Days";
+  const color =
+    time === "12 Hours" ? "red" : time === "1 Day" ? "orange" : "green";
 
-  // Validate input
-  if (!email || !department || !shareData) {
-    return res.status(400).json({ message: 'Missing required fields.' });
+  const token = `${Date.now()}-${Math.floor(Math.random() * 100000)}`;
+  const link = `${process.env.VITE_API_KEY}/status-update/${token}`;
+  const expiryDate = new Date(
+    Date.now() +
+      (time === "12 Hours" ? 12 : time === "1 Day" ? 24 : 48) * 60 * 60 * 1000
+  );
+
+  if (!email || !department || !shareData || !priority || !recipientName) {
+    return res.status(400).json({ message: "Missing required fields." });
   }
 
-  // Create unique PDF filename for generated form
   const pdfFilename = `grievance_${Date.now()}.pdf`;
   const pdfPath = path.join(__dirname, pdfFilename);
 
-  // Create PDF with margins
-  const doc = new PDFDocument({ margins: { top: 50, bottom: 50, left: 50, right: 50 } });
+  const doc = new PDFDocument({
+    margins: { top: 50, bottom: 50, left: 50, right: 50 },
+  });
   const writeStream = fs.createWriteStream(pdfPath);
+  writeStream.on("error", (err) => {
+    console.error("PDF write error:", err);
+
+    fs.unlink(pdfPath, (unlinkErr) => {
+      if (unlinkErr) console.error("Failed to delete partial PDF:", unlinkErr);
+    });
+    if (!res.headersSent) {
+      res.status(500).json({ message: "Failed to create PDF." });
+    }
+  });
   doc.pipe(writeStream);
 
   // Add formal header
-  doc.font('Helvetica-Bold').fontSize(24).text('Grievance Form Submission', { align: 'center' });
+  doc
+    .font("Helvetica-Bold")
+    .fontSize(24)
+    .text("Grievance Form Submission", { align: "center" });
   doc.moveDown(0.5);
-  doc.font('Helvetica').fontSize(12).text(`Date: ${new Date().toLocaleDateString()}`, { align: 'center' });
+  doc
+    .font("Helvetica")
+    .fontSize(12)
+    .text(`Date: ${new Date().toLocaleDateString()}`, { align: "center" });
   doc.moveDown(2);
 
   // Draw page border
@@ -40,30 +73,38 @@ router.post('/', async (req, res) => {
   const borderMargin = 30;
   doc
     .lineWidth(1)
-    .rect(borderMargin, borderMargin, pageWidth - 2 * borderMargin, pageHeight - 2 * borderMargin)
+    .rect(
+      borderMargin,
+      borderMargin,
+      pageWidth - 2 * borderMargin,
+      pageHeight - 2 * borderMargin
+    )
     .stroke();
 
   // Define table data based on shareData
   const table = {
-    headers: ['Field', 'Value'],
+    headers: ["Field", "Value"],
     rows: [
-      ['Application ID', shareData.Application_Id || 'N/A'],
-      ['Application Status', shareData.Application_Status || 'N/A'],
-      ['Name', shareData.Name || 'N/A'],
-      ['Email', shareData.Email || 'N/A'],
-      ['Gender', shareData.Gender || 'N/A'],
-      ['Disability', shareData.Disability || 'N/A'],
-      ['Address', shareData.Address || 'N/A'],
-      ['State', shareData.State || 'N/A'],
-      ['District', shareData.District || 'N/A'],
-      ['Block', shareData.Block || 'N/A'],
-      ['Grama Panchayat', shareData.GP || 'N/A'],
-      ['Village', shareData.Village || 'N/A'],
-      ['Grievance', shareData.Grievance || 'N/A'],
-      ['User Ticket Raise Message', shareData.User_Ticket_Raise_Message || 'N/A'],
-      ['Review Message', shareData.Review_Message || 'N/A'],
-      ['Any Suggestion or Problem', shareData.Message || 'N/A'],
-      ['Created Time', shareData.created_at || 'N/A'],
+      ["Application ID", shareData.Application_Id || "N/A"],
+      ["Application Status", shareData.Application_Status || "N/A"],
+      ["Name", shareData.Name || "N/A"],
+      ["Email", shareData.Email || "N/A"],
+      ["Gender", shareData.Gender || "N/A"],
+      ["Disability", shareData.Disability || "N/A"],
+      ["Address", shareData.Address || "N/A"],
+      ["State", shareData.State || "N/A"],
+      ["District", shareData.District || "N/A"],
+      ["Block", shareData.Block || "N/A"],
+      ["Grama Panchayat", shareData.GP || "N/A"],
+      ["Village", shareData.Village || "N/A"],
+      ["Grievance", shareData.Grievance || "N/A"],
+      [
+        "User Ticket Raise Message",
+        shareData.User_Ticket_Raise_Message || "N/A",
+      ],
+      ["Review Message", shareData.Review_Message || "N/A"],
+      ["Any Suggestion or Problem", shareData.Message || "N/A"],
+      ["Created Time", shareData.created_at || "N/A"],
     ],
   };
 
@@ -72,13 +113,13 @@ router.post('/', async (req, res) => {
     width: pageWidth - 100,
     padding: 8,
     columnSpacing: 10,
-    prepareHeader: () => doc.font('Helvetica-Bold').fontSize(12),
+    prepareHeader: () => doc.font("Helvetica-Bold").fontSize(12),
     prepareRow: (row, indexColumn, indexRow, rectRow, rectCell) => {
-      doc.font('Helvetica').fontSize(10);
+      doc.font("Helvetica").fontSize(10);
       if (indexRow === -1) {
-        doc.addBackground(rectRow, 'grey', 0.3);
+        doc.addBackground(rectRow, "grey", 0.3);
       } else if (indexRow % 2 === 0) {
-        doc.addBackground(rectRow, 'grey', 0.1);
+        doc.addBackground(rectRow, "grey", 0.1);
       }
       doc
         .lineWidth(0.5)
@@ -89,39 +130,40 @@ router.post('/', async (req, res) => {
 
   // Add footer
   doc.moveDown(2);
-  doc.fontSize(10).text('Generated by Grievance Management System', { align: 'center' });
+  doc
+    .fontSize(10)
+    .text("Generated by Grievance Management System", { align: "center" });
 
   doc.end();
 
-  writeStream.on('finish', async () => {
-    // Prepare email attachments
+  writeStream.on("finish", async () => {
     const attachments = [
       {
-        filename: 'grievance-form.pdf',
+        filename: "grievance-form.pdf",
         path: pdfPath,
       },
     ];
 
-    // Parse File_Paths and File_Names
     let filePaths = [];
     let fileNames = [];
     try {
-      filePaths = JSON.parse(shareData.File_Paths || '[]');
-      fileNames = JSON.parse(shareData.File_Names || '[]');
+      filePaths = JSON.parse(shareData.File_Paths || "[]");
+      fileNames = JSON.parse(shareData.File_Names || "[]");
     } catch (err) {
-      console.warn('Failed to parse File_Paths or File_Names:', err.message);
+      console.warn("Failed to parse File_Paths or File_Names:", err.message);
     }
 
-    // Add documents from File_Paths
     if (filePaths.length > 0) {
       for (let i = 0; i < filePaths.length; i++) {
         let filePath = filePaths[i];
         const fileName = fileNames[i] || path.basename(filePath);
 
-        // Sanitize file path to prevent directory traversal
-        filePath = path.resolve(__dirname, '../Uploads', path.basename(filePath));
+        filePath = path.resolve(
+          __dirname,
+          "../Uploads",
+          path.basename(filePath)
+        );
 
-        // Validate file exists and is a PDF or image
         try {
           const stats = fs.statSync(filePath);
           if (!stats.isFile()) {
@@ -130,7 +172,7 @@ router.post('/', async (req, res) => {
           }
 
           const mimeType = path.extname(filePath).toLowerCase();
-          if (!['.pdf', '.jpg', '.jpeg', '.png'].includes(mimeType)) {
+          if (![".pdf", ".jpg", ".jpeg", ".png"].includes(mimeType)) {
             console.warn(`Skipping ${filePath}: Invalid file type`);
             continue;
           }
@@ -145,43 +187,59 @@ router.post('/', async (req, res) => {
       }
     }
 
-    // Send email with attachments
-    let transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: sendUser,
-        pass: sendUserCode,
-      },
-      port: 465,
-      secure: true,
-    });
-
-    let mailOptions = {
-      from: fromMail,
-      to: toMail,
-      subject: `Grievance Form Submission - ${shareData.Application_Id}`,
-      text:
-        'Please find the attached PDF containing the grievance form data.' +
-        (attachments.length > 1 ? ' Additional documents are also attached.' : ''),
-      attachments: attachments,
-    };
-
+    let connection;
     try {
-      await transporter.sendMail(mailOptions);
-      res.json({ success: true, message: 'Email sent successfully!' });
+      connection = await getConnection();
+  
+      const [rows] = await connection.query(
+        `UPDATE form SET resolution_token = ?, expiry_time = ? WHERE Application_Id = ?`,
+        [token, expiryDate, shareData.Application_Id]
+      );
+
+      if (rows.affectedRows > 0) {
+        let transporter = nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: sendUser,
+            pass: sendUserCode,
+          },
+          port: 465,
+          secure: true,
+        });
+
+        let mailOptions = {
+          from: fromMail,
+          to: toMail,
+          subject: shareData.Grievance,
+          html: `Dear ${recipientName},<br><br>
+        Please find attached the official grievance form submission for your reference.<br><br>
+        The attached PDF contains the details provided, including personal information, grievance description, and additional remarks. If you have any further queries or require clarification, please feel free to contact us.<br><br>
+        <b>**This is a <i style="font-size: 16px;">${priority}</i> priority issue. Please resolve it within <span style="font-size: 16px; color: ${color}">${time}</span>.**</b><br><br>
+        <a href="${link}">${link}</a><br><br>
+        Thank you for your attention to this matter.<br><br>
+        Best regards,<br>
+        Grievance Management Team
+      `,
+          attachments: attachments,
+        };
+
+        await transporter.sendMail(mailOptions);
+        res.json({ success: true, message: "Email sent successfully!" });
+      } else {
+        return res.status(404).json({ message: "User not found" });
+      }
     } catch (error) {
-      console.error('Email error:', error);
-      res.status(500).json({success: false, message: 'Failed to send email.', error: error.message });
+      console.error("Email error:", error);
+      res.status(500).json({
+        success: false,
+        message: "Failed to send email.",
+        error: error.message,
+      });
     } finally {
       fs.unlink(pdfPath, (err) => {
-        if (err) console.error('Failed to delete PDF:', err);
+        if (err) console.error("Failed to delete PDF:", err);
       });
     }
-  });
-
-  writeStream.on('error', (err) => {
-    console.error('PDF write error:', err);
-    res.status(500).json({ message: 'Failed to create PDF.' });
   });
 });
 

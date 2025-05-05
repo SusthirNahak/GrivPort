@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getConnection } = require('./DBConnect');
+const { getConnection } = require("./DBConnect");
 
 router.get("/Data", async (req, res) => {
   let connection;
@@ -8,23 +8,22 @@ router.get("/Data", async (req, res) => {
   try {
     // Step 1: Create connection
     connection = await getConnection();
-    
-    const insertDataQuery = `SELECT * FROM form;`;
+
+    const insertDataQuery = `SELECT * FROM form ORDER BY id DESC;`;
 
     const [rows] = await connection.query(insertDataQuery);
 
-    if(rows.length > 0){
+    if (rows.length > 0) {
       return res.status(200).send({
         success: true,
         message: "Data Found",
-        data: rows
-      })
-    }else{
+        data: rows,
+      });
+    } else {
       return res.status(200).send({
         success: false,
-        message: "No Data Found"
-      })
-
+        message: "No Data Found",
+      });
     }
   } catch (err) {
     console.error("Error:", err.stack || err.message);
@@ -35,7 +34,7 @@ router.get("/Data", async (req, res) => {
   } finally {
     // Close the connection
     if (connection) {
-      await connection.end();
+      connection.release();
     }
   }
 });

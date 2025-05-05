@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const port = 5000;
+const port = process.env.PORT;
 const path = require('path');
 
 const CreateDatabase = require('./Routes/Database/AllDatabase');
@@ -14,6 +14,11 @@ CreateDatabase();
 app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "Public")));
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.urlencoded({ extended: true }))
 
 const grievanceFormRoutes = require("./Routes/GrievanceForm/GrievanceFormIndex");
 const sendOtpRouter = require("./Routes/Authentication/SendOTP")
@@ -31,6 +36,7 @@ const ChartData = require('./Routes/Database/ChartData')
 const UpdateLocation = require('./Routes/Database/UpdateLocation')
 
 ShareDepartmentData = require('./Routes/ShareDepartmentData')
+ResolutionPage = require('./Routes/ResolutionPage')
 
 
 app.use(grievanceFormRoutes); 
@@ -51,6 +57,7 @@ app.use('/user', UserData);
 app.use('/user', TicketRaiseReason);
 
 app.use('/ShareDepartmentData', ShareDepartmentData);
+app.use('/status-update', ResolutionPage);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

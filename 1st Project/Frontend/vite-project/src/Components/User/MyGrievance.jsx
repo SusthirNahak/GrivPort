@@ -60,8 +60,6 @@ export default function MyGrievance() {
     const handleRaiseSubmit = async (e) => {
         e.preventDefault();
         const applicationId = isRaiseTicketModalOpen[1];
-        console.log("Ticket Raise Reason: ", ticketRaiseReason);
-        console.log("Application Id: ", applicationId);
 
         try {
                 const response = await fetch(`${apiKey}/user/TicketRaiseReason`, {
@@ -90,9 +88,6 @@ export default function MyGrievance() {
             setError("An error occurred: " + error.message);
         }
     };
-
-    console.log("DATA: ", data);
-
 
     return (
         <>

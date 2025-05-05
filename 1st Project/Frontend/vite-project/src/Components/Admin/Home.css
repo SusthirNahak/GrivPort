@@ -65,7 +65,7 @@ body {
 #sidebar .brand {
 	font-size: 24px;
 	font-weight: 700;
-	height: 56px;
+	height: 80px;
 	display: flex;
 	align-items: center;
 	color: var(--blue);
@@ -630,8 +630,8 @@ body.dark #content nav .profile-menu li a {
 	border-radius: 20px;
 	font-weight: 700;
 }
-#content main .table-data .order table tr td .status.completed {
-	background: green;
+#content main .table-data .order table tr td .status.resolved {
+	background: rgb(133, 196, 133);
 }
 #content main .table-data .order table tr td .status.process {
 	background: var(--yellow);
@@ -640,10 +640,10 @@ body.dark #content nav .profile-menu li a {
 	background: var(--orange);
 }
 #content main .table-data .order table tr td .status.raised  {
-	background: var(--orange);
+	background: red;
 }
 #content main .table-data .order table tr td .status.rejected {
-	background: red;
+	background: rgb(184, 182, 182);
 }
 
 

@@ -196,6 +196,7 @@ export default function UpdateLocation() {
                                 ))
                             ) : (
                                 <tr>
+                                    <td></td>
                                     <td colSpan="7" className="text-center font-semibold text-2xl py-4">
                                         No Data Found
                                     </td>

@@ -14,7 +14,6 @@ function AdminApp() {
   const [darkMode, setDarkMode] = useState(false);
 
   const location = useLocation();
-  console.log("Current Path:", location.pathname);
 
   const isLandingPage = location.pathname === '/admin';
 

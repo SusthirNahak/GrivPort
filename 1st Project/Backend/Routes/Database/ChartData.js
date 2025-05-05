@@ -53,7 +53,7 @@ router.get("/ChartData", async (req, res) => {
     } finally {
         if (connection) {
             try {
-                await connection.end();
+            connection.release();
             } catch (endErr) {
                 console.error("Error closing connection:", endErr);
             }

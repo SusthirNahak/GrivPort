@@ -7,7 +7,7 @@ const { getStoredOTP } = require("./SendOTP");
 router.post("/verifyOTP", (req, res) => {
   const userOTP = req.body.otpString;
   const storedOTP = getStoredOTP();
-
+  
   if (!userOTP) {
     return res.status(400).json({ success: false, error: "OTP is required" });
   }

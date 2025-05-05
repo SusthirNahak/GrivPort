@@ -21,7 +21,6 @@ async function CreateDatabase() {
         id INT AUTO_INCREMENT PRIMARY KEY,
         Application_Id VARCHAR(255),
         User_Id VARCHAR(255) NOT NULL,
-        Application_Status VARCHAR(255),
         Grievance VARCHAR(255),
         Name VARCHAR(255),
         State VARCHAR(255),
@@ -40,6 +39,9 @@ async function CreateDatabase() {
         File_Types TEXT,
         File_Sizes TEXT,
         Review_Message TEXT,
+        resolution_token VARCHAR(255),
+        expiry_time DATETIME,
+        Application_Status ENUM('pending', 'resolved', 'rejected', 'process') DEFAULT 'pending',
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
     `;
@@ -74,10 +76,11 @@ async function CreateDatabase() {
   } catch (err) {
     console.error("Error:", err.stack || err.message);
   } finally {
+    // Close the connection
     if (connection) {
-      await connection.end();
+        connection.release();
     }
-  }
+}
 }
 
 module.exports = CreateDatabase;

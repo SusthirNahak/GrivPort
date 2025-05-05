@@ -41,7 +41,7 @@ router.post("/TicketRaiseReason", async (req, res) => {
     } finally {
         // Close the connection
         if (connection) {
-            await connection.end();
+            connection.release();
         }
     }
 });

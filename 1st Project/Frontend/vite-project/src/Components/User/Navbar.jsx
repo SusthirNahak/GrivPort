@@ -4,10 +4,12 @@ import Cookies from 'js-cookie';
 import './i18n';
 import { useTranslation } from 'react-i18next';
 
+import logo from '../../assets/Logo.png';
+
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [currentLanguage, setCurrentLanguage] = useState('en');
+    const [currentLanguage, setCurrentLanguage] = useState('od');
     const { i18n } = useTranslation();
 
     const navigate = useNavigate();
@@ -44,13 +46,13 @@ const Navbar = () => {
 
     const phoneNumberFromCookie = Cookies.get('setPhoneNumber');
     const isAboutUs = location.pathname === '/about-us';
+    
     const changeLanguage = (event) => {
         const language = event.target.value;
         setCurrentLanguage(language);
         i18n.changeLanguage(language)
-        
     };
-
+    
     const languages = [
         { code: 'en', label: 'English' },
         { code: 'od', label: 'Odia' }
@@ -60,13 +62,7 @@ const Navbar = () => {
         <nav className={`fixed top-0 left-0 w-full h-[12vh] z-50 transition-all duration-300 ease-in-out flex items-center ${isScrolled || isAboutUs ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
             <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
                 <Link to="/" className="flex items-center gap-2 group">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-700 to-blue-900 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                        <span className="text-white font-bold text-xl">G</span>
-                    </div>
-                    <div>
-                        <h1 className="text-blue-900 font-bold text-xl transition-colors duration-300">GrievEase</h1>
-                        <p className="text-xs text-blue-700">Government Grievance Portal</p>
-                    </div>
+                    <img src={logo} alt="Logo" className='w-16 h-16'/>
                 </Link>
 
                 {/* Desktop Navigation */}

@@ -5,9 +5,6 @@ const FileViewer = () => {
   const encodedFileUrl = urlParams.get("file");
   const fileUrl = encodedFileUrl ? decodeURIComponent(encodedFileUrl) : null;
 
-  console.log("URL: ", fileUrl);
-  
-
   const renderFile = (fileUrl) => {
     if (!fileUrl) return <p className="text-gray-500">No file provided.</p>;
 
@@ -27,7 +24,7 @@ const FileViewer = () => {
               className="w-full h-auto max-h-[80vh] object-contain rounded-md"
               onError={(e) => {
                 console.error("Image failed to load:", fileUrl);
-                e.target.src = "https://via.placeholder.com/400"; // Fallback image
+                e.target.src = "https://via.placeholder.com/400";
               }}
             />
           </div>

@@ -49,7 +49,6 @@ router.post("/userFormData", upload.array("Files"), async (req, res) => {
   const files = req.files;
   const formData = req.body;
 
-
   if (!files) {
     return res.status(400).json({ error: "No files uploaded" });
   }
@@ -133,7 +132,7 @@ router.post("/userFormData", upload.array("Files"), async (req, res) => {
     });
   } finally {
     if (connection) {
-      await connection.end();
+      connection.release();
     }
   }
 });

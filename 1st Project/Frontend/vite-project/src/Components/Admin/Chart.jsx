@@ -185,10 +185,6 @@ const DashboardCharts = () => {
             });
     }, []);
 
-
-    console.log("SERIES: ", series);
-
-
     return (
         <main className="p-6 space-y-10">
             <div className="head-title">

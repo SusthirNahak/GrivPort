@@ -5,103 +5,132 @@ import PopUp from "./popUp";
 const apiKey = import.meta.env.VITE_API_KEY;
 
 export default function SignIn({ onSignInSuccess }) {
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [popupMessage, setPopupMessage] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [popupMessage, setPopupMessage] = useState("");
 
-  useEffect(() => {
-  }, [popupMessage]);
+    useEffect(() => {
+    }, [popupMessage]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!phoneNumber.match(/^[6-9]{1}[0-9]{9}$/)) {
-      alert("Please enter a valid 10-digit phone number.");
-      return;
-    }
-
-    if (phoneNumber && !isSubmitted) {
-      setIsSubmitting(true);
-      const countryCode = "+91";
-      const fullPhoneNumber = countryCode + phoneNumber;
-
-      try {
-        const response = await fetch(`${apiKey}/sendOTP`, {
-
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ toPhoneNumber: fullPhoneNumber }),
-        });
-
-        const data = await response.json();
-        setIsSubmitting(false);
-        setShowPopup(true);
-        if (data.success) {
-          setIsSubmitted(true);
-          setPopupMessage(data);
-        } else {
-          setPopupMessage(data);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!phoneNumber.match(/^[6-9]{1}[0-9]{9}$/)) {
+            alert("Please enter a valid 10-digit phone number.");
+            return;
         }
-      } catch (error) {
-        setIsSubmitting(false);
-        setShowPopup(true);
-        setPopupMessage(
-          "An error occurred while sending OTP. Please try again."
-        );
-        console.error("Fetch error:", error);
-      }
-    }
-  };
 
-  const handlePopupClose = () => {
-    setShowPopup(false);
-    if (isSubmitted) {
-      onSignInSuccess(phoneNumber);
-    }
-  };
+        if (phoneNumber && !isSubmitted) {
+            setIsSubmitting(true);
+            const countryCode = "+91";
+            const fullPhoneNumber = countryCode + phoneNumber;
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <div className="relative mb-6">
-        <input
-          type="text"
-          id="phoneNumber"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-          placeholder=" "
-          maxLength="10"
-          pattern="[6-9]{1}[0-9]{9}"
-          required
-          className="peer w-full border border-gray-400 rounded-md px-6 py-3 text-sm placeholder-transparent focus:outline-2 focus:outline-black focus:outline-offset-4 focus:border-black"
-        />
+            try {
+                const response = await fetch(`${apiKey}/sendOTP`, {
 
-        <label
-          htmlFor="phoneNumber"
-          className="absolute left-[20%] -top-3.5 transform -translate-x-1/2 px-2 text-sm transition-all duration-300 ease-in-out bg-[#f5e790] peer-placeholder-shown:top-2 peer-placeholder-shown:left-20 peer-placeholder-shown:transform-none peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-4 peer-focus:left-[20%] peer-focus:-translate-x-1/2 peer-focus:text-sm peer-focus:text-black text-black rounded-lg leading-1.5"
-        >
-          Phone Number <sup className="text-red-500 text-lg">*</sup>
-        </label>
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ toPhoneNumber: fullPhoneNumber }),
+                });
 
-      </div>
+                const data = await response.json();
+                setIsSubmitting(false);
+                setShowPopup(true);
+                if (data.success) {
+                    setIsSubmitted(true);
+                    setPopupMessage(data);
+                } else {
+                    setPopupMessage(data);
+                }
+            } catch (error) {
+                setIsSubmitting(false);
+                setShowPopup(true);
+                setPopupMessage(
+                    "An error occurred while sending OTP. Please try again."
+                );
+                console.error("Fetch error:", error);
+            }
+        }
+    };
 
-      <button
-        type="submit"
-        disabled={isSubmitting || isSubmitted}
-        className={`w-full py-3 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition duration-200 cursor-pointer ${isSubmitting || isSubmitted ? "opacity-50 cursor-not-allowed" : ""
-          }`}
-      >
+    const handlePopupClose = () => {
+        setShowPopup(false);
+        if (isSubmitted) {
+            onSignInSuccess(phoneNumber);
+        }
+    };
 
-        {isSubmitting ? "..." : "Get OTP"}
-      </button>
+    return (
+        <form onSubmit={handleSubmit}>
+            <div className="min-h-screen flex items-center justify-center mt-4">
+                <div className="relative bg-white p-6 rounded-xl shadow-md max-w-md w-full space-y-6">
+                    {/* Phone Number Label and Input */}
+                    <div>
+                        <label htmlFor="phoneNumber" className="block text-lg font-semibold text-gray-800 mb-2">
+                            Phone Number <sup className="text-red-500 text-base">*</sup>
+                        </label>
+                        <input
+                            type="tel"
+                            id="phoneNumber"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                            placeholder="98******67"
+                            maxLength="10"
+                            pattern="[6-9]{1}[0-9]{9}"
+                            required
+                            className="w-full border border-gray-300 rounded-lg px-5 py-3 text-base text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-black focus:outline-none transition duration-200"
+                        />
+                    </div>
 
-      <PopUp
-        isOpen={showPopup}
-        setIsOpen={handlePopupClose}
-        type={popupMessage}
-      />
-    </form>
-  );
+                    {/* Agreement Checkbox */}
+                    <div>
+                        <div className="flex items-start gap-3">
+                            <input
+                                id="agreement"
+                                type="checkbox"
+                                className="mt-1 h-5 w-5 text-black border-gray-300 rounded focus:ring-black"
+                                required
+                            />
+                            <label htmlFor="agreement" className="text-sm sm:text-base text-gray-700 font-medium text-justify">
+                                By signing in, you agree to our{" "}
+                                <span className="text-blue-700 hover:underline cursor-pointer">Terms of Service</span>{" "}
+                                and{" "}
+                                <span className="text-blue-700 hover:underline cursor-pointer">Privacy Policy</span>.
+                            </label>
+                        </div>
+                    </div>
+
+                    {/* Submit Button */}
+                    <button
+                        type="submit"
+                        disabled={isSubmitting || isSubmitted}
+                        className={`w-full py-3 rounded-md font-semibold text-white transition duration-200 ${isSubmitting || isSubmitted
+                                ? "bg-green-500 opacity-50 cursor-not-allowed"
+                                : "bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-300"
+                            }`}
+                    >
+                        {isSubmitting ? "..." : "Get OTP"}
+                    </button>
+
+                    {/* QR Code */}
+                    <div className="flex justify-center items-center pt-4">
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
+                            alt="QR Code"
+                            className="h-24 w-24 rounded-md border border-gray-300 shadow-sm"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <PopUp
+                isOpen={showPopup}
+                setIsOpen={handlePopupClose}
+                type={popupMessage}
+            />
+        </form>
+    );
 }
 
 

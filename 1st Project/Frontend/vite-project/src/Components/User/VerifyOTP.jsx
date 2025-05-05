@@ -139,120 +139,122 @@ const VerifyOTP = ({ phoneNumber }) => {
   const isButtonEnabled = otp.every((digit) => digit !== "");
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <form onSubmit={handleSubmit} className="w-full max-w-sm">
-        <div className="my-7 space-x-2 flex justify-center">
-          {otp.map((digit, index) => (
-            <input
-              key={index}
-              type="text"
-              maxLength="1"
-              value={digit}
-              ref={(el) => (inputRefs.current[index] = el)}
-              onChange={(e) => handleChange(e, index)}
-              onKeyDown={(e) => handleKeyDown(e, index)}
-              onPaste={index === 0 ? handlePaste : undefined}
-              className={`w-12 h-12 text-center text-2xl border-2 rounded-md text-black
-                ${
-                  !isSubmitted
-                    ? "border-black"
-                    : isValid && triggerAnimation
-                    ? "animate-border-green border-green-400"
-                    : !isValid && triggerAnimation
-                    ? "animate-border-red border-red-500"
-                    : "border-black"
-                }
-                focus:outline-2 focus:outline-black focus:outline-offset-3`}
-              aria-label={`OTP digit ${index + 1}`}
-            />
-          ))}
-        </div>
-
-        <button
-          type="submit"
-          className={`w-full px-4 py-2 text-black rounded-lg font-semibold bg-green-600
-            active:outline-2 active:outline-green-800 active:outline-offset-3 
-            hover:bg-green-700 transition-all duration-150 cursor-pointer
-            ${!isButtonEnabled && "opacity-50 cursor-not-allowed"}`}
-          disabled={!isButtonEnabled}
-        >
-          Verify
-        </button>
-      </form>
-
-      <div className="mt-4">
-        <button
-          type="button"
-          onClick={handleResend}
-          disabled={resendCooldown > 0}
-          className={`text-black hover:underline cursor-pointer ${
-            resendCooldown > 0 ? "opacity-50" : "hover:underline"
-          }`}
-        >
-          {resendCooldown > 0
-            ? `Resend OTP (${resendCooldown}s)`
-            : "Resend OTP"}
-        </button>
+<div className="min-h-screen flex items-center justify-center bg-transparent">
+  <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-sm text-center space-y-6 mt-3 ">
+    <form onSubmit={handleSubmit} className="pt-6">
+      {/* OTP Inputs */}
+      <div className="flex justify-center gap-3 mb-4">
+        {otp.map((digit, index) => (
+          <input
+            key={index}
+            type="text"
+            maxLength="1"
+            value={digit}
+            ref={(el) => (inputRefs.current[index] = el)}
+            onChange={(e) => handleChange(e, index)}
+            onKeyDown={(e) => handleKeyDown(e, index)}
+            onPaste={index === 0 ? handlePaste : undefined}
+            className={`w-12 h-12 text-center text-2xl border-2 rounded-md text-black transition duration-150
+              ${
+                !isSubmitted
+                  ? "border-black"
+                  : isValid && triggerAnimation
+                  ? "animate-border-green border-green-400"
+                  : !isValid && triggerAnimation
+                  ? "animate-border-red border-red-500"
+                  : "border-black"
+              }
+              focus:outline-2 focus:outline-black focus:outline-offset-3`}
+            aria-label={`OTP digit ${index + 1}`}
+          />
+        ))}
       </div>
 
-      <PopUp isOpen={showPopup} setIsOpen={handlePopupClose} type={data} />
+      {/* Submit Button */}
+      <button
+        type="submit"
+        className={`w-full py-3 rounded-md font-semibold text-white transition duration-200
+          ${
+            !isButtonEnabled
+              ? "bg-green-500 opacity-50 cursor-not-allowed"
+              : "bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-300"
+          }`}
+        disabled={!isButtonEnabled}
+      >
+        Verify
+      </button>
+    </form>
 
-      <style jsx>{`
-        @keyframes borderGreen {
-          0% {
-            border-color: black;
-            border-width: 2px;
-          }
-          25% {
-            border-left-color: #10b981;
-            border-width: 2px;
-          }
-          50% {
-            border-top-color: #10b981;
-            border-width: 2px;
-          }
-          75% {
-            border-right-color: #10b981;
-            border-width: 2px;
-          }
-          100% {
-            border-color: #10b981;
-            border-width: 2px;
-          }
-        }
-
-        @keyframes borderRed {
-          0% {
-            border-color: black;
-            border-width: 2px;
-          }
-          25% {
-            border-left-color: #ef4444;
-            border-width: 2px;
-          }
-          50% {
-            border-top-color: #ef4444;
-            border-width: 2px;
-          }
-          75% {
-            border-right-color: #ef4444;
-            border-width: 2px;
-          }
-          100% {
-            border-color: #ef4444;
-            border-width: 2px;
-          }
-        }
-
-        .animate-border-green {
-          animation: borderGreen 1s ease-in-out forwards;
-        }
-
-        .animate-border-red {
-          animation: borderRed 1s ease-in-out forwards;
-        }
-      `}</style>
+    {/* Resend Button */}
+    <div className="">
+      <button
+        type="button"
+        onClick={handleResend}
+        disabled={resendCooldown > 0}
+        className={`text-sm text-black font-medium ${
+          resendCooldown > 0
+            ? "opacity-50 cursor-not-allowed"
+            : "hover:underline cursor-pointer"
+        }`}
+      >
+        {resendCooldown > 0
+          ? `Resend OTP (${resendCooldown}s)`
+          : "Resend OTP"}
+      </button>
     </div>
+
+    {/* PopUp Component */}
+    <PopUp isOpen={showPopup} setIsOpen={handlePopupClose} type={data} />
+
+    {/* Animations */}
+    <style jsx>{`
+      @keyframes borderGreen {
+        0% {
+          border-color: black;
+        }
+        25% {
+          border-left-color: #10b981;
+        }
+        50% {
+          border-top-color: #10b981;
+        }
+        75% {
+          border-right-color: #10b981;
+        }
+        100% {
+          border-color: #10b981;
+        }
+      }
+
+      @keyframes borderRed {
+        0% {
+          border-color: black;
+        }
+        25% {
+          border-left-color: #ef4444;
+        }
+        50% {
+          border-top-color: #ef4444;
+        }
+        75% {
+          border-right-color: #ef4444;
+        }
+        100% {
+          border-color: #ef4444;
+        }
+      }
+
+      .animate-border-green {
+        animation: borderGreen 0.8s ease-in-out forwards;
+      }
+
+      .animate-border-red {
+        animation: borderRed 0.8s ease-in-out forwards;
+      }
+    `}</style>
+  </div>
+</div>
+
   );
 };
 

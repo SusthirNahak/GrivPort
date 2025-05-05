@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import logo from '../../assets/Logo.png';
+import Cookies from 'js-cookie';
 
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
@@ -19,16 +21,15 @@ const Sidebar = ({ hidden }) => {
     { name: 'Logout', icon: 'bx-power-off', className: 'logout', link: "/" },
   ];
 
-  const handleLogout = () => {
-    sessionStorage.removeItem('name');
+  const handleLogout = () => {    
+    Cookies.remove('Name');
     navigate('/admin');
   }
 
   return (
     <section id="sidebar" className={!hidden ? 'hide' : ''}>
-      <Link to="#" className="brand">
-        <i className="bx bxs-smile bx-lg"></i>
-        <span className="text">AdminHub</span>
+      <Link to="/admin" className="brand">
+        <img src={logo} alt="Logo" />
       </Link>
       <ul className="side-menu top">
         {menuItems.map((item) => (

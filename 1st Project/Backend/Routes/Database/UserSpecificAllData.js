@@ -12,7 +12,7 @@
             connection = await getConnection();
 
             // Step 2: Create UPDATE query
-            const insertDataQuery = `SELECT * FROM form WHERE User_Id = ?;`;
+            const insertDataQuery = `SELECT * FROM form WHERE User_Id = ? ORDER BY created_at DESC;`;
 
             // Step 3: Execute query
             const [results] = await connection.execute(insertDataQuery, [cookiesData]);
@@ -42,7 +42,7 @@
         } finally {
             // Close the connection
             if (connection) {
-                await connection.end();
+                connection.release();
             }
         }
     });

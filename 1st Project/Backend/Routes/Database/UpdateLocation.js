@@ -47,7 +47,7 @@ router.post("/UpdateLocation", multer().none(), async (req, res) => {
     } finally {
         // Close the connection
         if (connection) {
-            await connection.end();
+            connection.release();
         }
     }
 });
@@ -88,7 +88,7 @@ router.get("/UpdateLocation", multer().none(), async (req, res) => {
     } finally {
         // Close the connection
         if (connection) {
-            await connection.end();
+            connection.release();
         }
     }
 });
@@ -132,7 +132,7 @@ router.put("/UpdateLocation", multer().none(), async (req, res) => {
     } finally {
         // Close the connection
         if (connection) {
-            await connection.end();
+            connection.release();
         }
     }
 });
@@ -177,7 +177,7 @@ router.delete("/UpdateLocation", multer().none(), async (req, res) => {
     } finally {
         // Close the connection
         if (connection) {
-            await connection.end();
+            connection.release();
         }
     }
 });

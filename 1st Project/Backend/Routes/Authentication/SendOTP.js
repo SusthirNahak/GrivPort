@@ -5,20 +5,19 @@ const router = express.Router();
 
 require("dotenv").config();
 
-// DATABASE_URL = mysql://root:DwgzXdlvNgiQBBZBpJhVcfwsbFOkdXIj@maglev.proxy.rlwy.net:24569/railway
-
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_ACCOUNT_AUTH_TOKEN;
-const client = new twilio(accountSid, authToken);
+// const accountSid = process.env.TWILIO_ACCOUNT_SID;
+// const authToken = process.env.TWILIO_ACCOUNT_AUTH_TOKEN;
+// const client = new twilio(accountSid, authToken);
 
 let storedOTP = null;
 
 const generateOtp = () => {
   const otp = crypto.randomInt(1000, 10000);
   storedOTP = otp;
-
   return otp;
 };
+
+const getStoredOTP = () => storedOTP;
 
 router.post("/sendOTP", (req, res) => {
   const { toPhoneNumber } = req.body;
@@ -32,11 +31,11 @@ router.post("/sendOTP", (req, res) => {
   const otp = generateOtp();
 
   try {
-    client.messages.create({
-      body: `Your OTP is: ${otp}`,
-      to: toPhoneNumber,
-      from: "+19566921338",
-    });
+    // client.messages.create({
+    //   body: `Your OTP is: ${otp}`,
+    //   to: toPhoneNumber,
+    //   from: process.env.TWILIO_ACCOUNT_FROM_PHONE_NUMBER,
+    // });
 
     console.log("OTP sent successfully:", otp);
     res.status(200).json({ success: true, message: "OTP Sent Successfully" });
@@ -50,4 +49,4 @@ router.post("/sendOTP", (req, res) => {
   }
 });
 
-module.exports = { router, getStoredOTP: () => storedOTP };
+module.exports = { router, getStoredOTP };

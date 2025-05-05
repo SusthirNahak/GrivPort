@@ -8,6 +8,7 @@ const fs = require("fs");
 let districtData = [];
 router.get("/", (req, res) => {
   const stateName = req.query.stateName;
+  
   if (!stateName) {
 	return res.status(400).json({ message: "stateName is required" });
   }
