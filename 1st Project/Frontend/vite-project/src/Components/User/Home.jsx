@@ -346,7 +346,7 @@ const Home = () => {
             {/* CTA Section */}
             <section
         ref={sectionRefs.cta}
-        className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-indigo-700 text-white"
+        className="py-16 md:py-24 bg-gradient-to-r from-[#FC635C] via-[#FF8A4D] to-[#F8BA64] text-white"
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible.cta ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>

@@ -59,7 +59,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={`fixed top-0 left-0 w-full h-[12vh] z-50 transition-all duration-300 ease-in-out flex items-center ${isScrolled || isAboutUs ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
+        <nav className={`fixed top-0 left-0 w-full h-[12vh] z-50 transition-all duration-300 ease-in-out flex items-center ${isScrolled || isAboutUs ? 'bg-gradient-to-r from-[#FC635C] via-[#FF8A4D] to-[#F8BA64] shadow-md py-2' : 'bg-transparent py-4'}`}>
             <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
                 <Link to="/" className="flex items-center gap-2 group">
                     <img src={logo} alt="Logo" className='w-16 h-16'/>
