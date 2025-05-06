@@ -5,9 +5,9 @@ const router = express.Router();
 
 require("dotenv").config();
 
-// const accountSid = process.env.TWILIO_ACCOUNT_SID;
-// const authToken = process.env.TWILIO_ACCOUNT_AUTH_TOKEN;
-// const client = new twilio(accountSid, authToken);
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_ACCOUNT_AUTH_TOKEN;
+const client = new twilio(accountSid, authToken);
 
 let storedOTP = null;
 
@@ -31,11 +31,11 @@ router.post("/sendOTP", (req, res) => {
   const otp = generateOtp();
 
   try {
-    // client.messages.create({
-    //   body: `Your OTP is: ${otp}`,
-    //   to: toPhoneNumber,
-    //   from: process.env.TWILIO_ACCOUNT_FROM_PHONE_NUMBER,
-    // });
+    client.messages.create({
+      body: `Your OTP is: ${otp}`,
+      to: toPhoneNumber,
+      from: process.env.TWILIO_ACCOUNT_FROM_PHONE_NUMBER,
+    });
 
     console.log("OTP sent successfully:", otp);
     res.status(200).json({ success: true, message: "OTP Sent Successfully" });
